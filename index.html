@@ -106,13 +106,15 @@ section {
     display: flex;
     flex-direction: row;
   gap: 1rem;
-  position: absolute;
+    position: fixed;       /* stay in place */
   top: 0;
   left: 40vw;
   width: 60vw;
+      height: 100%;
  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
   backdrop-filter: blur(4px);                 /* applies blur behind */
   -webkit-backdrop-filter: blur(4px);         /* for Safari support */
+
 
 }
 
@@ -129,24 +131,22 @@ section {
  .intro.overlay {
 display: flex;
 justify-content: space-between; /* left/right edges */
-flex-direction: row;
   width: 35vw ;
 margin: 0px; /* space for header */
   padding: 1rem;
-  height: 100%;
+  max-height: 90%;
   overflow-y: auto;
   top: 0;
   left: 5vw;
-
     border: 1px solid #ccc;
-    position: relative;
+     position: fixed;       /* stay in place */
   z-index: 1;
          background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
   backdrop-filter: blur(4px);                 /* applies blur behind */
   -webkit-backdrop-filter: blur(4px);         /* for Safari support */
 }
  .intro.overlay img {  max-width: 100%;   /* shrink to fit the parent width */
-  width: 550px;      /* ideal width on desktop */
+  width: 500px;      /* ideal width on desktop */
   height: auto;      /* keep aspect ratio */
   display: block;
   margin-top: 1rem;
@@ -164,6 +164,7 @@ width: 100%;
         overflow-y: auto;
         top: 0;
   left: 0;
+      overflow: visible; /* or at least not hidden */
 }
     .intro.overlay {
 display: block;
@@ -180,7 +181,8 @@ margin: 0px; /* space for header */
 position: relative;
  z-index: 1;
 }
-   .intro.overlay img {  
+   .intro.overlay 
+  {  
   max-width: 70%;
   height: auto;      /* keep aspect ratio */
   display: block;
@@ -208,12 +210,13 @@ hr {
   width: 100%;                 /* optional: control width */
 }
     .list {
-        position: fixed;
+        position: absolute;
         display: flex;
     flex-direction: column;
     top: 2vw;
     padding: 0 auto;
-    margin-top: 4vw;}
+    margin-top: 4vw;
+  overflow-y: auto; }
     .list a {font-family: var(--font-title);
         font-size: 100px;
     line-height: 7vw;}
@@ -279,12 +282,22 @@ hr {
   min-width: 250px;
 }
 
-iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-}
-
+iframe { width: 100%; aspect-ratio: 16 / 9; border: none; }
+  
+ .zoom-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); justify-content: center;
+ align-items: center; z-index: 1000; } .zoom-overlay img { display: block; max-width: 60%; height: auto; cursor:
+ zoom-out; }
+  
+.slideshow-container { position: relative; width: 100%; max-width: 100%; margin: 2rem auto; overflow: hidden; z-index:
+5; } .slide { width: 100%; display: none; } .slide.active { display: block; } .prev, .next { position: absolute; top:
+50%; transform: translateY(-50%); color:#ffffff; border: none; cursor: pointer; font-size: 1rem; padding: 0.5rem
+1rem; z-index: 10; } .prev { left: 10px; } .next { right: 10px; } /* === Slideshow inside .book-scroll === */
+.book-scroll .slideshow-container { position: relative; width: 100%; max-width: 100%; margin: 2rem auto; flex: none; /*
+prevent flex layout interference */ overflow: hidden; z-index: 10; } .book-scroll .slide { display: none; width: 100%;
+height: auto; } .book-scroll .slide.active { display: block; } /* === Navigation Buttons === */ .book-scroll .prev,
+.book-scroll .next { position: absolute; top: 50%; transform: translateY(-50%); border: none; font-size: 2rem; cursor:
+pointer; padding: 0.5rem 1rem; z-index: 20; transition: background 0.3s; } .book-scroll .prev:hover, .book-scroll
+.next:hover { text-decoration: none;} .book-scroll .prev { left: 10px; } .book-scroll .next { right: 10px; }
     
 </style>
 </head>
@@ -298,7 +311,9 @@ iframe {
 	<a href="#nuongnau" onclick="closeAllSections(); openSection('nuongnau'); return false;">Một nơi nương náu</a><br>
   <a href="#khantay" onclick="closeAllSections(); openSection('khantay'); return false;">Con có khăn tay rồi chứ?</a><br>
   <a href="#chatsong" onclick="closeAllSections(); openSection('chatsong'); return false;">Chặt sông ra từng khúc</a><br>
-  <a href="#canvas" onclick="closeAllSections(); openSection('canvas'); return false;">Tấm canvas trống</a> </div>
+  <a href="#canvas" onclick="closeAllSections(); openSection('canvas'); return false;">Tấm canvas trống</a> <br>
+  <a href="#mennonites" onclick="closeAllSections(); openSection('mennonites'); return false;">The Mennonites – Larry Towell</a>
+  </div>
 <!-- FOUR LOVES -->
   <section class="intro" id="fourloves" style="text-align: right;">
     <img src="https://upload.wikimedia.org/wikipedia/en/2/27/CS_Lewis_photo_on_dust_jacket.jpg" style="margin-left: auto;">
@@ -741,7 +756,7 @@ Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay
 
 <br>
 
-<p>Câu chuyện vũ trụ kia là những gì người viết cảm thấy khi xem loạt ảnh của Phong:cứ như mình là người hành tinh khác, nhìn thấy một loạt biểu tượng xa lạ bỗng dưng mọc lên trên những miếng đất tổ tiên mình, và tìm cách cắt nghĩa.</p>
+<p>Câu chuyện vũ trụ kia là những gì người viết cảm thấy khi xem loạt ảnh của Phong:cứ như mình là người hành tinh khác, nhìn thấy một loạt biểu tượng xa lạ bỗng dưng mọc lên trên những miếngđất tổ tiên mình, và tìm cách cắt nghĩa.</p>
 
 
 
@@ -777,6 +792,172 @@ Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay
 <br>
     </section>    
   
+   <section class="intro" id="mennonites" style="text-align: right;">
+    <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1738.jpg?v=1661692439548" style="margin-left: auto;">
+          <br>
+     <p>Her fingers are hummingbirds among meagre flowers that the earth is attempting to strangle with its dry gloves on.
+         <br>But I know, to her the flowers are so numerous and of so many colours and hues that she sees in them everything they want her to see.</p>
+          <hr>
+        <button onclick="closeAllSections()"><p>close</p></button>
+        <button onclick="openSection('moremennonites');"><p>read</p></button>
+</section>
+
+ <section id="moremennonites" class="book-scroll" style="display:none;">
+  
+    <button class="close-btn" onclick="closeSection('moremennonites')"><p>close</p></button>
+  <hr>
+  
+<h2>The Mennonites - Larry Towell</h2><br>
+      <div style="display: flex; gap: 2rem; align-items: flex-end">
+      <div style="flex: 0 0 80%">
+        <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1644-ff45511b-6ead-464c-951b-3b60ba27fd41.jpg?v=1661691039000" style="width: 50%;" alt=""><br>
+          <p>Để trả lời cho câu hỏi về sự lựa chọn màu đen trắng cho phim điện ảnh giành giải thưởng lớn nhất tại liên hoan phim Đài Bắc lần thứ 19 - The Great Buddha +, đạo diễn Huang Hsin-yao nói: “Phim đen trắng không chỉ vẽ nên một bức tranh chân thực mà còn gợi lên sự tương phản với chủ đề hiện thực của bộ phim. Nếu chúng tôi làm phim màu, điều đó sẽ tước đi góc nhìn về không gian của khán giả.”</p>
+<br>
+<p>Còn đạo diễn đạt giải Oscar Alfonso Cuarón nói về màu phim Roma: “Tôi không muốn quay phim đen trắng hoài cổ. Tôi không muốn bộ phim trông như những năm 50 hay 60. Tôi muốn bộ phim trông như năm 2018. Nhưng màu đen trắng. Một thứ ngôn ngữ khác.”</p>
+<br>
+<p>Đó chính xác là những gì mình nghĩ về khi xem dự án ảnh The Mennonites của Larry Towell.</p>
+          </div>
+          <div style="flex: 0 0 10%"></div>
+      </div>
+     
+      <div>
+      <hr>
+    <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1652.jpg?v=1661691375880" style="width: 100%;" alt=""><br>
+      <p>Bề ngoài lạnh lùng, khô khan và có phần xa cách: hộp đen, bìa đen, chữ trắng đen, hình đen trắng. Người ta sẽ cho rằng nội thất cuốn sách chứa loại hình ảnh đầy kịch tính, đầy căng thẳng, đầy vấn đề, và hẳn chèo kéo người xem phải vận động, và tư duy diễn nghĩa.</p>
+<br>
+<p>Điều đó có phần đúng. Nhưng cứ kiên nhẫn xem và đọc, nhiếp ảnh gia sẽ có cách dần cởi bỏ lớp áo định kiến bạn mặc. Và rồi thong thả mời bạn vào dùng bữa trong những căn nhà của người Mennonite, thong thả như cách ông đánh bạn với cộng đồng biệt lập này, và ngược lại, như cách họ từ từ chiếm lấy tình cảm của ông. Một bức tranh đen trắng không nhiều hoài cổ, hoàn toàn hiện thực và hiện đại.</p>
+<br>
+<p>Phải nói, Mennonite là một hệ phái Tin lành xuất hiện từ thế kỷ 16. Theo truyền thống, cộng đồng này chọn sống tách biệt với xã hội. Người Mennonite liên tục bị buộc phải di cư khắp thế giới để tự do sống lối sống họ chọn, thay vì đánh đổi. Trong các khu kiều dân tự duy trì, những cộng đồng bảo thủ này chống lại mọi hình thức hiện đại hóa, bao gồm máy móc cơ giới và điện. “Họ ở nông thôn, họ sống truyền thống và theo chủ nghĩa hòa bình. Họ không thỏa hiệp, và vì thế, họ không thuộc về”.</p>
+      <br>
+       <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1708.jpg?v=1661691437267" style="width: 100%;" alt="">
+    <br>
+      <p>Những đứa trẻ với mắt mở to và mái tóc bù xù, ăn mặc giống cha mẹ và ông bà của chúng: áo sơ mi kẻ caro và quần yếm hoặc váy dài và khăn trùm đầu. Bên trong ngôi nhà của họ, mọi thứ đều thanh đạm và trọng công năng: ghế gỗ đơn giản, cũi trẻ em làm thủ công, ghế làm việc và tủ bếp.</p>
+<br>
+<p>Việc ghi lại hình ảnh ở cộng đồng này bị cấm tiệt, duy chỉ có tình bạn của Towell mới khiến họ mở lòng trước ống kính. Những hình ảnh người Mennonite ở Canada và Mexico mà Towell chụp trong hơn mười năm cùng những ghi chép thân mật của chính ông kể lại chi tiết trải nghiệm của họ: cuộc sống thôn dã khắc nghiệt, cái nghèo, sự đói khát đất đai và công việc, cùng cuộc đấu tranh không ngừng để chặn đứng thế giới hiện đại ở ngoài cửa nhà. Kỷ luật và mâu thuẫn, sự khắc khổ trong niềm tin tôn giáo vang vọng trong phong cảnh lộng gió nơi họ định cư.</p>
+<br>
+<p>Nhưng ở thời điểm Towell thực hiện dự án ảnh này (thập niên 1990), cộng đồng Mennonite đang trải qua nhiều thay đổi. “Lần đầu tiên tôi đến Mexico, tất cả các cộng đồng tôi đến thăm đều có lối sống truyền thống, điều đó có nghĩa là không có điện và không có xe cộ ngoài máy kéo có bánh thép. Vào thời điểm tôi chụp xong, họ gần như đã thích nghi ở một mức độ nào đó. Sự tiến hóa xảy ra một phần là do những người Mennonite đến Canada phải thích nghi với cuộc sống ở đó và khi quay trở về, họ mang sự hiện đại theo.” Hình ảnh của ông kể từ đó đã gây được tiếng vang lịch sử như tài liệu về một dân tộc bị kẹt giữa việc tuân theo niềm tin trong Kinh thánh và nhu cầu thay đổi để tồn tại.</p>
+      <br>    
+      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1731.jpg?v=1661691244377" style="width: 100%;" alt="">
+      <br>
+      <p>Từ El Salvador đến Palestine và rồi người Mennonite, sợi chỉ đỏ chạy xuyên suốt các tác phẩm của nhiếp ảnh gia/nhà thơ/nghệ sĩ nhạc folk/sử gia truyền khẩu này chính là mối liên kết bị gãy đứt giữa con người và đất. Như ông nói: ”Nếu có một chủ đề kết nối tất cả công việc của tôi, đó sẽ là sự thiếu vắng hay mất đi mảnh đất mình thuộc về (landlessness); tôi quan tâm đến cách đất nuôi con người trở thành người như họ là, và điều xảy ra với họ khi mất nó, và do đó đánh mất danh tính của mình”.</p>
+<hr>
+<p>Ở tuổi 69, Larry vẫn không ngừng thực hành mối quan tâm đó. Bất ngờ bắt gặp ông đang cầm máy ở điểm nóng Ukraine trong một bài phỏng vấn trên Vanity Fair đăng 4 ngày trước, vẫn tâm hồn thi sĩ, cái nhìn sử gia và trách nhiệm người làm nhiếp ảnh, ông bước vào một trang sử khác.</p>
+<br>
+<p>“Đất đai biến chúng ta thành con người mình, nếu ta mất nó, ta sẽ mất đi một phần linh hồn mình, và rồi ta sẽ dành cả đời để cố gắng tìm lại. Từ vùng không có đất ở Trung Mỹ cho đến Palestine và rồi Các quốc gia đầu tiên của Châu Mỹ, có một kết quả có thể đoán trước được cho các cuộc chiếm đoạt này. Hệ quả của các cuộc nổi dậy; chiến tranh là không thể tránh khỏi khi bản sắc của một người, bản sắc có trong chính đất đai, bị đe dọa hoặc mất đi. Vì vậy, các nhiếp ảnh gia chúng ta phải dừng lại để nhìn nó trong toàn bộ sự tước đoạt mà ta đang chụp, nếu không, chúng ta sẽ chỉ trở thành những thợ chụp đủ nét, thay vì là những người chiêm ngưỡng cái mà nhà triết học Francis Bacon từng gọi là “mọi thứ như chúng vốn có”.</p>
+<hr>
+    <div class="slideshow-container">
+ <img class="slide" src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1711.jpg?v=1661691430503" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1728.jpg?v=1661691316773"
+     style="width: 100%" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1700.jpg?v=1661691419283"
+     style="width: 100%" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1711.jpg?v=1661691430503"
+     style="width: 100%" />
+ <img class="slide" src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/untitled-1.jpg?v=1661691612590" />
+ <img class="slide" src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1726.jpg?v=1661691394357" />
+ <img class="slide" src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1703.jpg?v=1661691399587" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1667.jpg?v=1661691402327"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1664.jpg?v=1661691404797"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1730.jpg?v=1661691373143"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1652.jpg?v=1661691375880"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1659.jpg?v=1661691380990"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1720.jpg?v=1661691386397"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1649.jpg?v=1661691389147"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1717.jpg?v=1661691338510"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1735.jpg?v=1661691344460"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1660.jpg?v=1661691347463"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1715.jpg?v=1661691358147"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1733.jpg?v=1661691361193"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1729.jpg?v=1661691326150"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1738.jpg?v=1661692439548"
+     alt="" />
+ <img
+     class="slide"
+     src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1739.jpg?v=1661692446404"
+     alt="" />
+
+  <button class="prev" onclick="changeSlide(-1)">❮</button>
+  <button class="next" onclick="changeSlide(1)">❯</button>
+     </div>
+         <hr>
+      <p>* Đọc thêm:</p> 
+      <ul>
+          <li><a href="https://www.magnumphotos.com/photographer/larry-towell/">Về Larry Towell trên website của tổ chức nhiếp ảnh Magnum Photos</a></li>
+          <li><a href="https://www.vanityfair.com/news/2022/08/what-one-war-photographer-has-learned-from-conflict-in-ukraine">Bài phỏng vấn Larry Towell trên Vanity Fair</a></li>
+          <li><a href="https://www.theguardian.com/artanddesign/2022/apr/09/a-community-out-of-time-larry-towells-images-of-mennonite-families">Về sách The Mennonites trên The Guardian</a></li>
+      </ul>
+   </div><br>
+    
+     
+     
+
+     </section>
+ <script>
+       let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(n) {
+  slides.forEach((s, i) => {
+    s.classList.toggle('active', i === n);
+  });
+}
+
+function changeSlide(n) {
+  currentSlide = (currentSlide + n + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+// auto start
+showSlide(currentSlide);
+setInterval(() => changeSlide(1), 4000); // auto next every 4s
+</script>
 <script>
 function openSection(id) {
   // STEP 1: close all currently open book-scroll sections
@@ -803,7 +984,89 @@ function closeSection(id) {
 
 function closeAllSections() {
   document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+}  
+</script>  
+
+  <script>
+let slideIndex = 0;
+showSlide(slideIndex);
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function showSlide(n) {
+  const slides = document.querySelectorAll('#moremennonites .slide');
+  if (!slides.length) return;
+
+  if (n >= slides.length) slideIndex = 0;
+  if (n < 0) slideIndex = slides.length - 1;
+
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[slideIndex].classList.add('active');
 }
 </script>
 
-</body>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const overlay = document.createElement("div");
+
+  overlay.className = "zoom-overlay";
+
+  overlay.addEventListener("click", () => overlay.style.display = "none");
+
+  document.body.appendChild(overlay);
+
+
+
+  document.querySelectorAll("img").forEach(img => {
+
+    img.addEventListener("click", () => {
+
+      const clone = img.cloneNode();
+
+      overlay.innerHTML = "";
+
+      overlay.appendChild(clone);
+
+      overlay.style.display = "flex";
+
+    });
+
+  });
+
+});
+
+</script>
+<script>
+function openSection(id) {
+  // STEP 1: close all currently open book-scroll sections
+  const openSections = document.querySelectorAll('.book-scroll');
+  openSections.forEach(section => {
+    section.classList.remove('overlay');
+    section.style.display = 'none';
+  });
+
+  // STEP 2: open the one you want
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('overlay');
+    target.style.display = 'block';
+  }
+}
+function closeSection(id) {
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.remove('overlay'); // remove top overlay class
+    target.style.display = 'none';      // hide it again
+  }
+}
+function closeAllSections() {
+  document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+}
+</script>
+</html>
+  
+
