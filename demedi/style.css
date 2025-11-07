@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&family=Grandstander:ital,wght@0,100..900;1,100..900&family=Potta+One&display=swap');
+
+:root {
+font-size: 1.125em;
+color-scheme: light dark;
+accent-color: teal;
+}
+
+body {
+color: black;
+font-family: "Grandstander", sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+* { 
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	scrollbar-color: cadetblue gainsboro;
+	overscroll-behavior: none;
+}
+
+ul {
+	padding: 10px 10px 0px 20px;
+	margin: 0px;
+	text-align: left;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-template-rows: repeat(2, auto);   /* 2 rows */
+  gap: 0px;                             /* space between boxes */
+  padding: 10px;
+  max-width: 1200px;
+  margin: auto;                          /* center grid on page */
+}
+
+.iframe-container {
+  display: flex;
+  justify-content: center;  /* căn giữa ngang */
+  align-items: center;      /* căn giữa dọc (nếu có chiều cao xác định) */
+  height: 100vh;            /* tùy chọn: chiếm toàn màn hình */
+}
+
+iframe {
+  border: none; /* bỏ khung nếu muốn */
+}
+.grid-item {
+  background-color: transparent;
+  border: 1px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: justify;                   /* neat paragraph text */
+}
+
+.grid-item p {
+  margin: 0;
+  font-family: 'Grandstander', sans-serif; /* example Google font */
+}
+
+.border { /* .rope from https://maxbittker.github.io/broider/ */
+
+   
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAAAXNSR0IArs4c6QAAAS9JREFUeF7t3TEKgDAUBcGf+x9a0VpTLVg4OcAK4wuWrpk5xskEFtDM8g4BbT2Bxp6PoNdqnXeB7Tfn6coD3c8JaHzdgAKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchQKNBeKchX4NGj//Xzm/rojfN1CgsUCcs1CgsUCcs1CgsUCcOwEsZJwBnQvBGwAAAABJRU5ErkJggg==') 28 /  28px / 0 round;
+    border-width:  20px;
+    border-style:  solid; 
+	background-color: rgb(255, 255, 255, 75%);
+	padding: 5px 36px;
+}	
+a.border:hover, a.border:focus { 
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAMBJREFUWEftlmEKgCAMhfUA3v+gHqAIEmIha9tDHL3+Cfn2+TmtWpI8NQlnISh6p2iURtEG0HnsURpFG0DnqT3aWjvQRa+83rta+1lXfTkdqNXAbBfGwq15n41ag5eBzrY8Cgw3uj2oXLE2tt4IMKMamLfQWJB3/uswEfRWusyotSfl+/8DlU0/xtH7E36Y0oFGDSz7hKYFjZ52Od/a85//nrYHRQN681Sj3mD0PILSKNoAOo89SqNoA+g89ija6AkKGqgruOVHVgAAAABJRU5ErkJggg==') 16 /  16px / 0 round;
+}
+	
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid;
+}
+
+h3, h2, h1 { font-weight: normal; }
+
+h3 { font-family: "Potta One", system-ui; font-size: 1.25rem; line-height: 1; font-style: italic; }
+h2 { font-family: "Potta One", system-ui; font-size: 1.45rem; line-height: 1; }
+h1 { font-family: "Potta One", system-ui; font-size: 2.75rem; line-height: 1; }
+		 
+p, ol, ul, dl, code, details { font-size: 1rem; line-height: 1.3; }
+		 
+h1, h2, h3, h4, h5, h6, p, table, details, cite, blockquote, hr {
+	margin: 18px 0;
+}
+
+ul, dl {
+	margin: 18px 0 18px 18px;
+}
+
+ol { margin: 18px 0 18px 54px; }
+ol ol { margin: 0 0 0 54px; }
+
+ul ul, dd { 
+	margin: 0 0 0 18px;
+}
+
+details p { margin: 18px 0 18px 36px; }
+
+summary { cursor: pointer; }
+
+/* Add a custom symbol before the summary text */
+summary::before {
+  content: "➤"; /* your new symbol */
+  display: inline-block;
+  margin-right: 0.2em; margin-bottom: 1em;
+  transition: transform 0.2s; /* optional for rotation effect */
+}
+
+/* Optional: rotate symbol when open */
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+ul { list-style-type: square;  list-style-position: inside;
+  padding-left: 0.5rem; /* optional fine-tune */}
+
+code {
+	background-color: lightgrey;
+	font-family: 'Courier New', monospace; 
+	padding: 1px 4px;
+	
+}
+
+pre {
+	background-color: lightgrey;
+	overflow-x: auto;
+	padding: 1px 4px;
+}
+
+table {	border: 1px solid; }
+tr, td, th { border: 1px dotted; }
+td, th { padding: 5px; }
+
+textarea {
+	padding: 2px;
+}
+
+cite { 
+	display: block;
+	text-align: right;
+}
+
+blockquote { border-left: 1px solid; padding-left: 14px; }
+
+details > summary {
+    list-style-type: '';
+}
+
+details[open] > summary {
+    list-style-type:;
+}
+
+a {
+	color: teal;
+	padding: 1px;
+}
+
+a:hover, a:focus {
+	background-color: teal;
+	color: white;
+}
+
+button, input, textarea {	
+	font-family: "Grandstander", sans-serif, "Courier New"
+}
+
+img { max-width: 100%; }
+	
+.new { 
+	text-transform: uppercase;
+	text-shadow: 0 -1px yellow, 1px 0 yellow, 0 1px yellow, -1px 0 yellow;
+}
+
+::selection {
+	color: white;
+	background-color: teal;
+}
+
+@media screen and (max-width: 600px){
+	
+	h1, h2, h3, h4, h5, h6, p, table, details, cite, blockquote, hr {
+		margin: 16px 0;
+	}
+
+	ul, dl {
+		margin: 16px 0 16px 16px;
+	}
+
+	ol { margin: 16px 0 16px 48px; }
+	ol ol { margin: 0 0 0 48px; }
+
+	ul ul, dd { 
+		margin: 0 0 0 16px;
+	}
+
+	details p { margin: 16px 0 16px 32px; }
+	
+	p, ol, ul, dl, code, details, table, figcaption { font-size: 0.9rem; }
+}
+
+@media (prefers-color-scheme: dark) {
+	* { scrollbar-color: cadetblue darkslategrey; }
+	body { color: white; }
+	img { filter: brightness(.9); }
+	.border { background-color: rgb(0,20,20,75%); border-color: darkslategrey; }
+	.new, code { color: black; }
+	a { color: #b2d7c1; }
+	a:hover, a:focus { color: darkslategrey; background-color: #b2d7c1; }
+	a.border:hover, a.border:focus { border-image:  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAtklEQVQ4T7VV2xHAIAjTzToao3Wz9vigFyMoZ7V/VIghPKzlwFcPYJYG9BJ57JJbpKKNl+uZ2uxvPh+oOpgzBuA/CzIw9jd7CBoBWhZbQJGhl1nH1NOINWXmU00N1EvZ6xBkyhp3mnpFmIEyIbdQrNcW0IwUqUKNnKKpY12X+xQviFqs0VQDcARXOkExhrPvsYp2AxKYjmnUYr8KFbXXMihqHBUIN1dq9nkf8E5Nzf6uV+DIc/ICR9UIJTV+2f0AAAAASUVORK5CYII=") 7 /  7px / 0 round;
+	}
+}
