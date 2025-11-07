@@ -64,9 +64,11 @@ button {
   color: rgb(0, 0, 0);
   cursor: pointer;
   background: none;
+  font-family: var(--font-body); font-size: small; color: #ccc;
 }
 button > p {font-family: var(--font-body); font-size: small; color: #ccc;}
 button > p:hover {text-decoration: underline; color: #000000;}
+  button:hover {text-decoration: underline; color: #000000;}
 header {
   position: fixed;
   top: 0;
@@ -152,11 +154,6 @@ margin: 0px; /* space for header */
      border: 1px solid #ccc;}
  
 ::-webkit-scrollbar{display: none;}
-@media (max-width: 768px) {
-  .threecols, .halfhalf {
-    flex-direction: column;
-  }
-}
 
 @media screen and (max-width: 400px)  { 
     .book-scroll.overlay {
@@ -213,10 +210,6 @@ hr {
     .list a {font-family: var(--font-title);
         font-size: 100px;
     line-height: 7vw;}
-    
-    @media (max-width: 768px) {
- 
-}
 
 @media screen and (max-width: 400px)  { 
      .list {
@@ -245,27 +238,36 @@ hr {
     
     
        <!-- FLEXBOX -->
-.threeseven    {display: flex; flex-wrap: wrap;}
-.threeseven > *:first-child { flex: 0 0 30%; }
-.threeseven > *:last-child { flex: 0 0 70%; }
-
-    .seventhree {display: flex; flex-wrap: wrap; }
-.seventhree > *:first-child { flex: 0 0 70%; }
-.seventhree > *:last-child { flex: 0 0 30%; }
-
-   .halfhalf {
+  .halfhalf, .flexbox {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
-
-.halfhalf .text {
+  .halfhalf .text {
   flex: 1 1 55%;
 }
-
 .halfhalf .videos {
   flex: 1 1 40%;
 }
+.threeseven > *:first-child { flex: 0 0 30%; }
+.threeseven > *:last-child { flex: 0 0 70%; }
+
+.seventhree > *:first-child { flex: 0 0 70%; }
+.seventhree > *:last-child { flex: 0 0 30%; }
+
+.sixfour > *:first-child { flex: 0 0 60%; }
+.sixfour > *:last-child { flex: 0 0 40%; }
+
+.foursix > *:first-child { flex: 0 0 40%; }
+.foursix > *:last-child { flex: 0 0 60%; }
+
+.threecols > div {
+  flex: 1 1 33%;
+  min-width: 250px;
+}
+
+
+
 
 iframe {
   width: 100%;
@@ -273,24 +275,7 @@ iframe {
   border: none;
 }
 
-    .sixfour {display: flex; flex-wrap: wrap;}
-.sixfour > *:first-child { flex: 0 0 60%; }
-.sixfour > *:last-child { flex: 0 0 40%; }
-
-    .foursix {display: flex; flex-wrap: wrap;}
-.foursix > *:first-child { flex: 0 0 40%; }
-.foursix > *:last-child { flex: 0 0 60%; }
     
-    .threecols {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.threecols > div {
-  flex: 1 1 33%;
-  min-width: 250px;
-}
 </style>
 </head>
 
@@ -323,11 +308,11 @@ iframe {
   <hr>
       <h2>The Four Loves</h2>
   </div>
-
+<br>
   
 
   <div class="halfhalf">
-    <div>
+    <div><em>
       <p>
         There was a man who found a naked tree<br>
         Sleeping in winter woods, and brought her home,<br>
@@ -340,9 +325,9 @@ iframe {
         Bursting, blazing, blended all of pearl<br>
         And moonshine; he, in wonder and delight,<br>
         Patted her magic boughs and said: Good girl.
-      </p>
+      </p></em>
     </div>
-    <div>
+    <div><em>
       <p>
         Thereafter, still obedient to the summer<br>
         The tree worked at her trade, until behold<br>
@@ -350,7 +335,7 @@ iframe {
         Apples of the Hesperides upon her,<br>
         Sweeter than Eden and its vanished bowers...<br>
         He said: No, no, I only wanted flowers.
-      </p>
+      </p></em>
         <br>
       <p class="credit"><em>(Sonnet XXIX) — Joy Davidman</em></p>
     </div>
@@ -374,7 +359,8 @@ Những mẩu quảng cáo thời nay, dù thuộc vào hàng gợi cảm nhất
 Các nhà tâm lý học ám ảnh tâm trí ta với tầm quan trọng vô hạn của hòa hợp tuyệt đối trong tình dục, và những gì họ đòi hỏi là gần như bất khả thi, đến mức tôi có thể hình dung cảnh một số cặp đôi trẻ hiện nay đang làm tình với toàn bộ tác phẩm của Freud, Kraft-Ebbing, Havelock Ellis và Tiến sĩ Stopes bày đầy cạnh giường… Ta đã đạt đến thời điểm mà không có gì cần thiết hơn là một tràng cười sảng khoái cổ điển.”
 </span>
 </em>
-
+<br>
+      <hr>
 <p>
 Đủ để nói, C. S. Lewis không ủng hộ sự phù phiếm, mà là niềm vui.
 </p>
@@ -393,7 +379,7 @@ Ngoài những văn bản C. S. Lewis để lại, di sản về băng ghi âm c
 <p>
 Ta nghe được giọng nam trầm ấm, với thứ tiếng Anh pha chút chất Ireland, dễ khiến ta nghĩ đến hình tượng một ông ngoại trong truyền thuyết, thủ thỉ đọc truyện cho đứa cháu nhỏ cạnh giường, dỗ giấc ngủ buổi khuya.
 </p>
-
+<br>
 <p>
 Trước khi kết hôn vào năm 1956, mối quan hệ của Joy Davidman và C. S. Lewis chủ yếu là qua trao đổi thư từ. Trong khoảng từ năm 1950 kéo dài đến hôn nhân, Joy đã viết 45 bài sonnet đề tặng Jack (C. S. Lewis), thể hiện tình yêu bà dành cho ông. Ở đây chép thêm bài sonnet mở đầu:
 </p><br>
@@ -402,13 +388,14 @@ Trước khi kết hôn vào năm 1956, mối quan hệ của Joy Davidman và C
 Dear Jack, I’ve written a few poems you might be interested in, but they are flawed, I think, because I jotted them down so quickly and easily. In fact, I’ve often dashed off sonnets like this in the past—my words rush beyond my art. Still, here they are, written especially for you. After you read them you may not think them very good. That’s as may be. But writing verse is my only talent. My poems may fail; my affection for you won’t.
 
 America. 1951
-</em>
-<span>
+  </em></span>
+
 <br><br>
 <p>
 Về phần C. S. Lewis, trong bức thư gửi Dom Bede Griffiths ngày 24 tháng 9 năm 1957, ông miêu tả diễn tiến tình cảm của mình dành cho Joy:
 </p>
-<br><p>
+<br>
+  <p>
 <span style="background-color: #bedaf5">
 <em>
 It is nice to have arrived at all this by something which began in Agape, proceeded to Philia, then became Pity, and only after that, Eros. As if the highest of these, Agape, had successfully undergone the sweet humiliation of an incarnation.
@@ -417,6 +404,7 @@ It is nice to have arrived at all this by something which began in Agape, procee
 <em>Collected Letters Vol. III 884</em>
 </span></p>
 </div>
+    <hr>   
  <div class="videos">
 
 <p><strong>STORGE | AFFECTION</strong></p>
@@ -432,7 +420,7 @@ It is nice to have arrived at all this by something which began in Agape, procee
 <iframe width="560" height="315" src="https://www.youtube.com/embed/owwuFSdDq98?si=Mw4u1GuXD-nwQ7LZ" title="AGAPE | CHARITY" frameborder="0" allowfullscreen></iframe>
 
     </div>
-    <hr><p>
+    <hr>
     </div>
 Để tài liệu đây xem thêm:
 <ul>
@@ -446,7 +434,7 @@ It is nice to have arrived at all this by something which began in Agape, procee
 
 <!-- MỘT NƠI NƯƠNG NÁU -->    
   <section class="intro" id="nuongnau" style="text-align: right;">
-    <img src="https://vasteprogramme.ca/wp-content/uploads/2022/06/romain-gary_0_1400_948-1080x675-1-uai-1036x582.webp" style="margin-left: auto;"></div>
+    <img src="https://vasteprogramme.ca/wp-content/uploads/2022/06/romain-gary_0_1400_948-1080x675-1-uai-1036x582.webp" style="margin-left: auto;">
           <br>
           Giáo dục châu Âu, đối với anh ấy,<br>
         đó là những quả bom, các cuộc tàn sát,
@@ -458,28 +446,48 @@ It is nice to have arrived at all this by something which began in Agape, procee
         <button onclick="openSection('morenuongnau');"><p>read</p></button>
 </section>
 
-    <section id="morenuongnau" class="book-scroll" style="display:none;>  
-    <p style="text-align:left;">  </p>
-    <button onclick="closeSection('morenuongnau');"><p>close</p></button><hr>
+    <section id="morenuongnau" class="book-scroll" style="display:none;">  
+<button class="close-btn" onclick="closeSection('morenuongnau')">close</button>
+    <hr>
+
 <h2>Một nơi nương náu</h2>
 <br>
-<p>Câu chuyện mở ra ở vùng quanh Wilno, ở Lithuania. Ta gặp một cậu bé Ba Lan, Janek Twardowski, đang nấp dưới khu hầm trú ẩn đào trong một khu rừng khi quân Đức đến. Đó là năm 1942 và trận Stalingrad bắt đầu.</p>
+   <div style="display: flex;">
+    <div style="flex: 0 0 80%;">
+<p>Câu chuyện mở ra ở vùng quanh Wilno, ở Lithuania.
+Ta gặp một cậu bé Ba Lan, Janek Twardowski, đang nấp dưới khu hầm trú ẩn đào trong một khu rừng khi quân Đức đến.
+Đó là năm 1942 và trận Stalingrad bắt đầu.</p>
 <br>
 <p><em style="background-color: #FFE6E1;">– Cần phải nghi ngờ con người.</em></p>
+                                         <br>
+<p>Bác sĩ Twardowski, bố của Janek, dặn đi dặn lại cậu như vậy, trước khi ông đi khỏi, và không bao giờ quay lại.
+<p>14 tuổi, nỗi đau đầu tiên Janek đối mặt là cái chết của bố.                                         </p>
+<br>                                        
+      <p>Cuộc phiêu lưu của Janek (hay hành trình giáo dục của cậu) bắt đầu khi cậu quyết định chui ra khỏi hầm để đến chỗ những người du kích
+– như bố cậu từng dặn – dù cậu không biết rõ lắm “du kích” nghĩa là gì.</p>
+
 <br>
-<p>Bác sĩ Twardowski, bố của Janek, dặn đi dặn lại cậu như vậy, trước khi ông đi khỏi, và không bao giờ quay lại. 14 tuổi, nỗi đau đầu tiên Janek đối mặt là cái chết của bố. Cuộc phiêu lưu của Janek (hay hành trình giáo dục của cậu) bắt đầu khi cậu quyết định chui ra khỏi hầm để đến chỗ những người du kích – như bố cậu từng dặn – dù cậu không biết rõ lắm “du kích” nghĩa là gì.</p>
+  
+<p>Câu chuyện tiểu thuyết xoay quanh quãng đời Janek gia nhập quân du kích. Rồi trận chiến sẽ kết thúc, thắng lợi sẽ đến, Janek sẽ trở thành sĩ quan,
+cậu sẽ về thăm lại khu rừng nơi mọi thứ bắt đầu, cậu sẽ nhận ra mình không còn nữa khả năng để hiểu những cây sồi: vì cậu đã đau, quá nhiều.
+</p>
+<br>
+<p>Xen kẽ liên tục giữa thực tế tàn khốc của chiến tranh và những mô tả cổ tích, Romain Gary đã tạo ra một bầu không khí gần như kỳ diệu:
+những nhân vật thần thoại trong hàng ngũ du kích, bối cảnh khu rừng tuyết với những cái lỗ chui để ẩn náu, tình yêu giữa Janek và Zosia,
+và cuộc nói chuyện về lý tưởng của những sinh viên quanh đống lửa. Khu rừng kỳ diệu này vừa dung chứa số phận cụ thể của các nhân vật, 
+vừa là không gian để tác giả truyền tải thông điệp phổ quát của mình.
+</p>
 
-<p>Câu chuyện tiểu thuyết xoay quanh quãng đời Janek gia nhập quân du kích. Rồi trận chiến sẽ kết thúc, thắng lợi sẽ đến, Janek sẽ trở thành sĩ quan, cậu sẽ về thăm lại khu rừng nơi mọi thứ bắt đầu, cậu sẽ nhận ra mình không còn nữa khả năng để hiểu những cây sồi: vì cậu đã đau, quá nhiều.</p>
-
-<p>Xen kẽ liên tục giữa thực tế tàn khốc của chiến tranh và những mô tả cổ tích, Romain Gary đã tạo ra một bầu không khí gần như kỳ diệu: những nhân vật thần thoại trong hàng ngũ du kích, bối cảnh khu rừng tuyết với những cái lỗ chui để ẩn náu, tình yêu giữa Janek và Zosia, và cuộc nói chuyện về lý tưởng của những sinh viên quanh đống lửa. Khu rừng kỳ diệu này vừa dung chứa số phận cụ thể của các nhân vật, vừa là không gian để tác giả truyền tải thông điệp phổ quát của mình.</p>
-
-<p>Tiểu thuyết là hành trình Janek đi qua nỗi tuyệt vọng, sự mất mát và niềm đau, với hành trang là cái lý tưởng mà cậu cố bám víu, hay đúng hơn, là ảo ảnh về lý tưởng, được thêu dệt nên chỉ để dỗ dành cho niềm hy vọng hao mòn về thắng lợi. Tựa sách “Giáo dục Châu Âu” tự nó là trò đi thăng bằng trên lằn ranh hy vọng/tuyệt vọng – trạng thái mà ta sẽ thường khi bắt gặp mình ở trong khi đọc cuốn sách này.</p>
+   <br>                                      
+   
+      <p>Tiểu thuyết là hành trình Janek đi qua nỗi tuyệt vọng, sự mất mát và niềm đau, với hành trang là cái lý tưởng mà cậu cố bám víu, hay đúng hơn, là ảo ảnh về lý tưởng, được thêu dệt nên chỉ để dỗ dành cho niềm hy vọng hao mòn về thắng lợi.</p>
+  <p>Tựa sách “Giáo dục Châu Âu” tự nó là trò đi thăng bằng trên lằn ranh hy vọng/tuyệt vọng – trạng thái mà ta sẽ thường khi bắt gặp mình ở trong khi đọc cuốn sách này.</p>
 
 <p>Cụ thể trong câu chuyện, “Giáo dục Châu Âu” là tựa đề mà một trong các nhân vật, anh sinh viên Dobranski, dự định đặt cho cuốn sách mình đang viết. Dobranski giải thích với Janek (cũng là Romain Gary giải thích với độc giả):</p>
 <br>
-<p><em style="background-color: #E5F3FF;">– Chủ đề là gì?</em><br><br>
+<p><em style="background-color: #ffe5f2;">– Chủ đề là gì?</em><br><br>
 Janek hỏi Dobranski.<br><br>
-<em style="background-color: #E5F3FF;">– Những người chịu đau đớn, tranh đấu và xích lại với nhau…</em></p>
+<em style="background-color: #ffe5e7;">– Những người chịu đau đớn, tranh đấu và xích lại với nhau…</em></p>
 <br>
 <p>Và:</p>
 <br>
@@ -498,7 +506,13 @@ Janek hỏi Dobranski.<br><br>
 <br>
 <p><em style="background-color: #F8E8FF;">– Chẳng gì quan trọng chết đi…<br>
 – Chẳng gì quan trọng chết đi… Chỉ… những con người… và lũ bướm…</em></p>
+<br>                                         
+                                         </div>
+                                        
+ <div style="flex: 0 0 20%;">
 <br>
+  </div> 
+                                                            </div> 
 
     </section>
 
@@ -514,16 +528,24 @@ Janek hỏi Dobranski.<br><br>
         <button onclick="openSection('morekhantay');"><p>read</p></button>
 </section>
 
-    <section id="morekhantay" class="book-scroll" style="display:none;>  
+    <section id="morekhantay" class="book-scroll" style="display:none;">  
     <p style="text-align:left;">  </p>
     <button onclick="closeSection('morekhantay');"><p>close</p></button><hr>
 <h2>Con có khăn tay rồi chứ?</h2><br>
-
-<p><span style="background-color:#D0F5D9">Vào tháng 1 năm 1945, Stalin ra lệnh trục xuất những người Romania – Đức trong độ tuổi từ 17 đến 45 tới Liên Xô để thực hiện 5 năm lao động cưỡng bức, nhằm “tái xây dựng” một Liên bang mới. Trong số đó có mẹ của Herta Müller. Nửa thế kỷ sau, Müller dành nhiều năm trò chuyện với một người Romania khác cũng là nạn nhân của sắc lệnh này, nhà thơ Oskar Pastior. Sau khi ông đột ngột qua đời vào năm 2006, từ ba cuốn sổ chép tay ghi lại phần đời của nhà thơ quá cố, Müller đã viết nên “Nhịp thở chao nghiêng”, với chính Oskar là nguyên mẫu của nhân vật Leo Auberg.</span></p><br>
-<span style="background-color:#E3EAFC">Cùng năm tiểu thuyết được xuất bản, 2009, Herta Müller được trao Nobel Văn chương. Bài diễn từ mà bà đọc trong dịp nhận giải xoay quay câu chuyện về chiếc khăn tay, một của mẹ bà, một của bà và một của Oskar Pastior.</span>
-<br>
-<span style="background-color:#EDCCF0">Xin trích.</span>
-
+<div style="display: flex; gap: 2rem;">
+  <div style="flex: 0 0 30%; font-size: smaller;">
+<p>Vào tháng 1 năm 1945, Stalin ra lệnh trục xuất những người Romania – Đức trong độ tuổi từ 17 đến 45 tới Liên Xô để thực hiện 5 năm lao động cưỡng bức, nhằm “tái xây dựng” một Liên bang mới. Trong số đó có mẹ của Herta Müller.</p>
+</div>
+<div style="flex: 0 0 50%">
+  <p> Nửa thế kỷ sau, Müller dành nhiều năm trò chuyện với một người Romania khác cũng là nạn nhân của sắc lệnh này, nhà thơ Oskar Pastior.</p>      
+  <p> Sau khi ông đột ngột qua đời vào năm 2006, từ ba cuốn sổ chép tay ghi lại phần đời của nhà thơ quá cố, Müller đã viết nên “Nhịp thở chao nghiêng”, với chính Oskar là nguyên mẫu của nhân vật Leo Auberg.</p>
+      <p>Cùng năm tiểu thuyết được xuất bản, 2009, Herta Müller được trao Nobel Văn chương. Bài diễn từ mà bà đọc trong dịp nhận giải xoay quay câu chuyện về chiếc khăn tay, một của mẹ bà, một của bà và một của Oskar Pastior.
+Xin trích.</p>
+  </div>
+  </div> 
+      
+  <div>
+    <hr>
 <p>Con có khăn tay rồi chứ là câu mà mẹ hỏi tôi mỗi sáng, khi bà đứng ở ngưỡng cửa, và tôi đang dợm bước khỏi nhà. Tôi chưa có. Và vì vậy, tôi sẽ trở lại trong nhà lấy một chiếc mang theo. Tôi không bao giờ mang sẵn vì tôi luôn chờ bà hỏi. Chiếc khăn tay là hiện thân của sự quan tâm mẹ dành cho tôi mỗi sáng. Cả ngày còn lại, tôi một mình. Câu hỏi Con có khăn tay rồi chứ là bày tỏ gián tiếp của tình thương. Mọi thể hiện trực tiếp khác sẽ là quá ngượng và không phải kiểu cách của những người nông dân. Tình thương cải trang trong hình dạng một câu hỏi. Đó là cách duy nhất mà nó có thể được thốt lên: như một việc thiết thực, với giọng điệu điều khiến, hoặc cử chỉ khéo léo. Cách nói sỗ sàng thậm chí còn tôn lên nỗi dịu dàng. Sáng nào cũng vậy, tôi bước ra cửa lần đầu mà không có khăn tay, và lần thứ hai thì đã có. Chỉ sau khi đó, tôi mới ra ngoài, cứ như thể việc mang theo khăn tay cũng đồng nghĩa với có mẹ bên mình.</p>
 
 <p>Khi tôi còn nhỏ, trong nhà có một hộc tủ dành riêng cho khăn tay, ngăn đôi thành hai hàng, mỗi hàng ba xấp khăn:<br>
@@ -531,29 +553,30 @@ Xấp bên trái là khăn của đàn ông trong nhà, cho cha và ông.<br>
 Bên phải là khăn phụ nữ, cho mẹ và bà.<br>
 Ở giữa là khăn trẻ con, cho tôi.<br>
 Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay. Khăn của đàn ông lớn bản nhất, với sọc sẫm màu viền quanh rìa, nâu, xám hoặc đỏ Bordeaux. Khăn phụ nữ thì nhỏ hơn, và được viền màu xanh biển nhạt, đỏ hoặc xanh lá. Khăn trẻ con nhỏ nhất, những mảnh vuông không viền rìa được trang trí với họa tiết hoa lá hoặc động vật. Ba loại khăn được chia ra như vậy dành cho sinh hoạt thường nhật, xếp ở hàng trước, và khăn dành cho ngày Chủ Nhật, nằm hàng sau. Ngày Chủ Nhật thì khăn phải cùng màu với quần áo, dù không ai thấy chúng.</p>
-
+<hr>
 <p>Đối với chúng tôi, không có đồ vật nào khác trong nhà, kể cả chính chúng tôi, quan trọng bằng những chiếc khăn tay. Nó được dùng cho tất cả: sụt sịt, mũi chảy máu, tay đau, cùi chỏ hay đầu gối; khóc, hay cắn vào để ngăn mình khỏi khóc. Một chiếc khăn tay ướt lạnh đặt trên trán khi đầu đau. Cột bốn mép lại với nhau, nó giúp bạn tránh nắng hay mưa. Có điều gì cần nhớ, bạn thắt nút khăn để nhắc mình khỏi quên. Để mang vật nặng, bạn quấn nó quanh bàn tay mình. Khi tàu hoả rời ga, bạn vẫy nó để nói lời tạm biệt. Và bởi vì từ dành cho nước mắt trong phương ngữ Banat của chúng tôi nghe từa tựa từ tàu hỏa trong tiếng Romania, nên đối với tôi, tiếng đoàn tàu nghiến vào thanh sắt đường ray luôn nghe như ai đang khóc. Trong làng, khi ai đó chết tại nhà, họ buộc ngay một chiếc khăn tay quanh cằm người chết để giữ cho hàm ngậm chặt khi tử thi bắt đầu co cứng. Ở thành phố nếu có ai ngã gục giữa đường, sẽ có người đi ngang lấy khăn tay che mặt họ lại, để chiếc khăn trở thành nơi an nghỉ đầu tiên của người chết.</p>
 
 <p>Vào mùa hè nóng bức, cha mẹ thường sai con họ đến nghĩa trang tưới hoa lúc tối muộn. Chúng tôi chia thành nhóm hai hay ba đứa, nhanh chóng tưới nước từ ngôi mộ này sang ngôi mộ khác. Sau đó cả nhóm sẽ ngồi lại với nhau trên bậc thang nhà thờ và nhìn những cụm sương trắng tỏa lên từ các nấm mồ. Chúng bay lên một đoạn rồi tan biến vào bóng đêm. Với chúng tôi, đó là linh hồn người chết: hình con thú, ly, chai lọ và cốc nhỏ, găng tay và tất dài. Và đây đó một chiếc khăn tay trắng được viền bởi đêm đen.</p>
-
+<hr>
 <p>Sau này khi tôi gặp Oskar Pastior để viết về khoảng thời gian ông bị trục xuất đến trại lao động của Liên Xô, ông kể tôi rằng một bà mẹ người Nga lớn tuổi từng tặng ông một chiếc khăn tay làm từ vải batiste trắng. Có thể cả hai sẽ gặp may, bà mẹ người Nga nói, và cậu sẽ được về nhà, cả con trai tôi nữa. Con trai của bà bằng tuổi Oskar Pastior và cũng đang xa nhà như vậy, nhưng là về hướng ngược lại, bà nói, trong một tiểu đoàn lính cựu tù. Oskar Pastior đã gõ cửa nhà bà, một gã ăn mày sắp chết đói muốn trao đổi một mẩu than lấy ít thức ăn. Bà đem ông vào nhà và cho ông súp nóng. Và khi thấy nước mũi ông nhỏ vào tô, bà đưa ông chiếc khăn tay trắng bằng vải batiste mới tinh. Với đường viền cổ điển, cuống lá và hoa thị được thêu tỉ mỉ với chỉ lụa, chiếc khăn tay là một thứ đẹp đẽ vừa ôm ấp vừa đả thương gã xin ăn. Nó là kết hợp của hai thứ đó: niềm an ủi làm từ vải batiste và phép đo bằng lụa cho sự tàn tạ của ông. Đối với người bàn đà, Oskar cũng là một sự kết hợp: của một gã xin ăn bị thế giới bỏ rơi đang ngồi trong nhà bà, và của một đứa trẻ lạc loài trên thế gian. Cả hai nhân cách này đều đang vui sướng và lúng túng trước cách đối đãi của người đàn bà cũng là sự kết hợp của hai người khác nhau: một người đàn bà Nga xa lạ, và một bà mẹ sốt sắng với câu hỏi Con có khăn tay rồi chứ?</p>
-
+<hr>
 <p>Kể từ lúc được nghe câu chuyện này, tôi nảy sinh một câu hỏi cho riêng mình: phải chăng Con có khăn tay rồi chứ có hiệu lực ở mọi nơi? Phải chăng nó trải dài nửa vòng trái đất trong ánh tuyết lấp lánh giữa thời điểm băng đóng lại và tan chảy? Phải chăng nó băng qua những ngọn núi và thảo nguyên để vượt mọi biên giới; liệu nó có thể vươn tới một đế chế khổng lồ với những trại cải tạo và trại lao động cưỡng bức nằm tản mát khắp nơi? Phải chăng câu hỏi Con có khăn tay rồi chứ là không thể trừ diệt, ngay cả với búa và liềm, ngay cả với tất cả những trại cải tạo theo chủ nghĩa Stalin?</p>
 
 <p>Oskar Pastior cất giữ chiếc khăn tay đó trong chiếc rương của mình như một kỷ vật của hai người mẹ có hai đứa con. Và sau năm năm sống trong trại, ông đã mang nó về nhà. Vì chiếc khăn tay batiste trắng của ông là niềm hy vọng cũng như nỗi sợ. Một khi ta buông bỏ niềm hy vọng và nỗi sợ, ta chết.</p>
-
+<hr>
 <p>Với tôi, có vẻ như đồ vật không biết chất liệu của chúng, cử chỉ không biết cảm xúc của chúng, và lời nói không biết đến khuôn miệng nói ra chúng. Nhưng để vững tâm về sự tồn tại của chính mình, chúng ta cần đồ vật, cử chỉ và lời nói. Suy cho cùng, càng nhiều từ ngữ ta được phép nói ra thì càng nhiều tự do ta có được. Nếu miệng của chúng ta bị cấm, ta cố gắng khẳng định mình qua cử chỉ, thậm chí đồ vật. Chúng thì khó để phiên dịch hơn, và sẽ mất nhiều thời gian hơn để người ta bắt đầu nghi ngờ chúng. Chúng có thể giúp ta chuyển hoá sự sỉ nhục thành một kiểu phẩm giá cần nhiều thời gian hơn để khơi dậy nghi ngờ.</p>
-
+<hr>
 <p>Một sáng sớm, ngay trước khi tôi đến định cư ở Romania, một gã cảnh sát trong làng đến tìm mẹ tôi. Bà đã theo ông ta đến cổng và rồi chợt nhớ ra: Mình có khăn tay rồi chứ? Bà chưa có. Dù gã cảnh sát có tỏ ra cáu kỉnh, bà đã quay trở lại trong nhà để lấy một chiếc khăn. Tại đồn, gã cảnh sát nổi cơn thịnh nộ. Tiếng Romania của mẹ tôi quá hạn chế để có thể hiểu được lời gã đang la hét. Vậy nên gã rời khỏi phòng và chốt trái cửa. Mẹ tôi bị nhốt ở đó suốt một ngày. Những giờ đầu, bà ngồi trên bàn làm việc của gã và khóc. Sau, bà đi đi lại lại rồi bắt đầu dùng chiếc khăn tay ướt đẫm nước mắt của mình để lau bụi cho đồ đạc trong phòng. Cuối cùng, bà lấy xô nước ra khỏi góc và cái giẻ ra khỏi móc trên tường, rồi bà lau sàn. Tôi kinh hoàng khi nghe bà kể lại. Làm sao mà mẹ có thể dọn văn phòng cho hắn như vậy, tôi hỏi. Bà nói không chút bối rối: Mẹ đang tìm cái gì đó làm cho trôi thời giờ. Và văn phòng hắn bẩn thỉu khủng khiếp. May là mẹ đã mang theo một chiếc khăn tay bản lớn của đàn ông nhà mình.</p>
 
 <p>Chỉ lúc đó tôi mới hiểu rằng bằng việc bổ sung thêm nỗi nhục tự nguyện này, bà đã tạo cho mình chút phẩm giá trong khoảng thời gian bị giam giữ.</p>
-
+<hr>
 <p>Tôi ước rằng mình có thể thốt nên một câu nào đó dành cho những người hằng ngày bị chế độ độc tài tước đoạt nhân phẩm, từ trước đến nay và kể cả bây giờ — một câu, có lẽ, có chứa từ khăn tay. Hoặc là câu hỏi Con có khăn tay rồi chứ? Phải chăng câu hỏi về chiếc khăn tay chưa bao giờ là về chiếc khăn tay, mà là về nỗi cô đơn sâu thẳm của con người?</p>
 
 <hr>
 
 <p>Xem cả bài: <a href="https://www.nobelprize.org/prizes/literature/2009/muller/lecture/">Herta Müller’s Nobel Lecture: Every word knows something of a vicious circle</a></p>
-
+</div>
+   
     </section>
 
 <!-- CHẶT SÔNG -->    
@@ -569,23 +592,29 @@ Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay
         <button onclick="openSection('morechatsong');"><p>read</p></button>
 </section>
 
-    <section id="morechatsong" class="book-scroll" style="display:none;>  
-    <p style="text-align:left;">  </p>
-    <button onclick="closeSection('morechatsong');"><p>close</p></button><hr>
+    <section id="morechatsong" class="book-scroll" style="display:none;">  
+
+    <button onclick="closeSection('morechatsong')"><p>close</p></button><hr>
 <h2>Chặt sông ra từng khúc</h2>
 <br>
+      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+        <div style="flex: 0 0 20%;"></div>
+        <div style="flex: 0 0 70%">
 <p>Cứ độ tháng 7 đến tháng 10 âm lịch hàng năm, mưa nhiều ở thượng nguồn sông Mekong khiến mực nước dâng lên, rồi ồ ạt đổ tràn về hạ nguồn vùng trũng đồng bằng sông Cửu Long. Thời điểm này, dân bản địa gọi là mùa nước nổi. Với đất miền Tây Nam Bộ, lũ lụt là trái ngược của thiên tai. Có thể gọi là thiên phước, nếu từ đó có nghĩa.</p>
-
-<p>Con nước về quạch đỏ phù sa nhấn chìm làng mạc, ruộng vườn, nhà cửa.</p>
+        </div>
+        </div>
+      <div>
+<hr>
+   <img src="https://k1rak1ra.neocities.org/blog/1.webp" style="width: 100%; margin: 0;" >    
+      <br>
+      <p>Con nước về quạch đỏ phù sa nhấn chìm làng mạc, ruộng vườn, nhà cửa.</p>
 
 <p>Sáng sáng, một cậu học trò chèo xuồng đi học, dọc ngang giữa mạng lưới giao thông đường bộ nay đã trở thành đường thủy. Cậu có thể ghé nhà hàng xóm đón một thằng bạn chung lớp nhờ quá giang, rồi í ới chào bạn bè được tía má đèo trên những chiếc võ lãi, những chiếc xuồng ba lá chạy qua.</p>
 
 <p>Chiều, cậu học trò chèo xuồng tan học, lấy những đụm cây điên điển bông vàng làm cột mốc, cậu ướm chừng hướng về nóc nhà mình. Tiện tay, cậu tuốt đầy một rổ điên điển, cái thứ bông ngọt ngọt nhẫn nhẫn, sinh ra để thuộc về nồi canh chua. Về đến nóc nhà mình, cậu lấy một chiếc rổ khác sục hú họa xuống biển nước lũ rồi vớt lên. Một mớ cá linh giãy lách tách xuất hiện trong lòng rổ vừa mới đây thôi chẳng có gì. Một màn ảo thuật tài tình.</p>
 
 <p>Lát nữa thôi, dăm chú cá linh sẽ bơi chung cùng điên điển, một tí me dầm và lá me, vài nhánh bạc hà cộng với rau thơm. Những chú cá còn lại thì được chiên giòn, đặt cạnh chén mắm me chua chua mặn mặn. Gia đình cậu học trò có một bữa tối không khác gì ăn nhà hàng.</p>
-<br>
-<p><img src="https://k1rak1ra.neocities.org/blog/1.webp" style="width: 400px;" ></p>
-<br>
+<hr>
 <p>Đó là câu chuyện của hơn ba mươi năm trước, ở đất Mộc Hóa, Long An.</p>
 
 <p>Cậu học trò nay đã bước qua tuổi 40. Mỗi lần thèm canh chua, cậu hay ra siêu thị mua từng nhúm bông điên điển đóng gói sẵn có xuất xứ từ Thái Lan, với cái giá khó hiểu so với khối lượng của nó. Bạn ghé chơi nhà, cậu học trò tìm mỏi mắt mới ra một gian hàng bán cá linh non đầu mùa trên Shopee, cậu bấm bụng bỏ tiền mua về làm lẩu. 250.000 đồng cho 500 gram thứ cá cậu từng úm ba la biến ra đầy rổ.</p>
@@ -594,13 +623,14 @@ Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay
 
 <p>Ngày nay mùa mưa ở miền Tây Nam Bộ có xu hướng ngắn lại và mùa khô dài ra. Mùa xuân năm 2016, miền Nam chứng kiến đợt hạn hán nghiêm trọng nhất trong vòng 100 năm trở lại đây. Bây giờ, ghé ngang một xóm trọ lụp xụp ở Sài Gòn, bạn có thể gặp nhiều người miền Tây hơn là ở chính quê hương họ.</p>
 <br>
+      <hr>
 <p><strong>Chuyện gì đã xảy ra ở miền Tây?</strong></p>
 <br>
 <p>Nếu một con bướm đập cánh ở Brazil có thể gây ra cơn lốc xoáy ở Texas thì một con đập thuỷ điện được xây dựng ở bất cứ nơi nào giữa thân mình sông Mekong cũng chắc chắn ảnh hưởng đến đồng bằng sông Cửu Long.</p>
 
 <p>Chuyến du khảo xuôi dòng Mekong của Brian Eyler chất vấn cặn kẽ loạt tác động domino đến từ mỗi cư xử dù là nhỏ nhất của con người sống dọc sông và dựa sông. Cuốn sách <em style="background-color: #FFF4CC;">“Những ngày cuối của dòng Mekong hùng vĩ”</em> là kết quả của chuyến thực địa này.</p>
 <br>
-<p><img src="https://k1rak1ra.neocities.org/blog/2.webp" style="width: 400px;"></p>
+<p><img src="https://k1rak1ra.neocities.org/blog/2.webp" style="width: 100%;"></p>
 <br>
 <p>Bắt nguồn từ cao nguyên Thanh Hải – Tây Tạng, chảy hơn một nửa chiều dài của nó qua Trung Quốc, <em style="background-color: #f8e1fa;">“sông Mekong dài 4.300km và chạy qua hay tạo thành đường biên giới của Trung Quốc, Myanmar, Lào, Thái Lan, Campuchia và Việt Nam.”</em> Cuộc hành trình của tác giả bắt đầu với thung lũng ẩn khuất Vũ Băng – “thiên đường hạ giới cuối cùng” ở tỉnh Vân Nam, Trung Quốc, từ đó ông bắt đầu khảo sát hàng loạt những dự án đập thuỷ điện đã và sẽ mọc lên ở các nước Trung Quốc, Lào, Campuchia. Ông tìm đến những người dân bản địa hiểu về đất của mình, những dân bản địa đang khổ sở loay hoay với chính sách khai thác và tái định hình dòng Mekong trong mấy chục năm gần đây, những dân bản địa đấu tranh để giành giật lại kế sinh nhai của nhiều đời cha ông mình, những dân bản địa chọn thay đổi để thích nghi với việc con sông ngày nay không còn hào phóng như mấy chục năm trước.</p>
 
@@ -612,12 +642,12 @@ Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay
 <br>
 <p><em style="background-color: #BCC7F5;">– Lấp hồ Boeung Kak (Campuchia) để xây dự án > Cư dân phải di dời đến làng tái định cư cách đó 20km > Các thành viên cộng đồng tái định cư bị giảm thu nhập đáng kể so với trước đây, họ khó tiếp cận y tế, giáo dục và nước > Thất nghiệp tăng cao, các triệu chứng trầm cảm và lo âu hiển hiện. “Nhiều người trong số này là nạn nhân của chế độ Khmer Đỏ. Cuộc sống, đối với họ, là chuỗi bi kịch không dứt.”</em></p>
 <br>
-<p><img src="https://k1rak1ra.neocities.org/blog/3.webp" style="width: 400px;"></p>
-<br>
+<p><img src="https://k1rak1ra.neocities.org/blog/3.webp" style="width: 100%;"></p>
+<hr>
 <p>Tác giả dành sự quan tâm đặc biệt đến những cộng đồng Zomia, khái niệm địa lý để chỉ các miền cao của vùng Mekong cùng những vùng đất ngập nước và đầm lầy – những khu vực mà nhà nước khó xâm nhập. Địa hình này là “khu vực nương náu của các nhóm sắc tộc chọn trốn tránh các nền văn minh đồng bằng đang bành trướng như Trung Quốc, Việt Nam hay Thái Lan.” Các cộng đồng dân cư Zomia xưa có thể duy trì một khoảng cách với các chính quyền cai trị và giữ được sự độc lập của họ là nhờ nguồn tài nguyên thiên nhiên dồi dào sẵn có xung quanh. Họ ít phụ thuộc vào sự giàu có tiền tệ mà tự hào về sự giàu có sản vật và bản sắc văn hoá.</p>
-
-<p>Nhưng việc đó đang thay đổi. Khi những trung tâm quyền lực tham lam mang danh nghĩa “hiện đại hóa” để xây dựng những tuyến đường, những cơ sở vật chất phục vụ du lịch ở khắp Zomia, họ cướp trắng trợn quyền kiểm soát tài nguyên và láo xược hủy hoại kết nối văn hoá bản địa.</p>
 <br>
+<p>Nhưng việc đó đang thay đổi. Khi những trung tâm quyền lực tham lam mang danh nghĩa “hiện đại hóa” để xây dựng những tuyến đường, những cơ sở vật chất phục vụ du lịch ở khắp Zomia, họ cướp trắng trợn quyền kiểm soát tài nguyên và láo xược hủy hoại kết nối văn hoá bản địa.</p>
+<hr>
 <p><strong>Rồi tóm lại, điều gì đã xảy ra với đồng bằng sông Cửu Long?</strong></p>
 <br>
 <p>Tất cả mọi thứ:</p>
@@ -639,16 +669,18 @@ Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay
 <p>Vì sự ngạo mạn nào của loài người mà làm trái đất nóng lên? Làm băng tan? Làm nước biển dâng? Làm các loài vật tuyệt chủng? Làm mất rừng? Làm dòng sông vốn hào sảng và bao dung đến thế cằn cỗi đi và chết dần?</p>
 
 <p>Xa xưa, biết bao cộng đồng người đã tìm ra cách sống chung hòa hợp với thiên nhiên chứ không chống lại nó. Đó là câu chuyện mà người hiện đại bây giờ lật lại, đặt khái niệm “phát triển bền vững”, rồi loay hoay cố giải câu đố đã có đáp án từ đời nào.</p>
-
+<hr>
 <p>Tác giả nhắc đi nhắc lại khái niệm “kết nối”, ông mong rằng đây sẽ là thông điệp được độc giả học thuộc lòng sau khi gấp sách lại.</p>
 <br>
 <p><em style="background-color: #F5BCE2;">Dòng sông tự nó không có Thượng hay Hạ Mekong. Cả hệ thống này là một. Không có phần Thượng Mekong thì không có vùng đồng bằng. Không có hoạt động dọc theo dòng sông, đi qua Lào, đi qua Thái Lan, đến Campuchia, thì sẽ không có sự đa dạng sinh học phong phú của dòng Mekong. Tôi thích so sánh dòng sông với cây. Thân cây không tự phát triển một mình. Nó phát triển nhờ tán, lá, rễ. Khi nghĩ về sông Mekong, anh nên nghĩ nó giống như một cây xanh. Nếu nó chỉ là thân cây, thì dân ở Trung Quốc, Lào, Thái Lan, Campuchia hay Việt Nam nghĩ rằng phần thuộc về họ là phần quan trọng nhất. Nhưng không phải vậy. Nếu người ta cắt tất cả các nhánh của cây, thân cây sẽ chết. Nếu người ta cắt rễ của cây, thân cây sẽ chết. Vì thế, nếu chúng ta muốn bảo tồn dòng Mekong hùng vĩ này, chúng ta phải nhìn vào tất cả các phần của dòng sông vốn được kết nối thành hệ thống. </em></p>
-<br>
-<p><img src="https://k1rak1ra.neocities.org/blog/5.webp" style="width: 400px;"></p>
-<br>
-<p>Thử mang theo cuốn sách này làm hành trang đi ngược từ hạ nguồn lên thượng nguồn con sông, quan sát và lấy đồng bằng sông Cửu Long làm tham chiếu, có thể sẽ là một hành trình thú vị. Vì như tác giả nói, đồng bằng sông Cửu Long đại diện cho quá khứ, hiện tại và tương lai của dòng Mekong. Miền Tây đã từng trù phú, đã từng cạn kiệt, rồi ngày nay đang nỗ lực tìm cách hồi sinh.</p>
 
+<hr>
+<p>Thử mang theo cuốn sách này làm hành trang đi ngược từ hạ nguồn lên thượng nguồn con sông, quan sát và lấy đồng bằng sông Cửu Long làm tham chiếu, có thể sẽ là một hành trình thú vị. Vì như tác giả nói, đồng bằng sông Cửu Long đại diện cho quá khứ, hiện tại và tương lai của dòng Mekong. Miền Tây đã từng trù phú, đã từng cạn kiệt, rồi ngày nay đang nỗ lực tìm cách hồi sinh.</p>
+<br>
 <p>Rồi biết đâu, một cậu học trò gen Alpha sẽ xúc được rổ cá đầy?</p><br>
+      <p><img src="https://k1rak1ra.neocities.org/blog/5.webp" style="width: 100%;"></p>
+          </div>
+       
     </section>    
 
 <!-- CANVAS -->    
@@ -658,12 +690,12 @@ Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay
        <br>  hàng loạt đề án nghiên cứu được hình thành và phát triển để tìm hiểu về những dị vật này.
        <hr>
           <button onclick="closeAllSections()"><p>close</p></button>
-        <button onclick="openSection('morecanvas');"><p>read</p></button>
+        <button onclick="openSection('morecanvas')"><p>read</p></button>
 </section>
 
-    <section id="morecanvas" class="book-scroll" style="display:none;>  
+    <section id="morecanvas" class="book-scroll" style="display:none;">  
     <p style="text-align:left;">  </p>
-    <button onclick="closeSection('morecanvas');"><p>close</p></button><hr>
+    <button onclick="closeSection('morecanvas')"><p>close</p></button><hr>
 <h2>Tấm canvas trống</h2>
 <br>
 <p>Ấn phẩm Makét 02: Qua Khe Hở, Trước Khoảng Không ra mắt dưới hình thức 5 tập sách giấy mềm nằm trong hộp bìa cứng, như một gói quà đầu năm. 
@@ -676,45 +708,45 @@ Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay
 
 
 
-<img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/bn6.jpg?v=1672889266170" alt="" />
+<hr>
 
 
 
-<p>Một ngày, dự án di cư loài người lên sao Hỏa của NASA&nbsp;thành công. Các nhà môi giới bất động sản đánh hơi được cơn sốt đất sao Hỏa đã nhanh chóng cài cắm hàng loạt biển báo định giá đất, kèm số điện thoại liên hệ giao dịch. Người Trái Đất nháo nhào mua bán, mặc cả, tranh chấp, chốt kèo trên mảnh đất ngay từ đầu đã không thuộc về họ. Người Sao Hỏa, vốn xa lạ với văn minh loài người, quá đỗi ngạc nhiên trước cảnh tượng những biển báo mọc lên hàng loạt trên hành tinh&nbsp;mình. Người Sao Hỏa cho rằng đây là&nbsp;thông điệp gì đó từ&nbsp;Người Trái Đất. Các nhà ngôn ngữ học lỗi lạc, tiến sĩ biểu tượng, giáo sư vũ trụ tổ chức nhiều buổi thảo luận sôi nổi, hàng loạt đề án nghiên cứu được hình thành và phát triển để tìm hiểu về những dị vật này. Một&nbsp;Người Sao Hỏa đưa ra lý thuyết so sánh hiện tượng này với hiện tượng tạm gọi là “Vòng tròn đồng ruộng” (Crop Circles) mà loài của họ đã để lại trên Trái Đất mấy thập kỷ trước, nhằm gửi thông điệp “Hòa bình trên toàn vũ trụ” đến loài người. Người Sao Hỏa này khẳng định&nbsp;Người Trái Đất&nbsp;đang gửi đến họ&nbsp;thông điệp tương tự. Ý kiến này được số đông ủng hộ.</p>
+<p>Một ngày, dự án di cư loài người lên sao Hỏa của NASAthành công. Các nhà môi giới bất động sản đánh hơi được cơn sốt đất sao Hỏa đã nhanh chóng cài cắm hàng loạt biển báo định giá đất, kèm số điện thoại liên hệ giao dịch. Người Trái Đất nháo nhào mua bán, mặc cả, tranh chấp, chốt kèo trên mảnh đất ngay từ đầu đã không thuộc về họ. Người Sao Hỏa, vốn xa lạ với văn minh loài người, quá đỗi ngạc nhiên trước cảnh tượng những biển báo mọc lên hàng loạt trên hành tinhmình. Người Sao Hỏa cho rằng đây làthông điệp gì đó từNgười Trái Đất. Các nhà ngôn ngữ học lỗi lạc, tiến sĩ biểu tượng, giáo sư vũ trụ tổ chức nhiều buổi thảo luận sôi nổi, hàng loạt đề án nghiên cứu được hình thành và phát triển để tìm hiểu về những dị vật này. MộtNgười Sao Hỏa đưa ra lý thuyết so sánh hiện tượng này với hiện tượng tạm gọi là “Vòng tròn đồng ruộng” (Crop Circles) mà loài của họ đã để lại trên Trái Đất mấy thập kỷ trước, nhằm gửi thông điệp “Hòa bình trên toàn vũ trụ” đến loài người. Người Sao Hỏa này khẳng địnhNgười Trái Đấtđang gửi đến họthông điệp tương tự. Ý kiến này được số đông ủng hộ.</p>
 
 <br>
 
-<p>Đó là bối cảnh cho dự án “No&nbsp;Land Man” (Người Không Đất) của tay máy Nguyễn Đình Phong.</p>
+<p>Đó là bối cảnh cho dự án “NoLand Man” (Người Không Đất) của tay máy Nguyễn Đình Phong.</p>
 
 
 
-<figure class="wp-block-image wp-duotone-black-and-red"><img src="https://bizweb.dktcdn.net/100/453/502/files/phong-3.jpg?v=1672640078187" alt="" /></figure>
+<img src="https://bizweb.dktcdn.net/100/453/502/files/phong-2.jpg?v=1672639985137" style="width: 100%;" alt="" />
 
 
 
 <p>Và dĩ nhiên chuyện này là bịa.</p>
-
+<br>
 
 
 <p>Những biển báo mọc lên vô số kể như nấm sau mưa kia đều nằm ở thành phố Hội An, tỉnh Quảng Nam, nước Việt Nam, hành tinh Trái Đất.</p>
 
+<br>
+
+<p>Câu chuyện vũ trụ kia là những gì người viết cảm thấy khi xem loạt ảnh của Phong:cứ như mình là người hành tinh khác, nhìn thấy một loạt biểu tượng xa lạ bỗng dưng mọc lên trên những miếngđất tổ tiên mình, và tìm cách cắt nghĩa.</p>
 
 
-<p>Câu chuyện vũ trụ kia là những gì người viết cảm thấy khi xem loạt ảnh của Phong:&nbsp;cứ như mình là người hành tinh khác, nhìn thấy một loạt biểu tượng xa lạ bỗng dưng mọc lên trên những miếng&nbsp;đất tổ tiên mình, và tìm cách cắt nghĩa.</p>
 
-
-
-<figure class="wp-block-image wp-duotone-black-and-red"><img src="https://bizweb.dktcdn.net/100/453/502/files/phong-8.png?v=1672641162067" alt="" /></figure>
+<img src="https://bizweb.dktcdn.net/100/453/502/files/phong-8.png?v=1672641162067" style="width: 100%;" alt="" />
 
 
 
 <p>Còn nhìn theo mắt của Người Trái Đất, thì những dị vật chắn trước phong cảnh rất đẹp kia tựa như tấm canvas trống mà một người họa sĩ bày ra chưa vẽ. Như người họa sĩ khao khát sở hữu cảnh đẹp trước mắt bằng cách biến nó thành tranh vẽ của mình, Đình Phong hẳn cũng khao khát sở hữu phong cảnh đó (thực dụng hơn là miếng đất đó) bằng thực hành nhiếp ảnh của mình.</p>
 
-
+<br>
 
 <p>Sau cùng, cả hai hành động đều vô nghĩa, vì mọi sao chép thực tại đều vô nghĩa.</p>
 
-
+<br>
 
 <p>Người họa sĩ tưởng tượng nào đó và Nguyễn Đình Phong đều chỉ đang tạo ra một thực tại khác cho riêng mình.</p>
 
@@ -724,15 +756,15 @@ Ngăn tủ này là bức chân dung gia đình dưới định dạng khăn tay
 
 
 
-<figure class="wp-block-image wp-duotone-black-and-red"><img src="https://bizweb.dktcdn.net/100/453/502/files/phong-4.jpg?v=1672640152993" alt="" /></figure>
+<img src="https://bizweb.dktcdn.net/100/453/502/files/phong-4.jpg?v=1672640152993" style="width: 100%;" alt="" />
 
 
 
-<figure class="wp-block-image wp-duotone-black-and-red"><img src="https://bizweb.dktcdn.net/100/453/502/files/phong-2.jpg?v=1672639985137" alt="" /></figure>
+
 
 <hr>
 
-<p><em>*&nbsp;Dự án “No Land Man” (Người Không Đất) của Nguyễn Đình Phong được giới thiệu trong ấn phẩm&nbsp;<a href="https://demedi.vn/maket-02-qua-khe-ho-truoc-khoang-khong" target="_blank" rel="noreferrer noopener">Makét 02: Qua Khe Hở, Trước Khoảng Không</a>.</em></p>
+<p><em>Dự án “No Land Man” (Người Không Đất) của Nguyễn Đình Phong được giới thiệu trong ấn phẩm Makét 02: Qua Khe Hở, Trước Khoảng Không.</em></p>
 <br>
     </section>    
   
@@ -766,5 +798,3 @@ function closeAllSections() {
 </script>
 
 </body>
-
-
