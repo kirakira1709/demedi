@@ -9,124 +9,47 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+2:wght@100..900&family=Major+Mono+Display&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Tektur:wght@400..900&family=Tourney:ital,wght@0,100..900;1,100..900&family=Trispace:wght@100..800&family=Unbounded:wght@200..900&family=VT323&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --font-title: "Be Vietnam Pro", sans-serif;
-      --font-display: "Be Vietnam Pro", sans-serif;
-      --font-body: "JetBrains Mono", monospace;
- --marquee-speed: 18s;
-      /* lower = faster */
-      --marquee-bg: #d885a0;
-      --marquee-color: #ffffff;
-      --marquee-gap: 3rem;
-      --marquee-pad: 0.6rem 1rem;
-      --marquee-height: 48px;
-      --color-text: #222;
-      --color-accent: #5b6cf0;
-      --padding: 2rem;
-    }
+    
+    /* 13-49 Base setup */
+    
+    :root { --font-title: "Be Vietnam Pro", sans-serif; --font-display: "Be Vietnam Pro", sans-serif; --font-body:
+    "JetBrains Mono", monospace; --marquee-speed: 18s; /* lower = faster */ --marquee-bg: #d885a0; --marquee-color:
+    #ffffff; --marquee-gap: 3rem; --marquee-pad: 0.6rem 1rem; --marquee-height: 48px; --color-text: #222;
+    --color-accent: #5b6cf0; --padding: 2rem; }
 
-    /* Base setup */
-    * {
-      font-size: small;
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { font-size: small; box-sizing: border-box; margin: 0; padding: 0; }
 
+    body { font-family: var(--font-body); background-color: var(--color-bg); color: var(--color-text); margin: 0;
+    line-height: 1.4; overflow-x: hidden; background-color: #f5f5f5; overflow-y: auto; }
+    
     body ::selection {
-      background-color: rgb(189, 147, 228);
-    }
+    background-color: rgb(189, 147, 228); }
 
-    body {
-      font-family: var(--font-body);
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      margin: 0;
-      line-height: 1.4;
-      overflow-x: hidden;
-      background-color: #f5f5f5;
-      overflow-y: auto;
-    }
+    h1, h2, h3 { font-family: var(--font-title); font-size: medium;}
 
-    h1,
-    h2,
-    h3 {
-      font-family: var(--font-title);
-    }
+    a { font-family: var(--font-body); color: #000000; text-decoration: none; transition: color 0.3s; } a:hover { color:
+    black; text-decoration: underline; }
+    
+    li { padding-left: 1rem; list-style-position: inside; padding-left: 0.5rem; /* optional fine-tune */ }
+    
+    hr { border: none; /* remove default 3D inset line */ border-top: 1px solid #ccc; /* your custom thin line */
+    margin: 1rem auto; /* spacing around */ width: 100%; /* optional: control width */ }
+    
+    iframe { display: inline-block; width: 100%; aspect-ratio: 16 / 9; border: none; }
+    
+    ::-webkit-scrollbar { display: none; }
+    time {font-family: var(--font-title); font-size: smaller;}
+    section { break-before: column; /* or column-break-before: always; */ position: relative; z-index: 1; display: none;}
 
+    button { border: none; color: rgb(0, 0, 0); cursor: pointer; background: none; font-family: var(--font-body); color:
+    #ccc; } button>p { font-family: var(--font-body); font-size: small; color: #ccc; } button>p:hover { text-decoration:
+    underline; color: #000000; } button:hover { text-decoration: underline; color: #000000; }
 
-    a {
-      font-family: var(--font-body);
-      color: var(--color-accent);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+    header { position: fixed; top: 0; left: 0; width: 100%; background: #fff; padding: 1rem; border: 1px solid #ccc;
+    z-index: 7; }
 
-    a:hover {
-      color: black;
-    }
-
-    li {
-      padding-left: 1rem;
-      list-style-position: inside;
-      padding-left: 0.5rem;
-      /* optional fine-tune */
-    }
-
-    button {
-      border: none;
-      color: rgb(0, 0, 0);
-      cursor: pointer;
-      background: none;
-      font-family: var(--font-body);
-
-      color: #ccc;
-    }
-
-    button>p {
-      font-family: var(--font-body);
-      font-size: small;
-      color: #ccc;
-    }
-
-    button>p:hover {
-      text-decoration: underline;
-      color: #000000;
-    }
-
-    button:hover {
-      text-decoration: underline;
-      color: #000000;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #fff;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      z-index: 7;
-      overflow-y: auto;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    a {
-      color: #000000;
-    }
-
-    section {
-      break-before: column;
-      /* or column-break-before: always; */
-      position: relative;
-      z-index: 1;
-      display: none;
-    }
-
+    /* 51-120 intro and book-scroll */
+    
     .book-scroll {
       margin: 0px auto;
       /* space for header */
@@ -157,346 +80,69 @@
       /* for Safari support */
     }
 
-    .book-scroll img {
-      max-width: 100%;
-      /* shrink to fit the parent width */
-      width: 600px;
-      /* ideal width on desktop */
-      height: auto;
-      /* keep aspect ratio */
-      display: block;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
+    .book-scroll img { max-width: 100%; /* shrink to fit the parent width */ width: 600px; /* ideal width on desktop */
+    height: auto; /* keep aspect ratio */ display: block; margin-top: 1rem; margin-bottom: 1rem; border: 1px solid #ccc;
     }
 
-    .intro.overlay {
-      display: flex;
-      justify-content: space-between;
-      /* left/right edges */
-      width: 35vw;
-      margin: 0px;
-      /* space for header */
-      padding: 1rem;
-      max-height: 90%;
-      overflow-y: auto;
-      top: 0;
-      left: 5vw;
-      border: 1px solid #ccc;
-      position: fixed;
-      /* stay in place */
-      z-index: 99;
-      background-color: rgba(255, 255, 255, 0.8);
-      /* semi-transparent white */
-      backdrop-filter: blur(4px);
-      /* applies blur behind */
-      -webkit-backdrop-filter: blur(4px);
-      /* for Safari support */
-    }
+    .intro.overlay { text-align: right; display: block; flex-direction: column; align-items: flex-end; top: 0; /*
+    optional, can adjust */ right: 60vw; /* anchor right edge at 40vw */ margin: 0px; padding: 1rem; max-height: 90%;
+    overflow-y: auto; top: 0; border: 1px solid #ccc; position: fixed; /* stay in place */ z-index: 99;
+    background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */ backdrop-filter: blur(4px); /* applies blur
+    behind */ -webkit-backdrop-filter: blur(4px); /* for Safari support */ }
 
-    .intro.overlay img {
-      max-width: 80%;
-      /* shrink to fit the parent width */
-      width: 500px;
-      /* ideal width on desktop */
-      height: auto;
-      /* keep aspect ratio */
-      display: block;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-    }
+    .intro.overlay img { /* shrink to fit the parent width */ width: auto; max-width: 100%; /* never exceed parent width
+    */ max-height: 55vh; width: auto; /* scale width proportionally */ height: auto; /* scale height proportionally */
+    object-fit: contain; /* keep aspect ratio, fit inside parent */ display: block; /* remove inline gaps */ margin: 0 auto;
+    1rem; border: 1px solid #ccc;}
+    .photo-frame img { display: block; width: auto; height: auto; max-width: 100%; max-height: 55vh; object-fit:
+    contain; border: 1px solid #ccc; }
 
-    ::-webkit-scrollbar {
-      display: none;
-    }
+   .photo-frame { display: inline-flex; flex-direction: column; align-items: flex-end; width: fit-content; /* matches
+   image width */ } 
+    
+    .photo-frame .caption { text-align: right; width: 100%; margin-top: 1rem; }
+    
+    /* 135-149 IMGs zoom-in and slideshow */
+    
+    .zoom-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); justify-content: center;
+    align-items: center; z-index: 1000; } .zoom-overlay img { display: block; max-width: 60%; height: auto; cursor:
+    zoom-out; }
 
-    @media screen and (max-width: 768px) {
-      .book-scroll.overlay {
-        display: block;
-        position: absolute;
-        margin: 0 auto;
-        width: 100%;
-        overflow-y: auto;
-        top: 0;
-        left: 0;
-                z-index: 999;
-      }
+    .slideshow-container { position: relative; width: 100%; max-width: 100%; margin: 2rem auto; overflow: hidden;
+    z-index: 5; } .slide { width: 100%; display: none; } .slide.active { display: block; } .prev, .next { position:
+    absolute; top: 50%; transform: translateY(-50%); color: #ffffff; border: none; cursor: pointer; font-size: 1rem;
+    padding: 0.5rem 1rem; z-index: 10; } .prev { left: 10px; } .next { right: 10px; } /* === Slideshow inside
+    .book-scroll === */ .book-scroll .slideshow-container { position: relative; width: 100%; max-width: 100%; margin:
+    2rem auto; flex: none; /* prevent flex layout interference */ overflow: hidden; z-index: 10; } .book-scroll .slide {
+    display: none; width: 100%; height: auto; } .book-scroll .slide.active { display: block; } /* === Navigation Buttons
+    === */ .book-scroll .prev, .book-scroll .next { position: absolute; top: 50%; transform: translateY(-50%); border:
+    none; font-size: 2rem; cursor: pointer; padding: 0.5rem 1rem; z-index: 20; transition: background 0.3s; }
+    .book-scroll .prev:hover, .book-scroll .next:hover { text-decoration: none; } .book-scroll .prev { left: 10px; }
+    .book-scroll .next { right: 10px; }
+    
+    /* 153 list of entries */
+    
+    .list-container { position:fixed; width: 100%; height: 100%; display: block; overflow-y: auto; } .list { position:
+    absolute; display: flex; flex-direction: column; padding: 0 auto; margin-top: 4vw; overflow-y: auto; } .list a {
+    font-family: var(--font-title); font-size: 100px; line-height: 7vw; }
 
-      .intro.overlay {
-        display: block;
-        width: 100%;
-        margin: 0px;
-        /* space for header */
-        padding: 1rem;
-        max-height: 100%;
-        overflow-y: auto;
-        top: 0;
-        left: 0;
-        border: 1px solid #ccc;
-        position: relative;
-        z-index: 100;
-      }
-      .intro > p {font-size: smaller;}
-      .intro.overlay {
-        max-width: 70%;
-        height: auto;
-        /* keep aspect ratio */
-        display: block;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
-      }
-    }
+    /* 159 media querries */
+    
+    @media screen and (max-width: 768px) { .book-scroll.overlay { display: block; position: absolute; margin: 0 auto;
+    width: 100%; overflow-y: auto; top: 0; left: 0; z-index: 999; } .intro.overlay { display: block; width: 100%;
+    margin: 0px; /* space for header */ padding: 1rem; max-height: 100%; overflow-y: auto; top: 0; left: 0; border: 1px
+    solid #ccc; position: relative; z-index: 100; max-width: 70%; height: auto; } .intro > p {font-size: smaller;} .list
+    { height: 100%; width: 100%; margin-top: 0; position: absolute; top: 0; padding: 0 auto; overflow-y: auto; } body
+    {top: 0;} .list>a { font-family: var(--font-title); font-size: 38px; line-height: 15vw; } header { display: none; }
+    body { margin: 0 auto; } button>p, button {font-size: x-small;} }
 
-    iframe {
-      display: inline-block;
-      width: 70%;
-      height: auto;
-    }
+    @media screen and (max-width: 1024px) { .list { width: 100%; padding: 0 auto; overflow-y: auto; } .list>a {
+    font-size: 58px; display: block } }
+    
+    @media screen and (orientation: landscape) and (max-width: 900px) { .intro.overlay img { max-width: 50% !important;
+    /* reduce size in landscape */ height: auto; width: auto; /* optional */ margin-top: 0; margin-bottom: 0; } *
+    {font-size: x-small;} button>p {font-size: smaller;}}
 
-    .break {
-      display: block;
-      margin: 0 auto;
-      width: 70%;
-      text-align: center;
-    }
-
-    hr {
-      border: none;
-      /* remove default 3D inset line */
-      border-top: 1px solid #ccc;
-      /* your custom thin line */
-      margin: 1rem auto;
-      /* spacing around */
-      width: 100%;
-      /* optional: control width */
-    }
-
-    .list {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      top: 2vw;
-      padding: 0 auto;
-      margin-top: 4vw;
-      overflow-y: auto;
-
-    }
-
-    .list a {
-      font-family: var(--font-title);
-      font-size: 100px;
-      line-height: 7vw;
-    }
-
-    @media screen and (max-width: 768px) {
-      .list {
-        height: 100vh;
-        width: 100%;
-        margin-top: 0;
-        position: absolute;
-        top: 0;
-        padding: 0 auto;
-        overflow-y: auto;
-      }
-
-      .list>a {
-        font-family: var(--font-title);
-        font-size: 38px;
-        line-height: 15vw;
-      }
-
-      header {
-        display: none;
-      }
-
-      body {
-        margin: 0 auto;
-      }
-    }
-
-    @media screen and (max-width: 1024px) {
-      .list {
-        width: 100%;
-        top: 3vw;
-        padding: 0 auto;
-        overflow-y: auto;
-      }
-
-      .list>a {
-        font-size: 58px;
-        display: block
-      }
-    }
-
-    < !-- FLEXBOX -->.halfhalf,
-    .flexbox {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .halfhalf .text {
-      flex: 1 1 55%;
-    }
-
-    .halfhalf .videos {
-      flex: 1 1 40%;
-    }
-
-    .threeseven>*:first-child {
-      flex: 0 0 30%;
-    }
-
-    .threeseven>*:last-child {
-      flex: 0 0 70%;
-    }
-
-    .seventhree>*:first-child {
-      flex: 0 0 70%;
-    }
-
-    .seventhree>*:last-child {
-      flex: 0 0 30%;
-    }
-
-    .sixfour>*:first-child {
-      flex: 0 0 60%;
-    }
-
-    .sixfour>*:last-child {
-      flex: 0 0 40%;
-    }
-
-    .foursix>*:first-child {
-      flex: 0 0 40%;
-    }
-
-    .foursix>*:last-child {
-      flex: 0 0 60%;
-    }
-
-    .threecols>div {
-      flex: 1 1 33%;
-      min-width: 250px;
-    }
-
-    iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-    }
-
-    .zoom-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .zoom-overlay img {
-      display: block;
-      max-width: 60%;
-      height: auto;
-      cursor:
-        zoom-out;
-    }
-
-    .slideshow-container {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      margin: 2rem auto;
-      overflow: hidden;
-      z-index:
-        5;
-    }
-
-    .slide {
-      width: 100%;
-      display: none;
-    }
-
-    .slide.active {
-      display: block;
-    }
-
-    .prev,
-    .next {
-      position: absolute;
-      top:
-        50%;
-      transform: translateY(-50%);
-      color: #ffffff;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-      z-index: 10;
-    }
-
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
-    }
-
-    /* === Slideshow inside .book-scroll === */
-    .book-scroll .slideshow-container {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      margin: 2rem auto;
-      flex: none;
-      /*
-prevent flex layout interference */
-      overflow: hidden;
-      z-index: 10;
-    }
-
-    .book-scroll .slide {
-      display: none;
-      width: 100%;
-      height: auto;
-    }
-
-    .book-scroll .slide.active {
-      display: block;
-    }
-
-    /* === Navigation Buttons === */
-    .book-scroll .prev,
-    .book-scroll .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      border: none;
-      font-size: 2rem;
-      cursor:
-        pointer;
-      padding: 0.5rem 1rem;
-      z-index: 20;
-      transition: background 0.3s;
-    }
-
-    .book-scroll .prev:hover,
-    .book-scroll .next:hover {
-      text-decoration: none;
-    }
-
-    .book-scroll .prev {
-      left: 10px;
-    }
-
-    .book-scroll .next {
-      right: 10px;
-    }
   </style>
 </head>
 
@@ -504,28 +150,38 @@ prevent flex layout interference */
   <header>
     <p id="top">demedi.vn</p>
   </header>
+  <div class="list-container">
   <div class="list">
-    <a href="#fourloves" onclick="closeAllSections(); openSection('fourloves'); return false;">The Four Loves</a><br>
-    <a href="#nuongnau" onclick="closeAllSections(); openSection('nuongnau'); return false;">Một nơi nương náu</a><br>
-    <a href="#khantay" onclick="closeAllSections(); openSection('khantay'); return false;">Con có khăn tay rồi chứ?</a><br>
-    <a href="#chatsong" onclick="closeAllSections(); openSection('chatsong'); return false;">Chặt sông ra từng khúc</a><br>
-    <a href="#canvas" onclick="closeAllSections(); openSection('canvas'); return false;">Tấm canvas trống</a> <br>
-    <a href="#mennonites" onclick="closeAllSections(); openSection('mennonites'); return false;">The Mennonites – Larry Towell</a><br><br><br><br><br>
-  </div>
+    <a href="#fourloves" onclick="closeAllSections(); openSection('fourloves'); return false;">07.2024 — The Four Loves <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">C. S. Lewis</span></a><br>
+    <a href="#khantay" onclick="closeAllSections(); openSection('khantay'); return false;">11.2023 — Con có khăn tay rồi chứ?</a><br>
+    <a href="#henryjames" onclick="closeAllSections(); openSection('henryjames'); return false;">11.2023 — Thứ quý giá nhất: James về cái chết</a><br>
+    <a href="#nuongnau" onclick="closeAllSections(); openSection('nuongnau'); return false;">11.2023 — Một nơi nương náu</a><br>
+    <a href="#homeschooled" onclick="closeAllSections(); openSection('homeschooled'); return false;">03.2023 — Không đến trường <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Rachel Papo</span></a><br>
+    <a href="#abbazappa" onclick="closeAllSections(); openSection('abbazappa'); return false;">02.2023 — ABBA…ZAPPA <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Gijsbert Hanekroot</span></a><br>
+    <a href="#canvas" onclick="closeAllSections(); openSection('canvas'); return false;">01.2023— Tấm canvas trống</a> <br>
+    <a href="#robertfrank" onclick="closeAllSections(); openSection('robertfrank'); return false;">11.2022 — Hold Still, Keep Going <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Robert Frank</span></a><br>
+    <a href="#mennonites" onclick="closeAllSections(); openSection('mennonites'); return false;">08.2022 — The Mennonites <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Larry Towell</span></a><br>
+    <a href="#salgado" onclick="closeAllSections(); openSection('salgado'); return false;">08.2022 — Gold <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Sebastião Salgado</span></a><br>
+    <a href="#chatsong" onclick="closeAllSections(); openSection('chatsong'); return false;">07.2022 — Chặt sông ra từng khúc</a><br>
+    <br><br><br><br>
+  </div></div>
+  
   <!-- FOUR LOVES -->
-  <section class="intro" id="fourloves" style="text-align: right;">
-    <img src="https://upload.wikimedia.org/wikipedia/en/2/27/CS_Lewis_photo_on_dust_jacket.jpg" style="margin-left: auto;">
-  <p>  <br>It is nice to have arrived at all this by something which began in Agape,
-    <br>proceeded to Philia, then became Pity,
-    <br>and only after that, Eros.</p>
-    <hr>
-    <button onclick="closeAllSections()">
-      <p>close</p>
-    </button>
-    <button onclick="openSection('morefourloves');">
-      <p>read</p>
-    </button>
-  </section>
+<section class="intro" id="fourloves">
+  <div class="photo-frame">
+    <img src="https://upload.wikimedia.org/wikipedia/en/2/27/CS_Lewis_photo_on_dust_jacket.jpg" style="margin-left: auto;" alt="CS Lewis">
+    <div class="caption">
+      <p>
+        It is nice to have arrived at all this<br>by something which began in Agape,
+        <br>proceeded to Philia, then became Pity,
+        <br>and only after that, Eros.
+      </p>
+      <hr>
+      <button onclick="closeAllSections()"><p>close</p></button>
+      <button onclick="openSection('morefourloves');"><p>read</p></button>
+    </div>
+  </div>
+</section>
 
   <section id="morefourloves" class="book-scroll" style="display:none;">
     <div class="section-header">
@@ -533,12 +189,12 @@ prevent flex layout interference */
         <p>close</p>
       </button>
       <hr>
-      <h2>The Four Loves</h2>
+      <time>July 14, 2024</time><h2>C. S. Lewis và chuỗi băng The Four Loves</h2>
     </div>
     <br>
-
-
-      <div><em>
+<div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
+        <em>
           <p>
             There was a man who found a naked tree<br>
             Sleeping in winter woods, and brought her home,<br>
@@ -551,10 +207,12 @@ prevent flex layout interference */
             Bursting, blazing, blended all of pearl<br>
             And moonshine; he, in wonder and delight,<br>
             Patted her magic boughs and said: Good girl.
-          </p><br>
+          </p>
         </em>
-
-      <div><em>
+        </div>
+  
+    <div style="flex: 0 0 40%;">
+      <em>
           <p>
             Thereafter, still obedient to the summer<br>
             The tree worked at her trade, until behold<br>
@@ -565,11 +223,11 @@ prevent flex layout interference */
           </p>
         </em>
         <br>
-        <p class="credit"><em>(Sonnet XXIX) — Joy Davidman</em></p>
-      
+        <p><em>(Sonnet XXIX) — Joy Davidman</em></p>
+  </div>
+  </div>
     <hr>
-  
-  
+
         <p>
           Tháng Tư năm 1958, C. S. Lewis (Clive Staples Lewis) nhận được đề xướng từ Episcopal Radio-TV Foundation về dự án sản xuất chuỗi bài nói qua đài truyền thanh, chủ đề tùy chọn. Ông gật đầu.
           <br>
@@ -647,10 +305,9 @@ prevent flex layout interference */
         <p><strong>AGAPE | CHARITY</strong></p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/owwuFSdDq98?si=Mw4u1GuXD-nwQ7LZ" title="AGAPE | CHARITY" frameborder="0" allowfullscreen></iframe>
 
-  
       <hr>
-    </div>
-    Để tài liệu đây xem thêm:
+
+    <p>Để tài liệu đây xem thêm:</p>
     <ul>
       <li><a href="http://www.jstor.org/stable/48599492" target="_blank" rel="noopener noreferrer">A Naked Tree: Joy Davidman’s Love Sonnets to C.S. Lewis</a></li>
       <li><a href="https://archive.org/embed/joy0000abig" target="_blank" rel="noopener noreferrer">Joy by Abigail Santamaria</a></li>
@@ -661,39 +318,43 @@ prevent flex layout interference */
 
   <!-- MỘT NƠI NƯƠNG NÁU -->
   <section class="intro" id="nuongnau" style="text-align: right;">
+     <div class="photo-frame">
     <img src="https://vasteprogramme.ca/wp-content/uploads/2022/06/romain-gary_0_1400_948-1080x675-1-uai-1036x582.webp" style="margin-left: auto;">
-    <br>
-    Giáo dục châu Âu, đối với anh ấy,<br>
-    đó là những quả bom, các cuộc tàn sát,
-    <br>những con tin bị xử bắn,
+    <div class="caption">
+    <p> Giáo dục châu Âu, đối với anh ấy,<br>
+    đó là những quả bom, các cuộc tàn sát, những con tin bị xử bắn,
     <br>những người buộc phải sống trong các cái lỗ,
-    <br>giống lũ súc vật…
+      <br>giống lũ súc vật…</p>
     <hr>
     <button onclick="closeAllSections()">
       <p>close</p>
     </button>
     <button onclick="openSection('morenuongnau');">
       <p>read</p>
-    </button>
+</button>
+       </div></div>
   </section>
 
   <section id="morenuongnau" class="book-scroll" style="display:none;">
     <button class="close-btn" onclick="closeSection('morenuongnau')">close</button>
     <hr>
 
-    <h2>Một nơi nương náu</h2>
+    <time>November 10, 2023</time><h2>Một nơi nương náu</h2>
     <br>
-    <div style="display: flex;">
-      <div style="flex: 0 0 80%;">
-        <p>Câu chuyện mở ra ở vùng quanh Wilno, ở Lithuania.
+    <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;"><p>Câu chuyện mở ra ở vùng quanh Wilno, ở Lithuania.
           Ta gặp một cậu bé Ba Lan, Janek Twardowski, đang nấp dưới khu hầm trú ẩn đào trong một khu rừng khi quân Đức đến.
           Đó là năm 1942 và trận Stalingrad bắt đầu.</p>
         <br>
-        <p><em style="background-color: #FFE6E1;">– Cần phải nghi ngờ con người.</em></p>
-        <br>
+        </div>
+      <div style="flex: 0 0 40%;">
+       <p>– Cần phải nghi ngờ con người.</p>
         <p>Bác sĩ Twardowski, bố của Janek, dặn đi dặn lại cậu như vậy, trước khi ông đi khỏi, và không bao giờ quay lại.
-        <p>14 tuổi, nỗi đau đầu tiên Janek đối mặt là cái chết của bố. </p>
-        <br>
+        <p>14 tuổi, nỗi đau đầu tiên Janek đối mặt là cái chết của bố. </p><br>
+      </div>
+    </div>
+      <div>
+      <hr>
         <p>Cuộc phiêu lưu của Janek (hay hành trình giáo dục của cậu) bắt đầu khi cậu quyết định chui ra khỏi hầm để đến chỗ những người du kích
           – như bố cậu từng dặn – dù cậu không biết rõ lắm “du kích” nghĩa là gì.</p>
 
@@ -722,9 +383,11 @@ prevent flex layout interference */
         </p>
         <br>
         <p>Và:</p>
+        <div style="display: flex;">
+        <div style="flex: 0 0 80%; flex-direction: column;">
         <br>
         <p><em style="background-color: #E5F3FF;">– Nó tên là Giáo dục Châu Âu. Chính Tadek Chmura đã gợi ý cho tôi cái tên đó… Lẽ dĩ nhiên anh ấy đặt vào đó một ý vị mỉa mai… Giáo dục châu Âu, đối với anh ấy, đó là những quả bom, các cuộc tàn sát, những con tin bị xử bắn, những người buộc phải sống trong các cái lỗ, giống lũ súc vật… Nhưng tôi, tôi nhận lời thách thức. Người ta có thể thoải mái nói với tôi những gì họ muốn về tự do, về phẩm giá, danh dự là một con người, toàn bộ những cái đó, rốt cuộc, chỉ là một câu chuyện vú em hay kể, một truyện cổ tích vì đó người ta bị giết. Sự thật là có những khoảnh khắc trong lịch sử, những khoảnh khắc như khoảnh khắc chúng ta đang sống đây, nơi toàn bộ những gì ngăn cản con người tuyệt vọng, toàn bộ những gì cho phép anh ta tin và tiếp tục sống, đều cần một chỗ trốn, một nơi nương náu. Nơi nương náu đó, đôi khi chỉ là một bài hát, một bài thơ, một thứ âm nhạc, một cuốn sách. Tôi mong sao cuốn sách của tôi là một trong những chỗ nương náu ấy, rằng khi nó mở ra, sau chiến tranh, chừng mọi chuyện đã kết thúc, người ta tìm được tài sản của họ còn nguyên vẹn, rằng họ biết là người ta đã có thể bắt chúng ta sống như lũ vật, nhưng người ta đã không thể bắt chúng ta tuyệt vọng được.</em></p>
-        <br>
+          <br></div>  <div style="display: flex; flex: 1; flex-direction: column;"></div></div>
         <p>Cậu sinh viên Dobranski không bao giờ hoàn thành cuốn sách, anh chết ngay bên lề thắng lợi. Janek là người thừa kế và Romain Gary là người kết thúc cuốn sách, y lời Dobranski trăn trối:</p>
         <br>
         <p><em style="background-color: #FFF4CC;">– Hứa với tôi….<br>
@@ -750,11 +413,13 @@ prevent flex layout interference */
 
   <!-- KHĂN TAY -->
   <section class="intro" id="khantay" style="text-align: right;">
-    <img src="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2009/10/8/1255001302568/Herta-Mueller-sitting-at--015.jpg?width=700&quality=85&auto=format&fit=max&s=9ec9763e8b8548827ada1b92e507a235" style="margin-left: auto;"></div>
-    <br>
-    Tôi ước rằng mình có thể thốt nên một câu nào đó dành cho những người hằng ngày bị chế độ độc tài tước đoạt nhân phẩm,
-    <br>từ trước đến nay và kể cả bây giờ
-    <br>— một câu, có lẽ, có chứa từ khăn tay.
+     <div class="photo-frame">
+    <img src="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2009/10/8/1255001302568/Herta-Mueller-sitting-at--015.jpg?width=700&quality=85&auto=format&fit=max&s=9ec9763e8b8548827ada1b92e507a235" style="margin-left: auto;">
+    <div class="caption">
+   <p>  Tôi ước rằng mình có thể thốt nên một câu nào đó
+     <br>dành cho những người hằng ngày bị chế độ độc tài
+     <br>tước đoạt nhân phẩm,
+     <br>từ trước đến nay và kể cả bây giờ — một câu,<br>có lẽ, có chứa từ khăn tay.</p>
     <hr>
     <button onclick="closeAllSections()">
       <p>close</p>
@@ -762,6 +427,7 @@ prevent flex layout interference */
     <button onclick="openSection('morekhantay');">
       <p>read</p>
     </button>
+       </div></div>
   </section>
 
   <section id="morekhantay" class="book-scroll" style="display:none;">
@@ -770,14 +436,14 @@ prevent flex layout interference */
       <p>close</p>
     </button>
     <hr>
-    <h2>Con có khăn tay rồi chứ?</h2><br>
-    <div style="display: flex; gap: 2rem;">
-      <div style="flex: 0 0 30%; font-size: smaller;">
+    <time>November 25, 2023</time><h2>Con có khăn tay rồi chứ?</h2><br>
+    <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
         <p>Vào tháng 1 năm 1945, Stalin ra lệnh trục xuất những người Romania – Đức trong độ tuổi từ 17 đến 45 tới Liên Xô để thực hiện 5 năm lao động cưỡng bức, nhằm “tái xây dựng” một Liên bang mới. Trong số đó có mẹ của Herta Müller.</p>
+      <p> Nửa thế kỷ sau, Müller dành nhiều năm trò chuyện với một người Romania khác cũng là nạn nhân của sắc lệnh này, nhà thơ Oskar Pastior.</p>
+      <p> Sau khi ông đột ngột qua đời vào năm 2006, từ ba cuốn sổ chép tay ghi lại phần đời của nhà thơ quá cố, Müller đã viết nên “Nhịp thở chao nghiêng”, với chính Oskar là nguyên mẫu của nhân vật Leo Auberg.</p>
       </div>
-      <div style="flex: 0 0 50%">
-        <p> Nửa thế kỷ sau, Müller dành nhiều năm trò chuyện với một người Romania khác cũng là nạn nhân của sắc lệnh này, nhà thơ Oskar Pastior.</p>
-        <p> Sau khi ông đột ngột qua đời vào năm 2006, từ ba cuốn sổ chép tay ghi lại phần đời của nhà thơ quá cố, Müller đã viết nên “Nhịp thở chao nghiêng”, với chính Oskar là nguyên mẫu của nhân vật Leo Auberg.</p>
+      <div style="flex: 0 0 40%">
         <p>Cùng năm tiểu thuyết được xuất bản, 2009, Herta Müller được trao Nobel Văn chương. Bài diễn từ mà bà đọc trong dịp nhận giải xoay quay câu chuyện về chiếc khăn tay, một của mẹ bà, một của bà và một của Oskar Pastior.
           Xin trích.</p>
       </div>
@@ -820,12 +486,14 @@ prevent flex layout interference */
 
   <!-- CHẶT SÔNG -->
   <section class="intro" id="chatsong" style="text-align: right;">
+     <div class="photo-frame">
     <img src="https://k1rak1ra.neocities.org/blog/4.webp" style="margin-left: auto;">
-    <br>
+    <div class="caption">
+    <p> 
     Thời đó chúng tôi ăn rau dại hái từ các cánh đồng và bờ sông.
     <br>Chúng tôi có những dòng sông trong xanh, mọi người đều tắm sông.
     <br>Giờ không ai dám tắm sông nữa.
-    <br> Nước giờ chảy ra từ những cánh đồng ô nhiễm thuốc trừ sâu gây ngứa.
+    <br> Nước giờ chảy ra từ những cánh đồng ô nhiễm thuốc trừ sâu gây ngứa.</p>
     <hr>
     <button onclick="closeAllSections()">
       <p>close</p>
@@ -833,25 +501,27 @@ prevent flex layout interference */
     <button onclick="openSection('morechatsong');">
       <p>read</p>
     </button>
+       </div></div>
   </section>
-
+    
   <section id="morechatsong" class="book-scroll" style="display:none;">
 
     <button onclick="closeSection('morechatsong')">
       <p>close</p>
     </button>
     <hr>
-    <h2>Chặt sông ra từng khúc</h2>
+    <time>July 29, 2022</time><h2>Chặt sông ra từng khúc</h2>
     <br>
     <div style="display: flex; gap: 2rem; align-items: flex-end;">
-      <div style="flex: 0 0 20%;"></div>
-      <div style="flex: 0 0 70%">
-        <p>Cứ độ tháng 7 đến tháng 10 âm lịch hàng năm, mưa nhiều ở thượng nguồn sông Mekong khiến mực nước dâng lên, rồi ồ ạt đổ tràn về hạ nguồn vùng trũng đồng bằng sông Cửu Long. Thời điểm này, dân bản địa gọi là mùa nước nổi. Với đất miền Tây Nam Bộ, lũ lụt là trái ngược của thiên tai. Có thể gọi là thiên phước, nếu từ đó có nghĩa.</p>
+      <div style="flex: 0 0 40%;"><img src="https://k1rak1ra.neocities.org/blog/1.webp" style="width: 100%; margin: 0;"></div>
+      <div style="flex: 0 0 40%">
+        <p>Cứ độ tháng 7 đến tháng 10 âm lịch hàng năm, mưa nhiều ở thượng nguồn sông Mekong khiến mực nước dâng lên, rồi ồ ạt đổ tràn về hạ nguồn vùng trũng đồng bằng sông Cửu Long. </p>
+        <p>Thời điểm này, dân bản địa gọi là mùa nước nổi. Với đất miền Tây Nam Bộ, lũ lụt là trái ngược của thiên tai. Có thể gọi là thiên phước, nếu từ đó có nghĩa.</p>
       </div>
     </div>
     <div>
       <hr>
-      <img src="https://k1rak1ra.neocities.org/blog/1.webp" style="width: 100%; margin: 0;">
+      
       <br>
       <p>Con nước về quạch đỏ phù sa nhấn chìm làng mạc, ruộng vườn, nhà cửa.</p>
 
@@ -931,9 +601,11 @@ prevent flex layout interference */
 
   <!-- CANVAS -->
   <section class="intro" id="canvas" style="text-align: right;">
+     <div class="photo-frame">
     <img src="https://bizweb.dktcdn.net/100/453/502/files/phong-3.jpg?v=1672640078187" style="margin-left: auto;">
-    <br>Các nhà ngôn ngữ học lỗi lạc, tiến sĩ biểu tượng, giáo sư vũ trụ tổ chức nhiều buổi thảo luận sôi nổi,
-    <br> hàng loạt đề án nghiên cứu được hình thành và phát triển để tìm hiểu về những dị vật này.
+   <div class="caption">
+    <p>Các nhà ngôn ngữ học lỗi lạc, tiến sĩ biểu tượng, giáo sư vũ trụ tổ chức nhiều buổi thảo luận sôi nổi,
+     <br> hàng loạt đề án nghiên cứu được hình thành và phát triển để tìm hiểu về những dị vật này.</p>
     <hr>
     <button onclick="closeAllSections()">
       <p>close</p>
@@ -941,7 +613,7 @@ prevent flex layout interference */
     <button onclick="openSection('morecanvas')">
       <p>read</p>
     </button>
-  </section>
+       </div></div></section>
 
   <section id="morecanvas" class="book-scroll" style="display:none;">
     <p style="text-align:left;"> </p>
@@ -949,24 +621,33 @@ prevent flex layout interference */
       <p>close</p>
     </button>
     <hr>
-    <h2>Tấm canvas trống</h2>
+    <time>January 02, 2023</time><h2>Tấm canvas trống</h2>
     <br>
-    <p>Ấn phẩm Makét 02: Qua Khe Hở, Trước Khoảng Không ra mắt dưới hình thức 5 tập sách giấy mềm nằm trong hộp bìa cứng, như một gói quà đầu năm.
-      <br>Lần đầu tụi mình nhận được ấn phẩm này đúng kiểu vậy, món quà mà Nguyễn Đình Phong - một trong nhiều tác giả - gửi tặng.
-      <br>Bên cạnh bài viết của Nguyễn Phương Thảo, tập hợp ảnh được giới thiệu nằm trong những dự án cá nhân của các tác giả, thể hiện cái nhìn riêng của mỗi người về thực hành nhiếp ảnh tư liệu.
-      <br>“Chúng đã có thể bị lãng quên trong ổ cứng hoặc chỉ tồn tại như mẩu chuyện buổi trà dư tửu hậu” (Matca), nhưng may quá, bằng việc in thành sách và được đưa đến từng góc nhà độc giả, hình ảnh đã có quyền sống đời sống riêng mình, luồn qua khe hở, ra trước khoảng không.
-    </p>
-
-    <br>
+    <div style="display: flex; gap: 2rem; align-items: flex-end">
+    <div style="flex: 0 0 40%;">
+      <p>Ấn phẩm Makét 02: Qua Khe Hở, Trước Khoảng Không ra mắt dưới hình thức 5 tập sách giấy mềm nằm trong hộp bìa cứng, như một gói quà đầu năm.</p>
+      <p>Lần đầu tụi mình nhận được ấn phẩm này đúng kiểu vậy, món quà mà Nguyễn Đình Phong - một trong nhiều tác giả - gửi tặng.   </p>
+      <p>Bên cạnh bài viết của Nguyễn Phương Thảo, tập hợp ảnh được giới thiệu nằm trong những dự án cá nhân của các tác giả, thể hiện cái nhìn riêng của mỗi người về thực hành nhiếp ảnh tư liệu.</p>
+     <p> “Chúng đã có thể bị lãng quên trong ổ cứng hoặc chỉ tồn tại như mẩu chuyện buổi trà dư tửu hậu” (Matca), nhưng may quá, bằng việc in thành sách và được đưa đến từng góc nhà độc giả, hình ảnh đã có quyền sống đời sống riêng mình, luồn qua khe hở, ra trước khoảng không.</p>    
+      </div>
+      <div style="flex: 0 0 40%;">
+      
     <p>Ở DEMEDI, tụi mình đã mở quà, đã nhâm nhi, và xin viết vài lời chuyện phiếm để trân trọng lòng can đảm của những người dám phơi bày tâm hồn họ, trong thời đại nghệ thuật trí tuệ nhân tạo lên ngôi.</p>
-
+    </div>
+    </div>
     <hr>
 
-    <p>Một ngày, dự án di cư loài người lên sao Hỏa của NASAthành công. Các nhà môi giới bất động sản đánh hơi được cơn sốt đất sao Hỏa đã nhanh chóng cài cắm hàng loạt biển báo định giá đất, kèm số điện thoại liên hệ giao dịch. Người Trái Đất nháo nhào mua bán, mặc cả, tranh chấp, chốt kèo trên mảnh đất ngay từ đầu đã không thuộc về họ. Người Sao Hỏa, vốn xa lạ với văn minh loài người, quá đỗi ngạc nhiên trước cảnh tượng những biển báo mọc lên hàng loạt trên hành tinhmình. Người Sao Hỏa cho rằng đây làthông điệp gì đó từNgười Trái Đất. Các nhà ngôn ngữ học lỗi lạc, tiến sĩ biểu tượng, giáo sư vũ trụ tổ chức nhiều buổi thảo luận sôi nổi, hàng loạt đề án nghiên cứu được hình thành và phát triển để tìm hiểu về những dị vật này. MộtNgười Sao Hỏa đưa ra lý thuyết so sánh hiện tượng này với hiện tượng tạm gọi là “Vòng tròn đồng ruộng” (Crop Circles) mà loài của họ đã để lại trên Trái Đất mấy thập kỷ trước, nhằm gửi thông điệp “Hòa bình trên toàn vũ trụ” đến loài người. Người Sao Hỏa này khẳng địnhNgười Trái Đấtđang gửi đến họthông điệp tương tự. Ý kiến này được số đông ủng hộ.</p>
+    <p>Một ngày, dự án di cư loài người lên sao Hỏa của NASA thành công. Các nhà môi giới bất động sản đánh hơi được cơn sốt đất sao Hỏa đã nhanh chóng cài cắm hàng loạt biển báo định giá đất, kèm số điện thoại liên hệ giao dịch.
+      <br>Người Trái Đất nháo nhào mua bán, mặc cả, tranh chấp, chốt kèo trên mảnh đất ngay từ đầu đã không thuộc về họ.
+      <br>Người Sao Hỏa, vốn xa lạ với văn minh loài người, quá đỗi ngạc nhiên trước cảnh tượng những biển báo mọc lên hàng loạt trên hành tinh mình. Người Sao Hỏa cho rằng đây là thông điệp gì đó từ Người Trái Đất.
+      Các nhà ngôn ngữ học lỗi lạc, tiến sĩ biểu tượng, giáo sư vũ trụ tổ chức nhiều buổi thảo luận sôi nổi, hàng loạt đề án nghiên cứu được hình thành và phát triển để tìm hiểu về những dị vật này.
+      <br>Một Người Sao Hỏa đưa ra lý thuyết so sánh hiện tượng này với hiện tượng tạm gọi là “Vòng tròn đồng ruộng” (Crop Circles) mà loài của họ đã để lại trên Trái Đất mấy thập kỷ trước, nhằm gửi thông điệp “Hòa bình trên toàn vũ trụ” đến loài người.
+      <br>Người Sao Hỏa này khẳng định Người Trái Đất đang gửi đến họ thông điệp tương tự.
+      <br>Ý kiến này được số đông ủng hộ.</p>
 
     <br>
 
-    <p>Đó là bối cảnh cho dự án “NoLand Man” (Người Không Đất) của tay máy Nguyễn Đình Phong.</p>
+    <p>Đó là bối cảnh cho dự án “No Land Man” (Người Không Đất) của tay máy Nguyễn Đình Phong.</p>
 
     <img src="https://bizweb.dktcdn.net/100/453/502/files/phong-2.jpg?v=1672639985137" style="width: 100%;" alt="" />
 
@@ -977,11 +658,12 @@ prevent flex layout interference */
 
     <br>
 
-    <p>Câu chuyện vũ trụ kia là những gì người viết cảm thấy khi xem loạt ảnh của Phong:cứ như mình là người hành tinh khác, nhìn thấy một loạt biểu tượng xa lạ bỗng dưng mọc lên trên những miếngđất tổ tiên mình, và tìm cách cắt nghĩa.</p>
+    <p>Câu chuyện vũ trụ kia là những gì người viết cảm thấy khi xem loạt ảnh của Phong: cứ như mình là người hành tinh khác, nhìn thấy một loạt biểu tượng xa lạ bỗng dưng mọc lên trên những miếng đất tổ tiên mình, và tìm cách cắt nghĩa.</p>
 
     <img src="https://bizweb.dktcdn.net/100/453/502/files/phong-8.png?v=1672641162067" style="width: 100%;" alt="" />
 
-    <p>Còn nhìn theo mắt của Người Trái Đất, thì những dị vật chắn trước phong cảnh rất đẹp kia tựa như tấm canvas trống mà một người họa sĩ bày ra chưa vẽ. Như người họa sĩ khao khát sở hữu cảnh đẹp trước mắt bằng cách biến nó thành tranh vẽ của mình, Đình Phong hẳn cũng khao khát sở hữu phong cảnh đó (thực dụng hơn là miếng đất đó) bằng thực hành nhiếp ảnh của mình.</p>
+    <p>Còn nhìn theo mắt của Người Trái Đất, thì những dị vật chắn trước phong cảnh rất đẹp kia tựa như tấm canvas trống mà một người họa sĩ bày ra chưa vẽ.
+      <br>Như người họa sĩ khao khát sở hữu cảnh đẹp trước mắt bằng cách biến nó thành tranh vẽ của mình, Đình Phong hẳn cũng khao khát sở hữu phong cảnh đó (thực dụng hơn là miếng đất đó) bằng thực hành nhiếp ảnh của mình.</p>
 
     <br>
 
@@ -1001,11 +683,13 @@ prevent flex layout interference */
     <br>
   </section>
 
+  <!-- Mennonites -->
   <section class="intro" id="mennonites" style="text-align: right;">
+     <div class="photo-frame">
     <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1738.jpg?v=1661692439548" style="margin-left: auto;">
-    <br>
-    <p>Her fingers are hummingbirds among meagre flowers that the earth is attempting to strangle with its dry gloves on.
-      <br>But I know, to her the flowers are so numerous and of so many colours and hues that she sees in them everything they want her to see.
+    <div class="caption">
+    <p>Her fingers are hummingbirds among meagre flowers that the earth<br>is attempting to strangle with its dry gloves on.
+      <br>But I know, to her the flowers are so numerous<br>and of so many colours and hues<br>that she sees in them everything they want her to see.
     </p>
     <hr>
     <button onclick="closeAllSections()">
@@ -1014,7 +698,8 @@ prevent flex layout interference */
     <button onclick="openSection('moremennonites');">
       <p>read</p>
     </button>
-  </section>
+       </div></div>
+    </section>
 
   <section id="moremennonites" class="book-scroll" style="display:none;">
 
@@ -1023,17 +708,19 @@ prevent flex layout interference */
     </button>
     <hr>
 
-    <h2>The Mennonites - Larry Towell</h2><br>
+ <time>August 28, 2022</time><h2>The Mennonites - Larry Towell</h2>
+    
     <div style="display: flex; gap: 2rem; align-items: flex-end">
-      <div style="flex: 0 0 80%">
-        <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1644-ff45511b-6ead-464c-951b-3b60ba27fd41.jpg?v=1661691039000" style="width: 50%;" alt=""><br>
-        <p>Để trả lời cho câu hỏi về sự lựa chọn màu đen trắng cho phim điện ảnh giành giải thưởng lớn nhất tại liên hoan phim Đài Bắc lần thứ 19 - The Great Buddha +, đạo diễn Huang Hsin-yao nói: “Phim đen trắng không chỉ vẽ nên một bức tranh chân thực mà còn gợi lên sự tương phản với chủ đề hiện thực của bộ phim. Nếu chúng tôi làm phim màu, điều đó sẽ tước đi góc nhìn về không gian của khán giả.”</p>
+      <div style="flex: 0 0 40%">
         <br>
+        <p>Để trả lời cho câu hỏi về sự lựa chọn màu đen trắng cho phim điện ảnh giành giải thưởng lớn nhất tại liên hoan phim Đài Bắc lần thứ 19 - The Great Buddha +, đạo diễn Huang Hsin-yao nói: “Phim đen trắng không chỉ vẽ nên một bức tranh chân thực mà còn gợi lên sự tương phản với chủ đề hiện thực của bộ phim. Nếu chúng tôi làm phim màu, điều đó sẽ tước đi góc nhìn về không gian của khán giả.”</p>
         <p>Còn đạo diễn đạt giải Oscar Alfonso Cuarón nói về màu phim Roma: “Tôi không muốn quay phim đen trắng hoài cổ. Tôi không muốn bộ phim trông như những năm 50 hay 60. Tôi muốn bộ phim trông như năm 2018. Nhưng màu đen trắng. Một thứ ngôn ngữ khác.”</p>
         <br>
-        <p>Đó chính xác là những gì mình nghĩ về khi xem dự án ảnh The Mennonites của Larry Towell.</p>
+        <p>Đó chính xác là những gì mình nghĩ về khi xem dự án ảnh The Mennonites của Larry Towell.</p>  
       </div>
-      <div style="flex: 0 0 10%"></div>
+        <div style="flex: 0 0 40%">
+          <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/medi1644-ff45511b-6ead-464c-951b-3b60ba27fd41.jpg?v=1661691039000" style="width: 100%; margin-top:  0; margin-bottom: 0;;" alt="">
+      </div>
     </div>
 
     <div>
@@ -1096,23 +783,646 @@ prevent flex layout interference */
     </div><br>
 
   </section>
+  
+<!-- Salgado -->
+  <section class="intro" id="salgado" style="text-align: right;">
+     <div class="photo-frame">
+    <img src="https://bizweb.dktcdn.net/100/453/502/files/img-2059.jpg?v=1659885925559" style="margin-left: auto;">
+    <div class="caption">
+    <p>Người ta liên tục nhận xét rằng Salgado bằng cách nào đó đã nắm bắt được phẩm giá của các đối tượng của mình, ngay cả trong những khoảnh khắc dễ tổn thương của họ.
+    </p>
+    <hr>
+    <button onclick="closeAllSections()">
+      <p>close</p>
+    </button>
+    <button onclick="openSection('moresalgado');">
+      <p>read</p>
+    </button>
+       </div></div></section>
+
+  <section id="moresalgado" class="book-scroll" style="display:none;">
+
+    <button class="close-btn" onclick="closeSection('moresalgado')">
+      <p>close</p>
+    </button>
+    <hr>
+
+ <time>August 07, 2022</time><h2>Gold – Sebastião Salgado</h2>
+    <br>
+    <div style="display: flex; gap: 2rem; align-items: flex-end">
+      <div style="flex: 0 0 40%">
+        
+        <p>Vào đầu những năm 1980, nhiếp ảnh Sebastião Salgado đến mỏ vàng Serra Pelada, Brazil, cách cửa sông Amazon khoảng 430 km về phía nam, nơi đang diễn ra một cuộc đua đào vàng lớn nhất trong lịch sử hiện đại.</p>
+        <p>Bị thúc đẩy bởi ước mơ làm giàu nhanh chóng, hàng chục nghìn thợ mỏ đã tràn xuống công trường như đàn kiến trong cái hố lộ thiên rộng lớn khoét sâu vào cảnh quan.</p>
+        
+      </div>
+      <div style="flex: 0 0 40%"><p>Salgado đã chụp một số bức ảnh ám ảnh về những người lao động ở đó, làm nổi bật những điều kiện nguy hiểm mà họ làm việc cũng như sự điên cuồng và hỗn loạn tuyệt đối của hoạt động này.</p>
+        <p>Xin trích dịch bài viết của Neil Burgess trên British Journal of Photography magazine về dự án nhiếp ảnh này.</p></div>
+    </div>
+
+    <div>
+      <hr>
+      
+      <p>Có một cái gì đó gần như nguyên thủy về hành động tìm kiếm kho báu bị chôn vùi. Và có lẽ nó chính xác là như thế; những gì bộ ảnh này kích thích trong chúng ta.</p>
+      <br>
+      <p>Salgado gọi cho tôi vào tháng 10; ông vừa trở về từ Brazil, nơi ông đã chụp ảnh một mỏ vàng được gọi là Serra Pelada, tin tưởng rằng mình đã chụp được bộ ảnh tốt về câu chuyện đầu tiên cho dự án Workers.</p>
+      <br>
+      <p>Câu chuyện là mẫu mực cho luận điểm của Salgado: rằng công việc lao động chân tay, thứ xác định giai cấp vô sản – khả năng bán sức lao động của mình – sắp kết thúc, và sẽ sớm bị thay thế bởi cơ giới hóa và máy tính hóa. Ngay sau chuyến thăm của ông, 50.000 nhân công đào vàng bằng cuốc và thuổng đã bị thay thế bằng các kỹ thuật khai thác cơ khí hiện đại. Bây giờ nhìn lại, chúng ta có thể nhận ra những bất ổn chính trị xã hội xuất hiện từ cái mà người ta gọi là “cộng đồng hậu công nghiệp”.</p>
+      <br>
+      <img src="https://bizweb.dktcdn.net/100/453/502/files/img-2073.jpg?v=1659886183114" style="width: 100%;" alt="">
+      <br>
+      <p>Rất nhiều lần sau khi cuốn sách Serra Pelada được xuất bản, tôi nghe thấy những từ và cụm từ tương tự để mô tả nó: “kinh thánh”, “chất điện ảnh của Cecil B DeMille”, hoặc “chắc hẳn quá trình xây dựng các Kim Tự Tháp vĩ đại trông giống như thế này”.</p>
+      <br>
+      <p>Sự thể hiện quy mô cảnh quan của Salgado là điều mà có lẽ chúng ta đã từng trải qua trong các bức ảnh khổ lớn của Ansel Adams về Công viên Quốc gia Yosemite, nhưng ở đây, bức tranh hoành tráng được truyền tải qua máy ảnh cầm tay 35mm của một nhà báo.</p>
+      <br>
+      <p>Tôi không đủ tư cách để nói về những tiến bộ trong quang học, hay sự phát triển của hóa phim, hay phương pháp xử lý phim của Salgado, nhưng tôi, cũng như tất cả chúng ta nhìn Serra Pelada, đều cảm thấy kinh ngạc trước cảm giác về quy mô mà Salgado đã nắm bắt được, trong các hình ảnh riêng lẻ và tích lũy.</p>
+      
+      <hr>
+      
+      <p>Ông đã ghi lại những hình ảnh giữa bạo lực và nguy hiểm, những hình ảnh khác trong khoảnh khắc nhạy cảm của tĩnh lặng và suy tư. </p>
+      <p>Đó là một tác phẩm tự sự lãng mạn gắn kết với tính tức thời của nó, nhưng không hề giảm bớt tình cảm. Thật là đáng kinh ngạc, một thiên sử thi dưới hình thức nhiếp ảnh.</p>
+      <br>
+      <p>Người ta liên tục nhận xét rằng Salgado bằng cách nào đó đã nắm bắt được phẩm giá của các đối tượng của mình, ngay cả trong những khoảnh khắc dễ tổn thương của họ.</p>
+      <p>Điều này cũng có thể được đẩy mạnh bởi ảnh đen trắng được ông chọn làm thủ pháp, nhưng nó còn liên quan nhiều hơn đến hai phẩm chất khác mà Salgado có, đó là sự kiên nhẫn và ham học hỏi.</p>
+      <br>
+      <p>Chính hàng tuần chứ không phải hàng giờ ở Serra Pelada đã cho phép Salgado đi xuống dưới bề mặt, vượt ra khỏi bề ngoài, và kết nối chúng ta với ý tưởng về lao động, phẩm giá và sự xuống cấp của nó.</p>
+      <br>
+      <img src="https://bizweb.dktcdn.net/100/453/502/files/img-2070.jpg?v=1659886229678" style="width: 100%;" alt="">
+      <br>
+      <p>Đồng minh với sự kiên nhẫn này là sự tò mò sâu sắc về con người và đồ vật, cũng như về cách thế giới vận hành.</p>
+      <p>Nghề nhiếp ảnh cung cấp giấy phép để nhìn và để ghi lại. Rất thường xuyên, chúng ta thấy những bức ảnh nhìn thẳng vào nơi mà nếu ở đó, hầu hết chúng ta sẽ nhìn đi chỗ khác – khỏi người mẹ đau buồn, thảm họa, hành động bạo lực hoặc thậm chí là điều gì đó đơn giản như sự xấu hổ của người khác. </p>
+      <p>Chúng ta không muốn xâm phạm, hoặc không thể chịu đựng khi chứng kiến ​​nỗi đau, hoặc sợ rằng sự tức giận sẽ đổ dồn vào mình. Các nhiếp ảnh gia chịu trách nhiệm đó thay chúng ta, đôi khi trả giá cho chúng ta. Và cảm ơn trời đất họ đã làm vậy.</p>
+      <br>
+      <p>Salgado có một niềm đam mê sâu sắc với chủ đề của mình, với con người và cách họ tìm cách tồn tại, và tâm trí của ông là để nhìn thẳng và không quay đi, để tiếp tục nhìn và sắp xếp các đối tượng trước máy ảnh thành các đường khối làm rõ ý nghĩa mà ông nghiệm ra, câu chuyện mà ông muốn truyền tải.</p>
+      <br>
+      <p><strong>Neil Burgess</strong></p>
+      <hr>
+ 
+    </div><br>
+
+  </section>
+  
+<!-- Hold Still, Keep Going – Robert Frank -->
+  <section class="intro" id="robertfrank" style="text-align: right;">
+     <div class="photo-frame">
+    <img src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9261.jpg?v=1698213971600" style="margin-left: auto;">
+    <div class="caption">
+    <p>...phác thảo phần nào bức chân dung phức tạp của “nhân vật Robert Frank”</p>
+    <p>– người nghệ sĩ dùng tác phẩm của mình để tuyên bố, để đặt câu hỏi,</p>
+    <p>và để thách thức những giả định của chúng ta về cái gọi là hiện thực.</p>
+    <hr>
+    <button onclick="closeAllSections()">
+      <p>close</p>
+    </button>
+    <button onclick="openSection('morerobertfrank');">
+      <p>read</p>
+    </button>
+       </div> </div> </section>
+
+  <section id="morerobertfrank" class="book-scroll" style="display:none;">
+
+    <button class="close-btn" onclick="closeSection('morerobertfrank')">
+      <p>close</p>
+    </button>
+    <hr>
+
+ <time>October 25, 2022</time><h2>Hold Still, Keep Going – Robert Frank</h2>
+    <br>
+    <div style="display: flex; gap: 2rem; align-items: flex-end">
+      <div style="flex: 0 0 40%">
+        
+        <p>Robert Frank (1924-2019) không chỉ được xếp vào hàng những nhiếp ảnh gia quan trọng nhất mà còn được nhìn nhận như một trong những nhân vật đặt nền móng cho sự phát triển của điện ảnh thử nghiệm cuối thập niên 1950.</p>
+        
+        
+      </div>
+      <div style="flex: 0 0 40%"><p>Tính liên tục và nhất quán trong nhiếp ảnh và phim ảnh của Frank hầu như chưa được nói đến đủ nhiều. Hold still, keep going là sách ảnh hé lộ chính điều này.</p>
+        </div>
+    </div>
+
+    <div>
+      <hr>
+      
+      <p>Tập hợp ảnh khám phá sự tương tác giữa ảnh tĩnh và ảnh động trong tác phẩm của Frank, đồng thời phân tích thẩm mỹ cốt lõi đã định hướng công việc của ông xuyên suốt các phương tiện sáng tạo.</p>
+      <br>
+      <p>Cuốn sách quan sát mối liên hệ giữa các tác phẩm đa phương tiện của Frank: từ những bức ảnh đơn được ông chụp trong khoảng đầu sự nghiệp, đến các cuộn phim 35mm, phim, video và các montage hình ảnh-chữ viết. Sách thể hiện cách tiếp cận đa nguyên của Frank trong sáng tạo nghệ thuật.</p>
+      <br>
+      <p>Cuốn nhật ký hình ảnh này thách thức phương pháp tường thuật tuyến tính và khả năng của nhiếp ảnh trong vai trò truyền tải “sự thật”.</p>
+      <hr>
+    <div class="slideshow-container">
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9261.jpg?v=1698213971600" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9223.jpg?v=1698213947160" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9226.jpg?v=1698213948283" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9228.jpg?v=1698213949694" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9230.jpg?v=1698213951119" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9239.jpg?v=1698213952460" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9242.jpg?v=1698213953680" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9244.jpg?v=1698213955068" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9246.jpg?v=1698213956015" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9247.jpg?v=1698213957411" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9248.jpg?v=1698213958390" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9250.jpg?v=1698213959339" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9251.jpg?v=1698213960742" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9253.jpg?v=1698213963402" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9255.jpg?v=1698213964638" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9256.jpg?v=1698213966041" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9257.jpg?v=1698213967449" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9258.jpg?v=1698213968706" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9259.jpg?v=1698213970197" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9261.jpg?v=1698213971600" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9262.jpg?v=1698213972948" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9263.jpg?v=1698213974264" alt="" />
+        <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9265.jpg?v=1698213975385" alt="" />
+      </div>
+ </div>
+    <br>
+
+  </section>
+
+<!-- Henry James -->
+  <section class="intro" id="henryjames" style="text-align: right;">
+     <div class="photo-frame">
+    <img src="https://www.phillipscollection.org/sites/default/files/collection/2008.012.0003a.jpg" style="margin-left: auto;">
+    <div class="caption">
+    <p>Mọi thứ đều ở đây, mọi thứ đã đến đây;</p>
+    <p>sự ngộ ra, sự bất động, sự xa lạ,<br>lòng trắc ẩn và sự thiêng liêng và nỗi kinh hoàng,</p>
+    <p>niềm đam mê nghẹt thở<br>và sự giải thoát thần thánh của nước mắt.</p>
+    <hr>
+    <button onclick="closeAllSections()">
+      <p>close</p>
+    </button>
+    <button onclick="openSection('morehenryjames');">
+      <p>read</p>
+    </button>
+       </div></div></section>
+
+  <section id="morehenryjames" class="book-scroll" style="display:none;">
+
+    <button class="close-btn" onclick="closeSection('morehenryjames')">
+      <p>close</p>
+    </button>
+    <hr>
+
+ <time>November 11, 2023</time><h2>Thứ quý giá nhất: James về cái chết</h2>
+    <br>
+    <div style="display: flex; gap: 2rem; align-items: flex-end">
+      <div style="flex: 0 0 40%">
+        
+        <p>Trích dịch tiểu luận</p>
+        <a href="https://www.jstor.org/stable/26280390"><p><strong>THE MOST VALUABLE THING: JAMES ON DEATH</strong></p></a>
+        
+        
+      </div>
+      <div style="flex: 0 0 40%"><p><em>(Mildred Hartsock, tạp chí Modern Fiction Studies, The John Hopkins University Press, Vol. 22, No.4, 1976-77)</em></p>
+        </div>
+    </div>
+
+    <div>
+      <hr>
+      
+      <p>Đối với Henry James, việc sống cuộc sống với đầy đủ ý thức là một giá trị tối thượng. Khi nói về ông, các nhà phê bình đã nhắc nhiều đến những khái niệm “phép thử tội của ý thức”, “giáo phái ý thức”, “ý niệm về ý thức” (1). Chính James đã từng tự hỏi, “…đạo đức có là gì khác ngoài biểu hiệu của trí tuệ vượt trội?” (The Golden Bowl, New York: Charles Scribner’s Sons, 1905), và những nhân vật của ông, như Lambert Strether hay Maggie Verner, đã có được nhận thức sáng tạo, hay như John Marcher và Merton Densher, đạt được điều đó khi đã muộn. Nhưng, bất chấp việc chủ đề này được nhìn nhận rộng rãi trong các tác phẩm của Henry James, trên phương diện triết học, ông vẫn gặp phải nhiều ý kiến bất đồng. Không ai đòi hỏi rằng một tiểu thuyết gia phải là một triết gia; và trong phần lời tựa của The Portrait of a Lady, James cũng đã gạt bỏ nhận định của các nhà luân lý học và các nhà truyền giáo khi ông cho rằng: yêu cầu đạo đức duy nhất của tác phẩm hư cấu là thể hiện “lượng cuộc sống cảm nhận được khi tạo ra tác phẩm.” Nhưng không trong bất kỳ nghĩa nào, các tuyên bố của ông phủ nhận sự thật: tiền giả định của một tiểu thuyết gia về cuộc sống và cái chết sẽ ảnh hưởng đến cách mà anh ta truyền tải “cuộc sống cảm nhận được”.</p>
+      <hr>
+      <p>Có những người cho rằng Henry James không có khuynh hướng triết học cụ thể. Martha Banta gọi ông là người theo chủ nghĩa chiết trung tối thượng và rằng ông áp dụng bất kỳ tư tưởng nào, miễn là nó hiệu quả (2). Ralph Barton Perry, người viết tiểu sử về William James, kết luận rằng Henry ngây thơ về mặt triết học… (3)</p>
+      <br>
+      <p>Robert Reilly, đặt sự chú ý vào mối quan hệ đạo đức của nhà văn với ông anh trai William James, miêu tả “kiểu nhân vật trung tâm điển hình của James” như là “người theo triết lý Emerson tồn tại trong một đức tin phi trí tuệ – trạng thái mở đường cho những hành động đạo đức độc đáo.” Kiểu nhân vật trung tâm này, Reilly tiếp, “không có kết nối nào với luật lệ, mà chỉ với thánh thần” (4). Với Yvor Winters, James chịu tư tưởng truyền thống theo “nề nếp lâu đời của các nhà thờ La Mã, Công giáo Anh và nhà thờ thần học Calvin”; nhưng ý thức đạo đức của ông, Winters kết luận, “rốt cuộc bị phá hủy bởi triết lý ‘phản đạo đức’ của Emerson.” (5)</p>
+      <br>
+      <p>Rõ ràng, Henry James không thể đồng thời tiếp nhận tất cả những quan điểm triết học này, cũng chưa ai đưa ra bằng chứng nào về quá trình tiến triển hay thay đổi từ triết lý này sang triết lý khác của James. Vì vậy, nếu có một cách để đánh giá mối tương quan giữa những ý kiến trên thì nó nên được khám phá thêm. Dù là ở trường phái triết học nào, cốt lõi của mọi triết lý là câu trả lời cho vấn đề ngoan cố nhất và không thể trốn tránh của loài người – cái chết. Tìm hiểu cách nhìn nhận của James về cái chết và cách nó được miêu tả trong các tác phẩm của ông, vì vậy, có thể thách thức một số nhận định kể trên và có thể cung cấp manh mối để tiếp cận – dù chỉ phần nào – thế giới quan của Henry James.</p>
+      <hr>
+      <p>Tuyên bố và quan niệm của James về cái chết thường được biết đến qua những lá thư, ghi chép và các bài tiểu luận văn xuôi; nhưng chúng cần được khảo sát về khuôn mẫu và tính nhất quán.</p>
+      <br>
+      <p>Thư từ của James tiết lộ cú sốc dai dẳng trước sự “chấm dứt” (termination) của con người và thái độ kiên quyết không chấp nhận cái mà Wallace Stevens gọi là “niềm an ủi bóng bẩy” (“sleek ensolacings” – xuất hiện trong bài thơ Esthétique Du Mal, Wallace Stevens, trong tập Collected Poems, 1954). Ngay cả những người theo thuyết tuyệt đối, tất nhiên, cũng cảm nhận và bày tỏ nỗi đau – cả những người theo thuyết duy tâm cũng như những người được nâng đỡ bởi niềm tin thần học. Nhưng, ngôn ngữ của James bộc lộ nhiều hơn là nỗi buồn cá nhân. “Tuyệt chủng” là từ thường được sử dụng để nói về số phận của những người thân đã khuất. Sau cái chết của William năm 1910, Henry viết cho Edith Wharton rằng ông ngồi đó “đắm chìm trong bóng tối” vì “sự vắng mặt bất khả vãn hồi của người anh yêu quý”. Ông viết thêm rằng mối quan hệ với William, tình cảm ông dành cho người anh và “phương diện khác biệt mà sự tuyệt chủng của anh ấy mang lại cho cuộc đời tôi là không thể thốt nên lời…”. Trong một lá thư gửi cho Edward Marsh, ông nói về cái chết của Ruppert Brooke: “Điều này thật quá khủng khiếp và đau lòng. Nếu còn bất kỳ biến dạng ngu ngốc, ghê tởm của cuộc sống và sự sỉ nhục cái đẹp nào mà thời cuộc khủng khiếp của chúng ta [Cuộc Chiến] có thể xuyên phá, thì giờ đây chúng đã đạt đến đỉnh cao tối thượng, và không một đòn đánh nào vào bi kịch cá nhân còn có thể tàn bạo hơn trong việc phủ đầy ánh nhìn ta bằng nước mắt.” Ông coi cái chết của Brooke như là “sự tuyệt chủng ngu xuẩn của hỡi ôi một khí cụ vô cùng tinh tế, hỡi ôi một sự tồn tại vô cùng tinh tế.” Trong một lá thư đau buồn khác về cái chết của Brooke, ông đòi hỏi rằng cái chết phải được đối mặt mà không lảng tránh. Ông khuyên: “…mọi sự thôi thúc dẫn tôi đến điều tôi nói với bạn [Edward Marsh] đây, hãy nâng niu nỗi đau và nếm trọn vị cay đắng với tất cả những gì chúng ‘đáng được hưởng’ – để biết, đến mức cùng tận, việc đã xảy đến với bạn, và để không lỡ mất bất kỳ khía cạnh nào, dù khó khăn đến đâu, mà nó tác động đến ta”.</p>
+      <br>
+      <p>Cái chết của mẹ vào năm 1882 là một trải nghiệm vô cùng phiền muộn với Henry James. Nó gợi lên một trong những phát biểu hiếm hoi của ông về cuộc sống sau cái chết:</p>
+      <br>
+      <p><em>“Cái chết của bà đã đem đến cho tôi niềm tin mãnh liệt vào những điều siêu việt nhất định – nội tại của sinh vật được tạo tác cao quý như bà – sự bất tử của đức hạnh đẹp nhường vậy – sự đoàn tụ của linh hồn ở một trạng huống tốt hơn thế này. Hôm nay, bà không trở thành một vị thiên thần nào khác hơn là vị thiên thần bà vẫn đã từng; nhưng tôi không tin được rằng, do tai ương là cái chết, mọi nỗi dịu dàng khó hòng diễn tả của bà bị tước đi chính bởi những tồn tại mà bà hằng yêu quý. Bà ở với chúng ta, bà thuộc về chúng ta-sự bất động vĩnh hằng chỉ là một dạng hình của tình yêu bà.”</em></p>
+      <br>
+      <p>Tuy nhiên, ngay cả ở đây, “điều siêu việt” dường như là sự tồn tại vĩnh hằng của ký ức về bà mẹ trong đời sống. Và trong cùng bức thư, ông cũng dùng từ “tuyệt chủng”. Sau cái chết của người cha, Henry bày tỏ với William: “Khi em nhìn vào biểu lộ cuối cùng này của biết bao năm chung sống trần thế, thật khó tin rằng họ [cha mẹ] lại không thể đoàn tụ lần nữa trong bất kỳ ý thức nào của em về đức tin.” (6)</p>
+      <br>
+      <p>Cuối đời, khi Henry thăm mộ gia đình ở nghĩa trang Mt. Auburn, không hề có lời nào về sự đoàn tụ cuối cùng ở một cõi “bên ngoài” với những người thân đã mất: chỉ có quyết tâm được biết và một lần nữa nếm trải ý nghĩa của những người chết này đối với cuộc sống của ông. Ông cảm thấy “không đến đây hẳn sẽ là một điều khốn khổ, thật khủng khiếp nếu giả như bị lỡ mất… Mọi thứ đều ở đây, mọi thứ đã đến đây; sự ngộ ra, sự bất động, sự xa lạ, lòng trắc ẩn và sự thiêng liêng và nỗi kinh hoàng, niềm đam mê nghẹt thở và sự giải thoát thần thánh của nước mắt.” Ông đứng đó đối mặt với “nỗi xót thương và bi kịch” của tất cả những gì trong quá khứ.</p>
+      <br>
+      <p>Nếu không còn bằng chứng nào khác để xem xét ngoài những gì đã được trích dẫn, thì có thể thấy rõ khoảng cách lớn giữa Henry James và Emerson, hoặc Whitman, hoặc bất kỳ một nhân vật theo trường phái lãng mạn nào khác. Khó mà tưởng tượng được James có thể kết thúc bài điếu ca cho con trai với giọng điệu an ủi rằng cậu bé “Lạc mất trong Chúa, được tìm thấy trong Thiên Chúa.” (7) Người ta cũng không thể tưởng tượng được James tìm thấy điều gì ngoài sự vớ vẩn trong lời khẳng định của Whitman: “Có ai cho rằng thật may mắn khi được sinh ra? Tôi sẽ vội vàng cho anh, hoặc cô ấy hay rằng, chết đi cũng là may mắn nhường vậy, và điều đó thì tôi biết rõ.” (8)</p>
+      <br>
+      <p>James không biết điều đó. Đối với ông, cái chết là con Quái vật trong Rừng, và ông gần gũi với thời đại của chúng ta hơn là với truyền thống của chủ nghĩa lãng mạn.</p>
+      <hr>
+      <p>Bằng chứng trực tiếp hơn được tìm thấy trong nhiều lá thư khác, và trong bài luận về sự bất tử của ông, được in trong tuyển tập “In After Days, Thoughts on the Future Life”, do Howells biên soạn.</p>
+      <br>
+      <p>Trong một lá thư gửi cho William về di cảo văn chương của người cha Henry James, Sr. mà anh ông cho in trước đó, Henry tách mình ra khỏi bất kỳ siêu nghiệm tuyệt đối nào:</p>
+      <br>
+      <p><em>“Em chợt nhận ra khi đọc chúng [di cảo của cha] rằng toàn bộ hệ thống của ông độc đáo và cá nhân đến chừng nào, và chúng là công trình tối yếu mà những ai đi theo tôn giáo nên để tâm. Bản thân em thì không thể nắm bắt được (nhiều). Em không nghiêng về thần học cũng không chấp nhận được những tiền đề phi thường của ông, không thể ném mình vào những quan niệm về thiên đường và địa ngục, và cũng không cam đoan được rằng nhân loại là chủ đề trung tâm của tự nhiên. …”</em></p>
+      <br>
+      <p>Cân nhắc nghiêm túc của ông về vấn đề này cũng được tìm thấy trong bức thư ông gửi cho chị dâu để cảm ơn bản sao của “bài giảng ‘Immortality’ anh William gửi tặng… mà tôi đã đọc với đánh giá cao về nghệ thuật và về mối quan tâm đến chủ đề này. Tôi cho rằng, một cách có ý thức, tôi không thuộc về đối tượng nào trong hai đối tượng mà bài giảng chủ định xoa dịu – ý tôi là, những người hoài mong, hay những kẻ phản đối. Thử thách khó khăn không phải là thứ ngăn cản tôi đứng vào vị trí của những người hoài mong – mà đúng hơn, chính là sự thiếu vắng một giá trị thống nhất”.</p>
+      <br>
+      <p>Bài luận viết cho Howells “Is There a Life After Death?” (9) đưa ra nhận định rõ ràng và đầy đủ nhất của James về cái chết và cái theo sau nó. Động lực chủ đạo của luận văn là lời khẳng định giá trị cuộc sống và bày tỏ thái độ thiếu nhẫn nại của ông với những người “đã chết” trước khi họ thật sự “chết”. Tỏ ra hờ hững với chất vấn về sự bất tử, James viết, nó “thấp hơn đặc quyền của con người”; và cho những ai dửng dưng với tồn tại của mình, James đặt câu hỏi “có thể phân biệt được họ là ‘người đang sống’ không? Kể cả trước hay sau cái chết”. Ross Labrie cho rằng ý của James là “ta phải tự mình kiếm được “cõi bên kia” bằng việc đẩy cao hơn nữa mức độ nhận thức của mình trong đời sống này.” Ross Labrie tiếp, một “tinh hoa bất tử” sẽ thừa hưởng cuộc sống sau cái chết theo cách tương tự như “quan niệm của người Thanh giáo Mỹ, Jonathan Edward là ví dụ”.</p>
+      <br>
+      <p>Có thể khẳng định rằng James chẳng hề có ý đó, Henry đơn giản là chộp lấy cơ hội để khiển trách những người do mải lo nghĩ về sự sống còn mà để lỡ mất cuộc đời họ có. Sau lời quở trách này, ở phần trung tâm của luận văn, James đưa ra bằng chứng xác tín hơn cho khẳng định cái chết là sự “chấm dứt”:</p>
+      <br>
+      <p><em>“không cách viết nào có thể bộc lộ nhân phẩm của thế giới rõ hơn là viết về nó trong sự hữu hạn, bấp bênh và khó hòng tiếp cận. Mọi sự xấu xí, thô thiển, ngu si, tàn ác, cái bình diện mênh mông mà thế giới này đóng vai trò là biên sử của bạo tàn và thô tục, sự vắng mặt quá đỗi dễ dàng nhường vậy của ý thức… những thứ này in sâu vào chúng ta rằng là, để có một nhân phẩm, chẳng cần thiết phải tạo ra một giả định nào khác ngoài những giả định mà thể giới hỗn tạp vô ngần này thừa mứa khả năng cung cấp.”</em></p>
+      <br>
+      <p>Giọng điệu bác bỏ, ông cho rằng thuyết duy linh đang thịnh vượng ở thời đại mình là “hoàn toàn thiếu căn cứ”, James than thở:</p>
+      <br>
+      <p><em>“… ta bắt đầu bằng việc xót thương người chết, vì ngại đối diện với sự thờ ơ của mình với họ, rốt cuộc, ta kết thúc bằng việc xót thương chính mình, vì họ thờ ơ với ta trong màn bày tỏ cuối cùng. “Hẳn họ đã chết rồi” ta nói; “hẳn họ đã chết như ‘khoa học’ xác minh…”.</em></p>
+      <br>
+      <p>Đến tận đây, không một dấu hiệu nào về đức tin, dù là vào một vị thần Cơ Đốc hay vào bất kỳ ý niệm nào về sự thống nhất tinh thần trong vũ trụ có thể khiến cái chết trở thành một thứ gì đó khác hơn là một kết cục bạo tàn. Người đàn ông “cứng rắn” chỉ đơn giản là nghiền ngẫm về cái hư vô sẽ ngáp dài vào cuối đời mình.</p>
+      <hr>
+      <p>Nhưng James vẫn tiếp:</p>
+      <br>
+      <p><em>“Việc sống, hoặc cảm nhận sự tò mò tinh tế của mình về vũ trụ khiến ta mãi mãi được nuôi dưỡng, mãi mãi được tưởng thưởng—mặc dù không có được câu trả lời dứt khoát nào—nó trở thành điều tốt đẹp nhất mà tôi có thể nhận thức, tốt hơn gấp triệu lần so với việc không sống…”</em></p>
+      <br>
+      <p>Thư từ và tác phẩm của Henry James gợi ý rằng, mặc dù ông đã chọn, theo lý trí, chủ nghĩa thực dụng có cái kết mở khi nhìn nhận về cái chết, nhưng giọng điệu chủ đạo của ông, trên phương diện cảm xúc ở tầng sâu, lại nghiêng về quan điểm như trong bài luận về sự bất tử: “Đức tin hay niềm hy vọng của ta, ở một mức độ nào đó, có thể bảo hộ ta trước hiện thực… về cái chết mà ta thấy và lấy làm tiếc nuối, nhưng tất cả sẽ đổ sập trước tiếp diễn bền bỉ khó hòng chịu đựng của cái chết”.</p>
+      <br>
+      <p>Cái chết, xảy ra trong nhiều truyện và tiểu thuyết của Henry James, là một sự thật nghiệt ngã, và chính những khảo sát về cái chết sẽ khẳng định thêm giá trị kiên định nhất xuyên suốt tác phẩm của ông: giá trị của cuộc sống. Ông nói rõ điều đó trong một bức thư rất thường xuyên được trích dẫn, bức thư gửi cho Grace Norton: “Tôi không biết tại sao ta sống-món quà cuộc sống đến từ nguồn gốc nào hay để cho mục đích gì; nhưng tôi tin rằng ta có thể tiếp tục sống bởi một lẽ… cuộc sống là thứ quý giá nhất mà ta từng hiểu được, và có lẽ sẽ là một sai lầm lớn lao nếu ta đầu hàng khi vẫn còn chút gì đó sót lại trong chiếc cốc của mình.” </p>
+      <br>
+      <p>Tựu chung, trong các truyện ngắn và tiểu thuyết, cái chết được sử dụng cho một trong ba mục đích sau: 1) để chứng tỏ rằng cuộc sống phải được sống ở hiện tại mà không bị quá khứ đè lên nó cái gánh nặng của mình; 2) đánh thức những người đang sống mà như đã chết, những người mà ý thức của họ hầu như chẳng hoạt động gì nhiều hơn so với giả như họ đang nằm trong mộ; 3) quở trách, với gián tiếp nghệ thuật, những người vì tính truyền thống hoặc nỗi sợ hãi cuộc sống mà kìm hãm sự thoả mãn về đời tư của mình.</p>
+      <br>
+      <p>James luôn nhạy cảm với tiếng kêu nài của người chết với người sống; ông có cảm giác sâu sắc với một quá khứ mà ta “có thể viếng thăm”. George Stransom, trong “Ban thờ Người Chết“, bảo vệ nghi lễ thờ phụng người quá cố của mình: ”Đây nào phải sự cứu vớt đục mờ của thần học, cũng chẳng phải phần thưởng của một thế giới phù du; những linh hồn này được cứu theo cách không tôn giáo hay công ích nào có thể – họ được cứu cho thế giới ấm áp, cho sự tiếp nối, cho sự vững vàng của ký ức và sự tưởng niệm con người”. Nhưng rốt cuộc, mấu chốt của câu chuyện nằm ở chỗ: dù cho mối liên kết của người sống với người chết là không thể đoạn tuyệt và nó cũng khiến đời sống ta phong phú thêm thì cái chết cũng không được phép ngăn cản ta yêu và sống.</p>
+      <br>
+      <p>Nỗi đau của Stransom khi một người bạn làm hoen ố danh dự người vợ quá cố bằng việc tái hôn chính là mặt trái của tấm gương soi rọi cho điều mà sau này ông vỡ lẽ, rằng tình yêu ông dành cho người bạn đồng hành trong cuộc thờ phụng mới là thứ thực sự tôn vinh người chết, đơn giản bằng cách tôn vinh cuộc sống.</p>
+      <br>
+      <p>Đối với James, cái chết là Con Quái Vật trong Rừng, vì nó kết liễu mọi cơ hội để được biết, được cảm thấy, và được tạo tác. Con Quái Vật vồ lấy John Marcher chính là cái chết – cuộc vỡ lẽ bi thảm của ông trước nấm mồ của May Bartram, rằng cuộc đời có một hạn định, và cuộc sống, tự nó có thể là cái chết khi ta sống mà thiếu đi ý thức: “Anh phải gặp định mệnh của mình trong Thời Gian, vậy nên chính trong Thời Gian, định mệnh của anh sẽ hiện hình”. Cái chết, đối với May Bartram không phải là một bi kịch: “cô đã sống – bởi cô đã yêu anh”, cô đã biết tình yêu trong trọn vẹn ý thức. Chính Marcher, bất lực trong việc “xuyên thủng màn tối thẳm của cái chết”, mới là người phải đau đớn quăng mình vào nấm mồ cô trong khoảnh khắc vỡ lẽ muộn mằn.</p>
+      <hr>
+      <p>Thư từ, tiểu luận, truyện ngắn, tiểu thuyết cho thấy quan điểm của Henry James về cái chết là nhất quán. Cái chết là sự kết thúc. Cũng như anh trai mình, William, về mặt lý tính, ông cởi mở với ý tưởng rằng tương lai có thể mang lại hiểu biết mới để giải quyết vấn đề, nhưng về cảm tính, Henry cam đoan, rằng: cái chết là kẻ thù, là Con Quái Vật trong Rừng. Một cuộc đối mặt chân thành với nó có thể mang đến ý thức trọn vẹn hơn cho người đang sống; tạo ra một giáo phái cho cái chết – dù là cái chết của người thân yêu, hay cái chết của quá khứ hay một hệ giá trị – là cản trở việc đón nhận cuộc sống.</p>
+      <br>
+      <p>Quan điểm của James về cái chết và cuộc sống đặt ông ở một vị trí rất xa so với chủ nghĩa duy tâm triết học điển hình. Không chịu sự nâng đỡ của niềm tin siêu hình, thay vào đó, ông gần gũi hơn với đặc tính luôn chất vấn và đầy hoài nghi của thế kỷ XX. Dù sao đi nữa, niềm tin của Henry James vào giá trị cuộc sống là không hề suy suyển.</p>
+      <hr>
+      
+      <p>Chú thích:</p>
+      <p>(*) Bài gốc:<a href="https://www.jstor.org/stable/26280390">The most valuable thing: James on death – Mildred Hartsock</a></p>
+
+      <p>1) Dorothea Krook, “The Ordeal of Consciousness in Henry James” (Cambridge at the University Press, 1962); Martha Banta, <a href="https://archive.org/details/henryjamesoccult0000bant/page/n1/mode/2up">“Henry James and the Occult”</a> (Bloomington: Indiana University Press, 1972); Ross Labrie, “Henry James’s Idea of Consciousness” American Literature, 39 (01/1968), 516-529.</p>
+
+      <p>2) Martha Banta, “Henry James and the Occult” (Bloomington: Indiana University Press).</p>
+
+      <p>3) Ralph Barton Perry, The Thought and Character of William James (Boston, MA: Little, Brown and Co., 1935).</p>
+
+      <p>4) Robert J. Reilly, “Henry James and the Morality of Fiction,” American Literature, 39 (03/1967).</p>
+
+      <p>5) Yvor Winters, “In Defense of Reason” (Denver, CO: University of Denver Press, 1947), tr. 306.</p>
+
+      <p>6) “A letter to William”, trích dẫn bởi by Leon Edel trong “Henry James, The Middle Years” (Philadelphia, PA: J. B. Lippincott Co., 1962), trang 62.</p>
+
+      <p>(7) Brooks Atkinson, “The Writings of Ralph Waldo Emerson” (New York: The Modern Library, 1950), tr. 775-783.</p>
+
+      <p>(8) Gay Wilson Allen và Charles T. Davis, “Walt Whitman’s Poems” (New York: New York University Press, 1955), tr. 75.</p>
+
+      <p>(9) F. O. Matthiessen, “Is There a Life After Death? The James Family” (New York: Alfred A. Knopf, 1961). Bài luận xuất hiện lần đầu trong tuyển tập <a href="https://archive.org/embed/inafterdaysthoug00unse">“In After Days, Thoughts on the Future Life“</a>, do Howells biên soạn (New York: Harper & Brothers, 1910). Mọi trích dẫn khác liên quan đều nằm trong ấn phẩm này.</p>
+
+      
+ </div>
+    <br>
+
+  </section>
+
+<!-- ABBA...ZAPPA -->
+  <section class="intro" id="abbazappa" style="text-align: right;">
+     <div class="photo-frame">
+    <img src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F50f7e980-1712-46e4-bd9c-a7832576bcfc/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAABA-ZUVPmHQPltbtROX5kao5VF6uKE78Z4eVsN8hVOHc&exp=1762613080&osig=AAAAAAAAAAAAAAAAAAAAAHcCygvvlTUJ3XFtQ0ZgeBP1A-PTTGKoALp2F62JJ08L&signer=media-rpc&x-canva-quality=screen_2x" style="margin-left: auto;">
+    <div class="caption">
+    <p>Rất nhiều bức chân dung vui vẻ, tươi cười của Neil Young,<br>người tự nhận mình là kẻ cô độc.</p>
+    <p>Mick Jagger, người đã lấy máy ảnh của tôi để chụp ngược lại tôi.</p>
+    <p>Über-ghoul Alice Cooper, đùa cợt với những cô hầu khách sạn.</p>
+    <hr>
+    <button onclick="closeAllSections()">
+      <p>close</p>
+    </button>
+    <button onclick="openSection('moreabbazappa');">
+      <p>read</p>
+    </button>
+       </div></div></section>
+
+  <section id="moreabbazappa" class="book-scroll" style="display:none;">
+
+    <button class="close-btn" onclick="closeSection('moreabbazappa')">
+      <p>close</p>
+    </button>
+    <hr>
+
+ <time>February 24, 2023</time><h2>ABBA…ZAPPA</h2>
+    <br>
+    <div style="display: flex; gap: 2rem; align-items: flex-end">
+      <div style="flex: 0 0 40%">
+        <p>Nhiều lần, những người bạn của tôi trong độ tuổi phải bắt đầu tìm hiểu về các loại thuốc nhuộm tóc đen lâu phai, ngồi lại nói chuyện với nhau.</p>
+        <p>Và tôi được mời bước vào địa phận ký ức của họ.</p>
+        <p>Ít lần trong những lúc nhiều lần, khi hơi men đã thấm, những câu chuyện tuôn ra đi kèm với bạn đồng hành là đôi mắt rơm rớm.</p>
+      </div>
+      <div style="flex: 0 0 40%">
+        <p>Tôi đã nghĩ, họ xúc động không phải vì đó là một kỷ niệm buồn, hay vui, vì qua làn khói mờ của thời gian thì hai điều đó cũng đã đổi chỗ cho nhau lâu rồi.</p> 
+        <p>Có lẽ họ xúc động, đơn giản vì họ còn có khả năng nhớ. Và bằng cách nhớ, câu chuyện đó hiện diện, ký ức đó hiện diện. Đã đang sẽ tiếp tục hiện diện.</p>
+        <p>Đó là cách tôi nghĩ về cảm giác hoài niệm.</p>
+        <br>
+        <p>Kể vậy, để bạn mang chính xác trải nghiệm đó bước vào chuyến hoài niệm về không khí âm nhạc ở châu Âu thập niên 70 qua sách ảnh ABBA…ZAPPA.</p>
+        </div>
+    </div>
+
+    <div>
+      <hr>
+      
+      
+      <br>
+      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf9266.jpg?v=1678248667460" style="width: 100%" alt="">
+      <p><strong>Ảnh bìa: Neil Young. Phản chiếu trong kính mắt: Gijsbert Hanekroot, Constant Meijers, 1974, Oakland Stadium</strong></p>
+      <hr>
+      <p>Như một cuốn kỷ yếu, tập hợp ảnh điểm mặt hầu hết ca, nhạc sĩ, nhóm nhạc pop, rock châu Âu trong giai đoạn hậu Woodstock – cuối những năm 1960 đến trước năm 1978.</p>
+      <p>Phần nhiều trong số họ giờ đã tốt nghiệp niên khóa âm nhạc của mình, một số đã tốt nghiệp chính cuộc đời của mình.</p>
+      <p>Người ở đó, lúc đó ghi lại những hình ảnh này là gã thanh niên Hà Lan trẻ, tên Gijsbert Hanekroot.</p>
+      <br>
+      <p><em>Những ngày đó, nền nhạc rock chưa phải là cỗ máy trơn tru như ngày nay. Mọi thứ vẫn đang được phát minh: hệ thống ánh sáng, âm thanh, quảng cáo, tổ chức, kiểm soát đám đông. <br>
+Từng ngày từng ngày, tất cả mọi người đều đang học, ứng biến, và thích nghi. Đó là khoảng thời gian thử nghiệm.<br>
+Gần như hàng tuần, các nhóm nhạc mới bước lên sân khấu, và tin tức báo chí bùng nổ. Chúng tôi cố gắng thu giữ cảnh tượng này, sâu sắc nhất mà chúng tôi có thể.<br>
+Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giới (âm nhạc) khác. Có thể nói rằng, từ Abba hôm nay đến Zappa ngày tiếp theo. Chúng tôi xem The Eagles diễn ở London, Paul McCartney ở miền nam nước Pháp, Bob Dylan ở New York và Stones ở Hamburg. Chúng tôi bay London hai tháng một lần. Đó là điều tự nhiên nhất trên thế giới vào thời điểm đó, và bây giờ nhìn lại, một khoảng thời gian tuyệt vời.
+        <br></em></p><br>
+      <br>
+      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf9317.jpg?v=1678248714183" style="width: 100%" alt="">
+      <p><strong>Bìa phải: Nhiếp ảnh gia Gijsbert Hanekroot</strong></p>
+      <hr>
+      <p>Tập hợp ảnh này có thể được chia thành 3 mảng, Gijsbert chụp những ngôi sao âm nhạc ở studio, ở những buổi diễn, và ở trong đời sống của họ. Qua con mắt của thời gian nhìn lại, Gijsbert đặc biệt yêu thích những bức ảnh chân dung của mình.</p>
+      <br>
+      <p><em>Nhìn lại bộ ảnh bằng con mắt ngày hôm nay, tôi nghĩ những bức chụp chân dung là đặc biệt nhất. Vào thời điểm đó, các ngôi sao nhạc rock chưa phải là những biểu tượng vĩ đại như bây giờ. Giờ, họ mài giũa hình ảnh của mình đến từng chi tiết cuối cùng. Họ được đào tạo bài bản về mặt đó, họ gần như tự động trưng ra kiểu thái độ rập khuôn hoặc một ánh nhìn “chữ ký” khi nghĩ rằng có ống kính đang ở gần đâu đó. Điều này hầu như không có vào đầu những năm bảy mươi. Tất nhiên các ngôi sao đều đầy cá tính, nhưng họ vẫn chưa mang vị thế biểu tượng. Rất nhiều bức chân dung vui vẻ, tươi cười của Neil Young, người tự nhận mình là kẻ cô độc. Mick Jagger, người đã lấy máy ảnh của tôi để chụp ngược lại tôi. Über-ghoul Alice Cooper, đùa cợt với những cô hầu khách sạn. Roxy Music nhiệt tình hơi quá đà trong những buổi chụp chân dung, kiểu hình thường được dàn dựng rất cẩn thận. Brian Ferry, gật gù trên chiếc ghế bành. Và nhiều nữa. Bạn trở nên gần gũi với nghệ sĩ đến mức có khả năng nhận ra những ý tứ tinh tế trong cách nói của họ, hay bắt gặp họ buồn bã hoặc xúc động. Bonnie Raitt, John Entwhistle, John Fogerty và nhiều người khác, họ tiết lộ “con người” đằng sau một nghệ sĩ. Và để bắt được con người đó, chính xác là mục tiêu của tôi.
+        </em></p>
+      <br>
+      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf4027.jpg?v=1678248652083" style="width: 100%" alt="">
+      <p><strong>Gijsbert Hanekroot là người duy nhất không cầm máy ảnh trong hình, tấm này do Mick Jagger bấm máy.</strong></p>
+        <hr>
+      <p>Trò chơi chữ trong cách đặt tên sách chỉ là món khai vị cho bữa tiệc thị giác bùng nổ mà Gijsbert cùng Sybren Kuiper mời người xem.</p>
+      <p>Ông là người thiết kế sách.</p>
+      <br>
+      <p>Dùng đa dạng kích thước ảnh, cách cắt ghép, vị trí xếp đặt, mỗi trang sách vừa che dấu nội dung của ảnh tiếp theo, đồng thời hé lộ vừa đủ thiếu. Đúng là vừa đủ thiếu, vì nếu quá thiếu thì nó trở thành bức ảnh tồi, còn nếu đầy đủ hơn một chút thì trò chơi này liền trở nên dễ đoán.</p>
+
+    <hr> 
+      <p>Để lý giải cho cách làm này, Sybren Kuiper trả lời trong một bài phỏng vấn:</p>
+      <br>
+      <p><em>Gijsbert đến studio của tôi. Tôi sẽ không bao giờ quên cảnh anh ấy đến với hai chiếc túi nhựa khổng lồ chứa đầy những bản in gốc. Tôi hỏi về số lượng ảnh tổng cộng, anh ấy trả lời lơ đãng rằng đây chỉ là ba chữ cái đầu tiên trong bảng chữ cái. Anh ấy trải ra hỗn độn những ảnh về biết bao cái tên thần tượng rock của tôi, theo thứ tự ngẫu nhiên, với kích cỡ và hình dạng khác nhau. Lấp dưới mỗi bức hình luôn có bất ngờ mới để khám phá. Ngay lập tức tôi cảm thấy rằng sẽ là một ý tưởng hay nếu mô phỏng hiệu ứng tương tự cho người xem sách. Như thể người xem đang lướt qua một chồng ảnh ghi lại năng lượng sôi nổi của thời gian đó. Nhưng tất nhiên nó phải là một cuốn sách thực sự, được đóng bìa chứ không chỉ là một đống ảnh rời… Cái khó ở đây là tạo ra một cuốn sách với những bức ảnh có định dạng và kích cỡ dường như rất lộn xộn lại với nhau. Làm thế nào một thứ như vậy có thể đóng thành sách, nếu không phải bằng lao động chân tay tốn công mà mắc mỏ? Thợ in nói rằng điều đó là không thể, nhưng tôi không muốn bỏ cuộc và đi thẳng đến thợ đóng sách. Trước sự ngạc nhiên của tôi, một lát sau, anh ấy gửi cho tôi một sách mẫu với vô số định dạng và biến thể trang khác nhau, được đóng gáy bằng máy.
+        <br>Thực sự, tôi đã bị choáng ngợp khi phải nghĩ về cách thiết kế đồng thời phải chọn những bức ảnh đi kèm có ý nghĩa với thiết kế đó. Vì vậy, tôi đã cố gắng giới hạn bản thân ở mức 10-12 biến thể và lựa chọn ảnh phù hợp với một sơ đồ đã phác thảo. Đó là trò cân bằng giống như trong một vở xiếc, ở đây tôi đặc biệt phải để mắt đến phần đóng gáy nếu tôi muốn đa dạng hoá kích thước của các trang. Gijsbert và tôi đều tin rằng sẽ tốt hơn nếu cuốn sách được sắp xếp theo thứ tự trực quan thay vì theo thứ tự bảng chữ cái hoặc thứ tự thời gian. Anh ấy đã cho tôi tất cả tự do trong việc sắp xếp cuốn sách thành hình…</em></p>
+      <br>
+      <p>Có thể thấy ở một ảnh Neil Young cười tít mắt cùng tay đánh bass của nhóm Crazy House  Billy Talbot, cạnh bên là tay trống Keith Moon của nhóm The Who đang tạo dáng trong chiếc quần tà lỏn sau một buổi diễn, cùng trong tập hợp này là ca sĩ Bruce Springsteen, sôi nổi trong một màn trình diễn của mình, như đang cổ vũ trò đùa của những bạn ảnh hàng xóm.</p>
+      <br>
+      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf9272.jpg?v=1678248674227" style="width: 100%" alt="">
+     
+      <p>Có thể thấy ở một ảnh Mick Jagger đang đổ xô nước xuống đầu mình trong khoảnh khắc được ánh đèn sân khấu soi rọi, ngay cạnh đó, người bạn ông, tay guitar Keith Richards ngồi trên chiếc ghế bành trong căn phòng bừa bộn của mình, cạnh đứa con trai nhỏ đang lúi húi trong một trò chơi, che dấu và hé lộ đôi chân của chính Keith Richards đang nghiêng ngả đắm chìm trong một màn diễn.</p>
+      <br>
+      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf9290.jpg?v=1678248690283" style="width: 100%" alt="">
+      <br>
+      <p>Bằng cách này, mỗi hình ảnh được mặc nhiều lớp áo, bạn không chỉ xem hình một lần, trong trọn vẹn khuôn hình độc lập của nó, mà còn được xem các biến thể, và khả năng tương tác của nó với những hình ảnh hàng xóm. Nó khiến người xem phải vận động, theo nghĩa đen là phải giở tới giở lui một trang sách mà soi cho kỹ, theo nghĩa bóng, là phải suy nghĩ, và liên tưởng xa ngoài hình ảnh.</p>
+      <hr>
+      <p>Đến cuối những năm 70, Gijsbert quyết định gác máy. Ông lý giải, rất giản dị:</p>
+      <br>
+      <p><em>Tôi ngừng chụp ảnh rock khi thấy mình mang về nhà những bức ảnh kém ấn tượng hơn so với những gì tôi đã chụp cùng màn diễn đó ba năm trước. Việc chụp đã trở thành thông lệ. Và dù sao đi nữa, đã có ít nhất 50 ban nhạc mới vào năm 1978. Như vậy là quá nhiều để theo kịp và kiểu nhạc đó cũng không hẳn gây cho tôi thích thú. Đã đến lúc người khác thay thế vị trí của tôi. Tuy nhiên, ngay trước khi gác máy, tôi may mắn kịp chụp Talking Heads và David Byrne – đó là âm nhạc thực sự, trong một thế giới chỉ toàn tiếng ồn.</em></p>
+      <br>
+      <p>Chàng thanh niên trẻ Gijsbert lơ đãng và nhã nhặn ngày nào mà cú máy của Mick Jagger ghi hình giờ đã là ông lão tóc bạc gần 80. Vẫn nụ cười vụng về và cặp mắt kính tròng mỏng nhìn như thể là bất cứ ai, bây giờ ông chủ yếu chụp ảnh đường phố, đồng thời mang ảnh trong dự án ABBA…ZAPPA đi triển lãm khắp nơi.
+        Nếu tò mò, bạn có thể tìm Instagram @gijsbert_hanekroot để xem những slide ảnh gốc mà ông giữ.</p>
+      <br>
+      <p>Nhưng chỉ cảnh báo:</p>
+      <p>Nếu một nửa sự thật không phải là sự thật, thì việc xem ảnh của dự án này qua bất cứ một màn hình trung gian nào khác, mà không phải là mặt đối mặt với ảnh, tay lật sách, thậm chí còn không phải là một nano của sự thật.</p>
+      <br>
+      <p>Kể cả việc xem bài viết này.</p>
+     
+      <div class="slideshow-container">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2F5a3d9ccb-f5b9-4d8f-a328-f79273c527e1/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAABFLN3zWnLOuih-h8bzqTs1XBZjhohM1WSkwRJenpTuP&exp=1762635731&osig=AAAAAAAAAAAAAAAAAAAAADrpaujAsCpF_LClScycRyhHEWeiDTFIJ8qLD0aBGQFn&signer=media-rpc&x-canva-quality=screen">    
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:599/quality:92/uri:ifs%3A%2F%2FM%2F679d085a-dab0-4fe7-a018-4a75231e3770/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAALe9S_fwPOgg2vz07ZYV-MxhQf6YCKb7g9UU-IwMGJzU&exp=1762634375&osig=AAAAAAAAAAAAAAAAAAAAAEvnZv-7yIaIcUE2SnmSyLEWVMRjxec7hYjgnGGaibdM&signer=media-rpc&x-canva-quality=screen">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2Fe7e07fa5-ca04-4093-a15c-ff856cc5ebf7/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAHLB-3usQ73UHBEAbhwpNz6TBoWZFYAMHu3QfYq-9tqb&exp=1762615194&osig=AAAAAAAAAAAAAAAAAAAAAMbBik6EIDG_WfPfeV_AmJub2DjGVt-ap0GygZrCWMOt&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F3bca7593-5748-49b6-aa38-8f61d319093e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAAN18X1Hey_Or14-AgJ_d8ZJ9GLGgxBJ2dKbp4ZLRxQ8&exp=1762612677&osig=AAAAAAAAAAAAAAAAAAAAAEseROdZwZLZJB-slwT4C7WF-6ILjfmoNfPaLxoH2hsb&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2Fddacfc31-7fac-4fd0-af94-a45a39986d74/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAGXtL00b2vdv5wvbuTOaI2_tjGHR8nOTjl5zYknimHeQ&exp=1762612108&osig=AAAAAAAAAAAAAAAAAAAAAD_RVyOkLzZC1mg9OWtwYfEo9xJ91PdwQIMQ1T_R3W3I&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2F9a668f4e-ea24-4640-8e39-2ff1fadd1b47/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAHOnw_V1NmOJ_Y1oTRAAi6ByxnGl9ViGg1bC7fS979To&exp=1762636266&osig=AAAAAAAAAAAAAAAAAAAAALcBIwLKagKIpqRSR2lLfrBNI-LJGyiCdIDGmNxdCZkO&signer=media-rpc&x-canva-quality=screen">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2Fd8d29651-e586-4bbb-b587-e5d5b9d181a4/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPdLT2RT7aoTstgvj9cKnTinEajBlmIF1okukBPZ4nx8&exp=1762636396&osig=AAAAAAAAAAAAAAAAAAAAANNoLSm_lOhPJDOqg6ISKPcjGBWHWirE8_uhdjGvIdue&signer=media-rpc&x-canva-quality=screen">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F947ef2fd-1eb2-47ee-a10e-f0080d61df0b/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAAT_U3yftX9DJ0ezJpwCgj2lz565MNz4iJaiLgAfgP-k&exp=1762613077&osig=AAAAAAAAAAAAAAAAAAAAAPUH-1wh06RbQeyLOqO0WItgm_Pla3DsaljDHnodSGtj&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2Fe71e3f98-760d-4142-9ebd-cdc300e39456/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAF-eQfBgQS6vpfAiCg4-_-Og4eEzYiAsiO2QVLbNeR3k&exp=1762615465&osig=AAAAAAAAAAAAAAAAAAAAAARd-UWfKUR6wO66TOewObvsswQmYZWVKA6W58-KxFzW&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2Fe520e07e-5171-4258-9116-8cc90a9f6a8b/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEI5P5smEqkK0_bBoNgXEUNKlHJ1i342s20nqKDzPfg5&exp=1762612686&osig=AAAAAAAAAAAAAAAAAAAAAE_bIThUzbX5oJNJb3ieQWUYj8kQmyM24aV5hoo5C-dk&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F2bd3c8d1-9437-4a90-8799-4cff13113f65/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAADasIaBXbH_QxCKYz5QBfYTQY_q3KZ-DK6y_hND_5JDs&exp=1762612887&osig=AAAAAAAAAAAAAAAAAAAAAPnDCYhMUJnCzSM3hfI4gtyBXTyl79auckIibevmZ5f_&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F43561dbd-2815-4caa-bddb-bac4ea9140ff/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAIj0KRg15a99B1LYtm91Do4enZbZ47bw53QsQSJ0_c_Y&exp=1762614346&osig=AAAAAAAAAAAAAAAAAAAAANHvkNubRrTST4Lz6JrN5gODI4jb7EI3L-KhVPnXig1H&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F93a1cc29-030f-4d4e-8fb3-76c4fb2bfd42/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAP1RdUlmgHq-w2nJSSBM7v9CDrl-Ttqzo2TYiYHqipJ0&exp=1762614800&osig=AAAAAAAAAAAAAAAAAAAAAIMKHzh0s3GAQJ1-AlEXg86SBoUl6WCXDb2na61deyLr&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F8dca1ac6-f246-49b0-a039-3ed165c10726/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAFk8donVKszkfOhG8RBUL6TL5DjFqWJAjRwPK3WNzYDQ&exp=1762613352&osig=AAAAAAAAAAAAAAAAAAAAAI7B39QewfrVwXLVDVeeZ6VXQySjU_mNP8LiCkQgoX6j&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2Ff4d943dc-7d73-48e6-afe9-13ffc5ba09aa/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEfSwtGyJArQKFduw-JEUcFGYzF4R-UfyBNW_Ff3IjCR&exp=1762615074&osig=AAAAAAAAAAAAAAAAAAAAAIpRbHKZWLS4OB4fPvwZjKN5Yrq_-wv8q-oAcuOLPi9x&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F6b65c0a5-a797-42ad-8161-ffd04292f01e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAACVMDsP6ghMPHKCzdm4EXH9HZjmBpHeZRtsSrflvFt-i&exp=1762614249&osig=AAAAAAAAAAAAAAAAAAAAAGvpTTkPdt97Bl7T7run-yojdX3hfzx2M2Ac2gKGaZMc&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2Fa56e2b7b-18b8-4c20-946e-7287310b12c9/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAOSeasO9SsZLhiXXib0-YZcEFzMPCKRCriOdVfiQLmet&exp=1762612392&osig=AAAAAAAAAAAAAAAAAAAAAMnTjJb1fIf87_P91eLA4TOEwSXkIz7WnmQ7_T7kcQWh&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Ff7e2ea29-8086-4af9-a19d-47d14153470b/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEkfGECCasuHEZYOaPIjRQcg0gHLIu6gQph3xmXJiF66&exp=1762613389&osig=AAAAAAAAAAAAAAAAAAAAAEltP72IDZQvvr9-0rKZpfcrnJSZk10sPloy5Zib2BmZ&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F72a354f1-a589-47f5-a015-c73ab251aa30/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAB2jlv2LsZ1edShIrViDc2Q6UggVCCvy2Z8V_-sobqPo&exp=1762612268&osig=AAAAAAAAAAAAAAAAAAAAAMCfvZblq_nOcbAEJwCYDIdfmHHc_iGoN0HFXr7NYhu_&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F2b2ad9c7-3321-4df6-bcc9-bd4261c68a80/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAKxkMtiAgZWUhJL-1lMvxFAzVSg-j7T45nudLo6vCuYD&exp=1762614393&osig=AAAAAAAAAAAAAAAAAAAAADdef35VD5uwQ9epKe6M1kLW_ZDEu46SyYt0gtslFf8i&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F3a52c394-8d88-48f9-acfa-cf5948b702bf/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAKeYLZAy_aF5eUnOyo2nJeSrxEyWJM-t5W1QhGN6NHfg&exp=1762613144&osig=AAAAAAAAAAAAAAAAAAAAAGXQNPwfcRxSFQH0puhj-IQxz6JnOEnoaq9S1XXbwHdi&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F3b501cf4-015c-46eb-85bf-b0f791e974cf/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAPF1ziniO954F2LnzpX4Xb-ak2cti5deCXCKO0kgRjkc&exp=1762613668&osig=AAAAAAAAAAAAAAAAAAAAABRN8gRlYspsWMicR08OA9sGybKkESBuc3mq24dzDr26&signer=media-rpc&x-canva-quality=screen_2x">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2F43da5445-fd51-4238-9596-b1edaea17e9e/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAACReg5S7-eRfOG3Frvw5uX6JRl9ByVU2p1yoonzPVBxo&exp=1762636386&osig=AAAAAAAAAAAAAAAAAAAAAM50MuLBmz6ouASzMP7GKTcfcwfx4EHRuwq9uuXP2pc-&signer=media-rpc&x-canva-quality=screen">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2F39a73ee0-3a2a-46ac-8ad5-ac957550ea50/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAOk9KUQNiQQW6JKajB-NLvkXRe97lk6nkLWeh_WHTrnt&exp=1762633537&osig=AAAAAAAAAAAAAAAAAAAAAGrcrkoTG0lF5fZsEc25lIxi-ZRaIgL4p5tInCcGS-WN&signer=media-rpc&x-canva-quality=screen">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:599/quality:92/uri:ifs%3A%2F%2FM%2F106a626b-b0e7-4d1e-b62c-333d30df8808/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAAQou_SDChtCtl88JErzHqL3GY6asDNTimafEQkqg1FI&exp=1762633296&osig=AAAAAAAAAAAAAAAAAAAAADaEiOG81NddZksAGTpTSFjqdGcWudb16MYX2CtvPUn0&signer=media-rpc&x-canva-quality=screen">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:599/quality:92/uri:ifs%3A%2F%2FM%2Faca5fb41-d574-4b19-ac9c-b641c37d438c/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAP3zjYUzw59losCURRre9JqU4Ygw-QRFk9BvMOcz5KIS&exp=1762633771&osig=AAAAAAAAAAAAAAAAAAAAALLtcS3oBuYdlmiZCCDUKV7Dsu3b-J3WsDwAo7rpTq2j&signer=media-rpc&x-canva-quality=screen">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F969a235c-0a4a-4733-971e-ee4fb74b99a1/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAF5ceyNoRtReSTdfDxt9b8CfkQPKDogGJkMhQCIUMOFr&exp=1762612157&osig=AAAAAAAAAAAAAAAAAAAAAC_YIGPl3yECEurYISsIq1_9WpgA3jQ1mRN6BXsCrhma&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F52af208c-e72a-4ef7-938e-3f5b376d7b7e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAGqm3yIrZbW83Luv4GkDwgepnCAkL_VpOHbgMzwwqPus&exp=1762615571&osig=AAAAAAAAAAAAAAAAAAAAAIX09V2ydSWxpN4DY7oh5f5AeotcCz2DRmMWsctZWiHP&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Fc6a1ef9d-0395-448b-9aa4-fb11599fbf2d/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAOg65ommo0n85x5FQOOY6gKoemqQzOA4aQdwEaJMWS9M&exp=1762614649&osig=AAAAAAAAAAAAAAAAAAAAAPY7zXN0EmBbl7pIjsaD5JuLBF2uum2GHn0raNcue_Qw&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Fa3616155-e8d0-42a9-8945-70e116fcba8f/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAOfMpqQSTaalZEvUN4ZMuzdpoyUqXiasmlSQuZ08zxa5&exp=1762612365&osig=AAAAAAAAAAAAAAAAAAAAAERilFpTzZct1MfRt_k5QrQhoPUVXLWxc9XtWTejNHfu&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F67d6a7e8-523f-4467-9960-5c0d5b22126c/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAOHrdpFinzu_v8HXzYACZaLcWsuISxu7MYx_64GUuR44&exp=1762614735&osig=AAAAAAAAAAAAAAAAAAAAAKWaZ0gzKMEdYkTka8cj2608SufRjY1z2yXF5IQ08B39&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F50f7e980-1712-46e4-bd9c-a7832576bcfc/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAABA-ZUVPmHQPltbtROX5kao5VF6uKE78Z4eVsN8hVOHc&exp=1762613080&osig=AAAAAAAAAAAAAAAAAAAAAHcCygvvlTUJ3XFtQ0ZgeBP1A-PTTGKoALp2F62JJ08L&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F52af208c-e72a-4ef7-938e-3f5b376d7b7e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAGqm3yIrZbW83Luv4GkDwgepnCAkL_VpOHbgMzwwqPus&exp=1762615571&osig=AAAAAAAAAAAAAAAAAAAAAIX09V2ydSWxpN4DY7oh5f5AeotcCz2DRmMWsctZWiHP&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F2e1ac554-9914-4548-a1cc-5b3b876e0030/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEpx7uZW6kf6eVpvLSTdixNahQ7BvGKZMmUAK6-5vpLV&exp=1762612308&osig=AAAAAAAAAAAAAAAAAAAAANcxTHUzeNji-78gn1wU-6xhwS0gEsmsyylvwHs5R_Tk&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Fa9fe3eb7-5b22-4f07-9ac3-d6ad21f0ca8e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAMKxaRIwXO55xZ5dakKuxZuI1pHVmwqhISO-Jxxhjc67&exp=1762612610&osig=AAAAAAAAAAAAAAAAAAAAAMALCtBoYTlQFK3gZjKc72KbuoUbus9HQ14b8KgkgQEB&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Fbc0cfb69-3c0d-4f9e-8845-c93be7806023/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAADehHsKqKNCBg_b4CbwP34g3-5i8PP12wY-e-7W9G5l7&exp=1762613772&osig=AAAAAAAAAAAAAAAAAAAAAPsvqT6a46vouwsmH8UoU6ZE7vELfYyeA_KJ8sicQrLO&signer=media-rpc&x-canva-quality=screen_2x">
+    
+      </div>
+</div>
+    <br>
+
+  </section>
+
+  <!-- Homeschooled -->
+  <section class="intro" id="homeschooled" style="text-align: right;">
+     <div class="photo-frame">
+    <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5531-1.jpg?v=1680144318020" style="margin-left: auto;">
+    <div class="caption">
+    <p>Grisha yêu thích việc làm mộc trong xưởng của cha, học về những loài động vật,<br>
+      thiên nhiên, khoa học, và sáng chế các vật dụng.
+      <br>Cậu bé thường xuyên có những chuyến du ngoạn băng rừng một mình,
+      <br>cậu cũng đang viết một cuốn sách về cuộc phiêu lưu của loài cá, tựa đề “Can the Fish”,
+      <br>và hi vọng cuốn sách sẽ được xuất bản một ngày nào đó.
+
+</p>
+    <hr>
+    <button onclick="closeAllSections()">
+      <p>close</p>
+    </button>
+    <button onclick="openSection('morehomeschooled');">
+      <p>read</p>
+    </button>
+       </div></div></section>
+
+  <section id="morehomeschooled" class="book-scroll" style="display:none;">
+
+    <button class="close-btn" onclick="closeSection('morehomeschooled')">
+      <p>close</p>
+    </button>
+    <hr>
+
+ <time>March 29, 2023</time><h2>Không đến trường</h2>
+    <br>
+    <div style="display: flex; gap: 2rem; align-items: flex-end">
+      <div style="flex: 0 0 40%">
+        <p>Cách Downtown New York về phía đông nam khoảng 2 giờ chạy xe là khu vực dãy núi Catskill, điểm dừng chân của những kẻ kiếm tìm khoảng tách rời khỏi nhịp sống nhốn nháo của thành phố không bao giờ ngủ. </p>
+        <br><p>Khi nữ nhiếp ảnh gia Rachel Papo cùng gia đình đặt chân đến đây vào năm 2010, bà bị cuốn hút bởi một cô bé 5 tuổi giàu năng lượng mà bà tình cờ gặp, và được cho biết rằng cô bé không đến trường.</p>
+      </div>
+      <div style="flex: 0 0 40%">
+        <p>Cuộc gặp gỡ này mở ra cơ hội để bà bước vào cuộc sống hàng ngày của những đứa trẻ được giáo dục tại nhà ở cộng đồng Catskill, và khám phá thế giới của chúng bằng nhiếp ảnh.</p> 
+<br>        <p>Dự án nhiếp ảnh <strong>Homeschooled</strong> bắt đầu như vậy.</p>
+        </div>
+    </div>
+
+    <div>
+      <hr>
+      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf5671.jpg?v=1680072115306" style="width: 100%" alt="">
+      <br>
+      <p><em>Ý tưởng ban đầu của tôi là chụp loạt ảnh chân dung đơn lẻ của những đứa trẻ được giáo dục tại nhà trong khu vực. Tôi đã nghĩ mình có thể khám phá ra điểm chung giữa chúng.
+        <br>Tuy nhiên, khi tôi gặp nhiều trẻ em và gia đình hơn, có hai điều trở nên rất rõ ràng: tất cả bọn trẻ đều rất khác nhau về nhiều mặt, đến nỗi không thể tìm ra điểm chung. Và thứ hai, sau khi chụp ảnh một đứa trẻ, tôi chỉ muốn dành nhiều thời gian hơn cho chúng.
+        <br>Vì vậy, tôi đối mặt với một thách thức mới: làm cách nào để kể câu chuyện của những đứa trẻ học tại nhà này mà không lặp lại những hình ảnh dễ đoán, như đứa trẻ đang học, đọc hoặc viết?
+        <br>Tiếp tục thực hiện dự án, tôi phát hiện ra rằng, đối với chúng, việc học diễn ra mỗi giờ trong ngày khi chúng quan sát thế giới tự nhiên xung quanh mình. Khi nhận ra điều đó, tôi có nhiều tự do hơn trong việc khám phá và tự cho phép mình theo chân bọn trẻ bước vào thế giới kỳ diệu của chúng. Tôi luôn học được điều gì đó mới từ mỗi đứa trẻ sau mỗi lần tiếp xúc, và điều đó đã góp phần vào chất lượng chung của dự án.
+        <br>Mặc dù bản thân không có kế hoạch dạy con tại nhà, nhưng tôi đã học được cách trân trọng cách làm này. Khi cha mẹ dành nhiều thời gian cho con cái trong những năm chúng đang phát triển, cả hai phía đều đạt được điều gì đó rất đặc biệt.
+        <br>Trong sách ảnh Homeschooled, tôi đã ghi chép lại câu chuyện và quan điểm của những người cha, người mẹ này, giúp làm sáng tỏ triết lý và lựa chọn của họ. Điều quan trọng cần nhớ là: bất kỳ quyết định nào của cha mẹ liên quan đến con cái đều không dễ dàng, và ta không nên vội vàng phán xét họ.
+        <br>Quan điểm của tôi trong dự án này, cũng như trong các dự án trước đây của tôi, là quan điểm của một người quan sát: Tôi không đứng về phía nào mà cố gắng tiết lộ sự phức tạp của chủ đề.
+        <br><br><strong>(Trích bài phỏng vấn Rachel Papo trên lensculture.com)</strong>
+        </em></p>
+      <br>
+      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
+        <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5482-1.jpg?v=1680072890033" style="width: 100%" alt=""></div>
+        <br>
+      <div style="flex: 0 0 40%;">
+      <p><strong>True, lúc đó 5 tuổi,</strong><br>là cô bé Rachel Papo vô tình gặp khi vừa đến thị trấn Woodstock, vùng núi Catskill. Cuộc gặp là cơ duyên dẫn nữ nhiếp ảnh gia đến dự án ảnh này.</p>
+      <p>Cô bé dành hầu hết thời gian với cha mình từ lúc 4 tuần tuổi, sau khi mẹ cô phải trở lại với công việc toàn thời gian tại một nhà hàng địa phương. Cô bé thường phụ giúp cha mình trong những công việc ngoài trời, đồng thời được học những chủ đề đa dạng. Cô và cha thường xuyên lui tới trung tâm New York, nơi cô bé có cơ hội gặp gỡ các nghệ sĩ, nhạc sĩ, và các kì thủ cờ vua. Cô bé thể hiện niềm hứng thú tự nhiên với thế giới xung quanh mình, yêu thích khám phá môi trường hoang dã, và viết nhật ký hằng ngày.</p>
+        <hr></div></div>
+      <div class="slideshow-container">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fe9f81ff3-1fa7-4f5f-a1c7-0ff07ca028ac/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAOKcBi_wKB3OeemAFhojGPOJEaPQbooIFv4l3S6H_Izt&exp=1762630642&osig=AAAAAAAAAAAAAAAAAAAAANfQiC_ZWxvGx4J37SABOMf2BsWkmDVDUhfISerORKOK&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F19f34ea8-4bcc-48f9-8c84-3bbcec1e9da0/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAObfSvwoq_5ja20EheHy_XOTfWF91dBUrEKKvaBOK1Yl&exp=1762633706&osig=AAAAAAAAAAAAAAAAAAAAAMvLzVXt6FADgjDzUE25iykNJIpegUDnU_6t0wQWBa8o&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F34976c07-2145-4fd5-9b84-aade1263fd6e/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPu_DApsxARnJqhTc75rudT3hkz5kii74BDRyLwjJtei&exp=1762632923&osig=AAAAAAAAAAAAAAAAAAAAAAesaChqY-Z9bpKj3KtF850Y_NV1mjQLjtJjfhoqiYRy&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F1a7f37ac-4261-4402-ba09-6581e8325f61/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAL3k4m4J7faaOnB01kR3--ww9vchdvFpoQz1oHCCOtm5&exp=1762631953&osig=AAAAAAAAAAAAAAAAAAAAACexQsFti_gsF569mR-Iq8JrEt9FEX5eu3GFNtzokS4q&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F2103ffec-3599-46b2-af21-ab2bf639d438/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAOdY_t3V-e9Mledrp3adshKV4B2nm9jr9i1B02eFehdm&exp=1762632733&osig=AAAAAAAAAAAAAAAAAAAAAG7oAcVOW0Fw4XUMyFH8Gph38joXjTexfZshFb5a_Lq2&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F55d0829f-d777-4afb-b124-e015eac2f104/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAACZDAQrsdxVerJBcWVAd2QQnLlAjCaPkWkCVJtSUvrj-&exp=1762633446&osig=AAAAAAAAAAAAAAAAAAAAACQfn3KlyPbBEfhJeEVkzTk8PmcBRnrEu2IHtzBywyWP&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F94afa12b-8e3c-47ee-9402-11dc2a884726/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAABrBocEXtydb-BCMBd6twyCZo02lyyGNBN6G1OyU7tte&exp=1762632416&osig=AAAAAAAAAAAAAAAAAAAAAAFrlI1i8t0wo7udGG7z3-0xZvHTjGDF83AJTMk53xaY&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F3288c231-e414-4698-abdb-d990805e53d6/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPVzVwspzhs4DzFXy7oehjIHRJk8RkTYX-SCzO9K08dF&exp=1762633705&osig=AAAAAAAAAAAAAAAAAAAAAKhuNZsNgkn8Qtu6kWE9QM2OGRIih1bzt8Qxr2C7DNSI&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fe9102cd5-d01e-40e2-859f-37c53a70b0b9/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPDIbigmrbhB2Pioc1cflWdKJoZDEOx9wHB_SuHwuTCl&exp=1762631990&osig=AAAAAAAAAAAAAAAAAAAAAFuaWiQno6s0H1LYIi2pDoH3o1a4V6bvE8nbvPy3B8F3&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F8e70e0c8-344f-4ecb-9dce-89946d90350e/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGPnyKVD8tAo2Xxl-bbbEEEbEL4c_hRQxhh8qQiUO95I&exp=1762631961&osig=AAAAAAAAAAAAAAAAAAAAAEShYHI3EO_4s_7OANUV7zu7NM8KSbM-nckikqEMcDZ-&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fa712487c-d4f5-470b-b7b4-4950660de354/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGFZbfTu_OSyFUdk-9F1ZdAcfihsrJ8akw6-DzvX-ItG&exp=1762633880&osig=AAAAAAAAAAAAAAAAAAAAAN5fOYVRZ0KUtCaoJz7uUuBxbXD8GkCBdsIWlDCT7ben&signer=media-rpc&x-canva-quality=screen" alt="">
+      </div>
+      <hr>
+      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
+        <p><em>Học tại nhà giúp True dành thời gian cho những ‘chuyến phiêu lưu cuộc sống’. Cô bé được tiếp cận với nghệ thuật, âm nhạc, tôn giáo, và được những nghệ sĩ hay bạn bè chúng tôi hướng dẫn. Việc này giúp chúng tôi bảo vệ tinh thần của con và cả truyền thống gia đình. Chúng tôi hiểu rõ điểm mạnh và yếu của con và thường đoán được lúc nào con bực bội. Chúng tôi biết chính xác những gì con cần và có thể điều chỉnh thời khóa biểu cho phù hợp, để giúp con học và lớn lên. Được là một phần trong quá trình con phát triển và học hỏi, tìm tòi và khám phá là một món quà. Chúng tôi không bỏ lỡ bất cứ điều gì; chúng tôi có mặt trong những trải nghiệm đầu tiên của con.</em></p></div>
+      <br><div style="flex: 0 0 40%;"><p><em>Điều mà True thực sự có được từ việc học tại nhà chính là tuổi thơ. Con có thời gian để tự phát triển con người riêng của mình. Điều mà tôi nhận thấy, đó là cô bé vẫn giữ được nét trẻ thơ, thứ mà vốn sẽ biến mất nếu con phải đến trường. Ở trường, những đứa trẻ dần nhận thức được chúng có gì và không có gì, chúng trở nên e dè về bản thân, chúng cảm thấy cần phải giống những người khác. True ngớ ngẩn và kỳ quặc, lăn xả và nhân hậu, nhiệt thành và minh mẫn. Giáo dục tại nhà giúp con khám phá chính bản thân mình trước hết, mà không có áp lực của việc phải trở nên hợp chuẩn.
+        <br><strong>Lea, mẹ của True</strong></em></p></div></div>
+      <hr>
+      
+
+      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
+        <p>Thời gian trôi theo nhịp điệu riêng quanh những ngôi nhà, những trang trại, những cánh rừng này. Giữa môi trường được bao bọc bởi thiên nhiên và xa rời những dấu hiệu của công nghệ, Eli, Grisha, Jake, Layla, Iris, Lucia, Maggie Morgan, Roan, Tosabel, True và Zephyr tìm thấy trong mỗi giây phút trải nghiệm là một bài học, một khung cảnh mở ra là một lớp học, mỗi mùa trôi qua là một khóa học mới để chúng tự do khám phá.</p>
+        <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5562-1.jpg?v=1680079763993" style="width: 100%"></div>
+      <br>
+      <div style="flex: 0 0 40%;">
+      <p><strong>Zephyr, 11 tuổi,</strong></p>
+      <p>sống trong căn nhà giữa một rừng thông nhỏ, và chưa bao giờ đến trường. Từ nhiều năm nay, cậu bé được hướng dẫn về học thuật và nghệ thuật bởi một nhóm giáo viên sáng tạo. Lúc 10 tuổi, cậu được học về thiết kế – xây dựng với một kiến trúc sư trẻ, qua đó, cậu biết được phần mềm vẽ 3D, cậu thiết kế một ngôi nhà trên cây, làm mô hình, và tự dựng nên ngôi nhà với vật liệu lấy từ gỗ một cây thông già. Ông bà cậu sống ở Lebanon, Zephyr thường xuyên du lịch đến đó suốt trong năm. Thế giới của cậu bé là sự pha trộn của tiếng Anh, lịch sử, toán, khoa học, hoạt họa, làm mộc, âm nhạc, kịch nghệ, nấu ăn, Aikido, Youtube, và trò chơi điện tử.</p>
+       <hr> </div></div>
+      <div class="slideshow-container">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2F643a760b-af76-4c9f-b1a4-76cdb083b824/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAO7EWqEgNNktexajypcgUaEvLgWfd0pRl05lgTTiv8bT&exp=1762632084&osig=AAAAAAAAAAAAAAAAAAAAAAarhg0yrrhazbZ5jd5tsGF5PNOHWZXmsndI2qxzq67G&signer=media-rpc&x-canva-quality=screen_2x" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2F35167e55-6325-4a05-8de0-f97ba693fcb2/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEHROpWDauOROe-VRyYZ4O-5DzrMZX5dGHexOA7ghtHX&exp=1762628696&osig=AAAAAAAAAAAAAAAAAAAAAFLd-VGTLIyJVCZS-M0JzGtnWYN6WzOPkjtqplitwbZO&signer=media-rpc&x-canva-quality=screen_2x" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fdc218ffa-8263-4eb4-8f58-3699baae0d42/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAADaxWGyDO6wTwCSrxKJrdAT7Y_58ud8-4MVF4kT-k6AV&exp=1762630233&osig=AAAAAAAAAAAAAAAAAAAAACMDe6KKpwjxxCd0_gjLJM1XdHet1QHF9p0LTGqSrpCq&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2Fe5d7fcf7-da47-4da3-8d89-6d2b39ed8268/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAJfvjoKjLDcQaCIBndmU0GTigEHaxBs8g29uZ55ghu-o&exp=1762628737&osig=AAAAAAAAAAAAAAAAAAAAAPbjs4G-Xa2Wr7CH8AJDqxUJ99sqXgM7YXzGr5Wyl71k&signer=media-rpc&x-canva-quality=screen_2x" alt="">
+      </div>
+        <br>
+      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
+        <p><em>
+        Tôi nắm rất nhiều chức danh: hiệu trưởng, người giữ biên bản, nhà tổ chức, giáo viên, tài xế, phụ huynh, đôi lúc là người càu nhàu, đồng thời cũng là một người học. Nếu cần sự hướng dẫn, tôi tìm đến bạn bè và giáo viên của Zephyr, đôi khi tôi đọc lại những văn bản ghi chép về việc giáo dục tại nhà để lấy cảm hứng. Vào một vài ngày, có cảm giác như chúng tôi đang làm đúng, những ngày khác thì không. Đó là một hành trình và một sự hy sinh đối với những người làm cha mẹ, chuyến hành trình cần đến sự can đảm, kỷ luật và những thắc mắc thường trực.
+          </em></p></div>
+<br>
+      <div style="flex: 0 0 40%;">
+        <p><em>Niềm vui là ở chỗ chúng tôi tự đặt ra giờ giấc cho riêng mình, đi du lịch bất cứ lúc nào, dành cả ngày để học môn Hóa hoặc bỏ qua để làm bom khói. Chúng tôi đi bên lề hệ thống và hi vọng tìm thấy mình vượt qua nó một bước. Mỗi khi bắt đầu một chu trình mới, chúng tôi đều có cảm giác như mình đang mở ra một lãnh địa chưa được khai phá. Rất dễ nản lòng, nhưng nếu Zephyr thành công khi chúng tôi hạ cánh, điều đó sẽ thật tuyệt vời, và đó là lúc chúng tôi biết việc mình làm là đúng.
+          </em></p>
+        <br><p><em><strong>Karine, mẹ của Zephyr.  </strong></em></p>    </div></div>
+        <hr>
+
+        <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
+        <p>Bề ngoài hoang dại và vô lo, chúng dạn dĩ, xông xáo và đầy tò mò. Chúng không bị gây mê bởi những ứng dụng điện thoại, không chìm đắm trong những xu hướng mạng xã hội, không lay động bởi những tiêu chuẩn được cho là phù hợp, chúng phản chiếu lại môi trường mà chúng sống. Hoàn toàn thoải mái dưới lớp da của mình, chúng dẫn ta bước vào một thế giới huyền bí, đầy ma thuật, được tạo ra bởi óc sáng tạo và trí tưởng tượng không rào cản.</p>
+
+        <p>Dẫu tách lìa khỏi xu hướng chung, chúng không bị cô lập. Không tồn tại một ranh giới hay hàng rào vật lý nào ngăn cản tiềm năng của chúng.</p>
+        <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5531-1.jpg?v=1680144318020"  style="width: 100%" alt="">  </div>
+        <br>
+        
+      <div style="flex: 0 0 40%;">
+        <p>Cha mẹ của <strong>Grisha, 8 tuổi,</strong> muốn con thể hiện trí tưởng tượng và khả năng sáng tạo của mình hết mức có thể trong giai đoạn đa cảm này, họ nghĩ rằng những điều này có thể không được coi trọng và nuôi dưỡng đúng mức ở trường học. Với sự tò mò bất tận, Grisha yêu thích việc làm mộc trong xưởng của cha, học về những loài động vật, thiên nhiên, khoa học, và sáng chế các vật dụng. Cậu bé thường xuyên có những chuyến du ngoạn băng rừng một mình, cậu cũng đang viết một cuốn sách về cuộc phiêu lưu của loài cá, tựa đề “Can the Fish”, và hi vọng cuốn sách sẽ được xuất bản một ngày nào đó.</p>
+          <hr></div></div>
+        <br>
+        <div class="slideshow-container">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2Ff86288f2-7d6e-40e9-90f8-88308dde6e39/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAHn42kJLXtWVlPLD2WSatCY8l_ITL9Hn6mwvMJ0YxxJO&exp=1762632375&osig=AAAAAAAAAAAAAAAAAAAAAJJZrH-gwfq9GrQBydZJLVNdBUEjWocRGbQIyLXwtHYS&signer=media-rpc&x-canva-quality=screen_2x" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2Fc12a1caa-564a-4e65-a655-dd3cf205e046/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAIvJmbbzGgGoRbnWRZkKfAD1xOMYYhUiLs7kjETQz8zh&exp=1762635788&osig=AAAAAAAAAAAAAAAAAAAAALdCYL2jEQdbgtsKfM8pmK63KdG7tN_OcqqGXf7i0jXE&signer=media-rpc&x-canva-quality=screen_2x" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2F2122e6d6-3c28-4ae6-9353-5ead66f10a63/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEBBC8d750_bvLFGjCgv6FDAYfhI3e7tV8liwVJLz6-b&exp=1762632220&osig=AAAAAAAAAAAAAAAAAAAAAI_JvE83jUJ20yyvDo13lQJRULv9IIyoNzDwpzDVcLbi&signer=media-rpc&x-canva-quality=screen_2x" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F0a360a91-6ae9-457c-a5ad-073710dd3171/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAJcLiajeVKBIX5kHW3zhcFcg5mK7GISJzHQO6ACJUTMo&exp=1762632355&osig=AAAAAAAAAAAAAAAAAAAAALCSYkobyJL8BeUuuOAYlu7YgAhZdI6s-RR-Q63hyumm&signer=media-rpc&x-canva-quality=screen" alt="">
+      </div>
+      <hr>
+      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
+      <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5469-1.jpg?v=1680146140190" style="width: 100%" alt=""> </div>
+        <br>
+      <div style="flex: 0 0 40%;"><p><strong>Lucia, 12 tuổi, </strong>sống nửa ở thành phố và nửa ở vùng quê.</p>
+      <p>Mẹ cô bé từng là giáo viên dạy khoa học ở trường công, đã bỏ việc để giáo dục cô bé tại nhà. Thời gian trong ngày của Lucia dành cho việc tự thiết kế những trải nghiệm của mình, cô bé có hứng thú đặc biệt với di truyền học và khoa học thần kinh. Cô bé học làm gốm từ một nghệ nhân và cũng theo học một lớp vũ đạo. Cô bé yêu thích văn học cổ điển và tham gia khóa kịch nghệ Shakespeare mùa hè từ lúc 9 tuổi.</p>
+        <hr></div></div>
+      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
+        <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5520-1.jpg?v=1680147996907" style="width: 100%" alt="">  </div>
+      <br>
+      <div style="flex: 0 0 40%;">
+      <p>Từ nhiều năm nay, <strong>Rosabel, 7 tuổi,</strong> được giáo dục tại nhà trên trang trại cùng một nhóm những đứa trẻ khác. Tại đây cô bé được trải nghiệm thực tế công việc làm nông, bao gồm chăm sóc động vật và đất đai. Cô bé học được cách tự làm ra những vật dụng hữu ích thường ngày, như quần áo hay đồ nội thất. Nhóm trẻ giáo dục tại nhà này đề cao việc giáo dục toàn diện – nhắm đến phát triển cả trí óc, cơ thể, tinh thần – trong một môi trường tập trung vào việc nuôi dưỡng mối quan hệ hài hòa với thế giới tự nhiên.</p>
+        <hr></div></div>
+      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 40%;">
+        <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5472-1.jpg?v=1680147952400" style="width: 100%" alt="">  </div>
+      <br>
+      <div style="flex: 0 0 40%;">
+      <p><strong>Roan, 10 tuổi,</strong>sống cùng cha mẹ và nhiều vật nuôi trên một trang trại. Cậu bé được giáo dục theo phương pháp dựa trên thiên nhiên, nhấn mạnh vào các chu kỳ của việc làm nông và việc tự nuôi trồng thức ăn cho mình. Bên cạnh việc học các môn truyền thống, hoạt động hằng ngày của cậu bé bao gồm gieo hạt, làm đồ thủ công từ lá và rễ cây, chăm sóc mùa màng và gia súc, cùng với việc tự phát triển các sở thích riêng. Cậu say mê lịch sử thuộc địa, tham gia vào một giải bóng đá nhỏ, thích bơi lội, trượt băng trên mặt hồ và chạy chơi khắp khu rừng.</p>
+        <hr></div></div>
+      <div class="slideshow-container">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Ff06e281e-60c9-4423-80ff-3defc4c68a15/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPbB6wJ34mVPgvfQGfQ_w-1R76wS8_UElYhOSJFF2PVp&exp=1762632079&osig=AAAAAAAAAAAAAAAAAAAAAMbg8_oz_vWRmzzrbDcf9IUP42eGhNt6aZK4ph0guC7G&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F12411e62-345b-4be7-b31d-57a35589b1b2/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGNCQ1NfE76VoPw7-9vVZmH_b4BcisNsnOQdh7ZzRXTS&exp=1762629533&osig=AAAAAAAAAAAAAAAAAAAAAF_ef9r9nfbrbeKb0UHViaGZ9h1vHX_KrhYHjM2hh1aT&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F9acebbeb-bbcc-4e70-b3af-52abffa4398a/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPmPOFTcsaVf-1_mO0_kTp-bWtbWHSivY4W9WqeJ-3jh&exp=1762629037&osig=AAAAAAAAAAAAAAAAAAAAACb2JH_bs7iYdo_scYT-3Maan4vRDox9Cj0J9Hf3Fppd&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F0a27f54a-4005-4c0d-b74d-9cc2baf87d83/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAFDK1JGPqkE8NLwddq-I8eTUP7O62nr6i6mRrGLI8r_5&exp=1762631934&osig=AAAAAAAAAAAAAAAAAAAAAEQ2XZpRz5fvvboCkDPedD0FyE6Pj6n-RJQwDzwPLn74&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F34976495-809e-4c43-880b-7435e4b5c390/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAI471Ow7igqh7GPPoa5-EeuJBSgbv_eIXID-ZqtXURjc&exp=1762629552&osig=AAAAAAAAAAAAAAAAAAAAABd2YA8jgQNHPFEX6V1vfo_aNXRJ6rsM3bQFCHdvinxE&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F70051515-0c28-4fd2-8d11-a23db6a640b5/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAH1KsW7QECowcYxjjZKJljaEKtp-S06WuafeDQ6cOt1g&exp=1762630755&osig=AAAAAAAAAAAAAAAAAAAAANYh-1yIy2x1wUNELo-JTqH6t1q9tGtNwGQfOsOelsL2&signer=media-rpc&x-canva-quality=screen" alt="">`
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Ff63ac4d3-3482-4d94-9be9-46ebfc57a91f/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGEOSucWu3_-wpN6tV1-Yus5dTAWVk59ofCDjJOqDf-o&exp=1762630483&osig=AAAAAAAAAAAAAAAAAAAAABUkHfEiBxOOC87oVPeYz0i2wj57EetEoQI5fwme-sbg&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F1dbc090b-e104-4dec-8217-61d7bd4bc652/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAIeAPCX1qv8MtQklDQocKasbbk1HEYAmpn_bjDcd49q-&exp=1762629518&osig=AAAAAAAAAAAAAAAAAAAAAENz9d8Ps80hqCH2dyEjRytOns3zjS2oSQarxEhYMeZp&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fef218444-bab6-41c6-a4d9-bb163de73c80/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPXEeq61GRjqu63hSh6TnjaCmpR_BiawHFOG2Cpifo1F&exp=1762631286&osig=AAAAAAAAAAAAAAAAAAAAAEmyRlnyY6vpvCSSJN3xBhd48vEPRFl6hjwMwIRC-t2j&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fd77bd102-714d-4eb4-a684-45fa2352c1aa/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAM-p34ch0w_6zlkvGzTnOcUDQqmqL9KD7eyMW5ujRbJ4&exp=1762631817&osig=AAAAAAAAAAAAAAAAAAAAAD1Jy68kvEJCeNKW5kSRHx8p0PIegnBo0iNBwDVgxWin&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F86bac37c-b31c-4e0e-8150-47ce09f2a4c5/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAMA1twLIgnfY1i07Focz6Al78f5kdINiQYWUgHPWdhHa&exp=1762631305&osig=AAAAAAAAAAAAAAAAAAAAAMWPtB7tHGGRHVb0rL7vRB_8rQUyLeeEewIfQUAFTI2k&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F02362b31-eb42-4873-befc-e7c0d09ce40d/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAKE_Gp0LrX63B9TpvlGRl6GZazV0x7hSJDxB8HN4ArmT&exp=1762631519&osig=AAAAAAAAAAAAAAAAAAAAAIhSZlvCeJyxXktOXubv290ahzhDNr1KQn2KEGlTGdUJ&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F2e462907-f6d0-459b-9d26-862657eb6540/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAEn2GWoWPvOSWFsd_uFgCtbVxTFXhZfStg7yMCyvmxXI&exp=1762629234&osig=AAAAAAAAAAAAAAAAAAAAAMeJb0GiynRaELaABBdMNxwqJ8grHg7nI_aVS03VzTRg&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fd90fe051-6a9f-4c89-9625-1057b8d8a7cf/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAACVY8QGh_s0iFZcJJ4lph9ogTiQiCF7gDePJ9V_Q_4wG&exp=1762629929&osig=AAAAAAAAAAAAAAAAAAAAAFfujiS44WVuYT2w08HEUb69M8NY-UcSMAsNJedjAqo0&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F49b98ec8-8561-4920-87c9-3e488ccd6423/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAB5ZeShSK7HgYYnYVFjuTBVrITREH86tyR6c1EN4kOjB&exp=1762630135&osig=AAAAAAAAAAAAAAAAAAAAAGmfHAGdTibCaoCkeuRx9Xyo3pCMqUFUM9QxHyEjPrRN&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F49b98ec8-8561-4920-87c9-3e488ccd6423/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAB5ZeShSK7HgYYnYVFjuTBVrITREH86tyR6c1EN4kOjB&exp=1762630135&osig=AAAAAAAAAAAAAAAAAAAAAGmfHAGdTibCaoCkeuRx9Xyo3pCMqUFUM9QxHyEjPrRN&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F80c29eb2-9799-4f0f-93e2-d988be76f427/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAJm4GLd-iczZqc2LE1m2VG_QbgxM6MJXht2aqQVUlvgI&exp=1762631342&osig=AAAAAAAAAAAAAAAAAAAAAJrQCk11kb6_cXdWgT1oyb3JjPdS4n9ayLJkmohm5sFf&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F23201fb9-75d2-47ce-882e-96e52341b9d0/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAMhXwWAvHLh800R3cFOxt-O3ynyQHp_awlQdn5fhVozr&exp=1762631778&osig=AAAAAAAAAAAAAAAAAAAAAFtzJAZwej_QpB3l4H3JmGGZxQvF2yt8GpFPnej77shM&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F23c87723-00be-45d5-a5e6-c74747271ed0/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGeNcZ0EmTNcYoWLVqXRKcjHemSiqi-wgt82GfgHbsz-&exp=1762631833&osig=AAAAAAAAAAAAAAAAAAAAAN7JBpHBqqw0pIUNupDqBohnwz1De6HW0XLUFm_9PFJe&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fe6c6352f-2abc-4ffa-95ea-9ed7b863f515/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAP8KCNa_lDXgZfTHHILL5_G2KP4cqF804_65Y0tZGWFZ&exp=1762630950&osig=AAAAAAAAAAAAAAAAAAAAADe9If0-9DzaDAo4E03jDm4bCu0HG2pZiy94hlgVbJfv&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F2b752dd0-4deb-4948-a1df-d6c0674631ed/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAADzrsK3D0pmsqnGl_Bkj0MvenbWCUmJPb3I2U5xld9yH&exp=1762629782&osig=AAAAAAAAAAAAAAAAAAAAAJSv-YzWlDwyZMClpemRTj0FTKrBpGsHpYdpe1MCMk5s&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F168b9c12-b095-40a1-a3b2-26e1d6dc66fc/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAIuSMFyNvNwtERAoNVRXqVgEFkXpOAwizH9W12KYJvFr&exp=1762630166&osig=AAAAAAAAAAAAAAAAAAAAAHzeDJ_ynmEYXLeBZCTijDE3AaW4HqkDW4uj4ENHo8RA&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F9ac87d48-29d7-4312-9768-e57a456a65cc/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAANjC4Gf4_TIow-zmNSL7tUy6QycIjJmN1EYkawaJ8NFQ&exp=1762631622&osig=AAAAAAAAAAAAAAAAAAAAADrFfThsWC7uYO_qHhxLS0fA1gWJB1SgR-zTz19vxGx9&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F29ae888d-69cd-4ec8-ac70-8d12614d854e/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAAOsvHzFqXOKgrfJqpLOK_ZPnj-K_i4BB4UNzg_d_fUz&exp=1762628547&osig=AAAAAAAAAAAAAAAAAAAAAPCcQVzG7iCJGtQhUl4KQ_SVs57TNRcX9nH0IfhIKf8E&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F096dc7fa-8249-49e4-81e6-828259a6a5df/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAFpSFbpevxnLv1o1GbJfXw7_ryVvKvpibvs1hXyD0rbI&exp=1762629013&osig=AAAAAAAAAAAAAAAAAAAAAH37mUiGvbYLHVG0eE_vL2nAgH9a48elT-QwnRU0SL2S&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fb657f325-1a78-42c8-addb-e3f634c33470/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAP1Iw76pJn6VCoj1P3QDvBpCkPQ-fNl0ioW8dVbI0mWc&exp=1762628750&osig=AAAAAAAAAAAAAAAAAAAAAPXFhagJK0LdY9V0eTw4j1AVmEHxxbszwnI7Glwrq6Ox&signer=media-rpc&x-canva-quality=screen" alt="">  
+      </div>
+      <br>
+
+  </section>
+
+<!-- Scripts -->
   <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
+document.querySelectorAll('.slideshow-container').forEach(container => {
+  const slides = container.querySelectorAll('.slide');
+  let index = 0;
 
-    function showSlide(n) {
-      slides.forEach((s, i) => {
-        s.classList.toggle('active', i === n);
-      });
-    }
+  function showSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[n].classList.add('active');
+  }
 
-    function changeSlide(n) {
-      currentSlide = (currentSlide + n + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-    // auto start
-    showSlide(currentSlide);
-    setInterval(() => changeSlide(1), 4000); // auto next every 4s
+  // Initialize first slide
+  showSlide(index);
+
+  // Auto cycle
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 3000);
+});
   </script>
   <script>
     function openSection(id) {
@@ -1142,7 +1452,6 @@ prevent flex layout interference */
       document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
     }
   </script>
-
   <script>
     let slideIndex = 0;
     showSlide(slideIndex);
@@ -1160,7 +1469,6 @@ prevent flex layout interference */
       slides[slideIndex].classList.add('active');
     }
   </script>
-
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const overlay = document.createElement("div");
@@ -1205,5 +1513,7 @@ prevent flex layout interference */
       document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
     }
   </script>
+  
+  
 
 </html>
