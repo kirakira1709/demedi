@@ -120,7 +120,7 @@
     none; font-size: 2rem; cursor: pointer; padding: 0.5rem 1rem; z-index: 20; transition: background 0.3s; }
     .book-scroll .prev:hover, .book-scroll .next:hover { text-decoration: none; } .book-scroll .prev { left: 10px; }
     .book-scroll .next { right: 10px; }
-    
+    .button-end {display: none;}
     /* 153 list of entries */
     
     .list-container { position:fixed; width: 100%; height: 100%; display: block; overflow-y: auto; } .list { position:
@@ -129,13 +129,13 @@
 
     /* 159 media querries */
     
-    @media screen and (max-width: 768px) { .book-scroll.overlay { display: block; position: absolute; margin: 0 auto;
+    @media screen and (max-width: 768px) {* {font-size: medium;} .book-scroll.overlay { display: block; position: absolute; margin: 0 auto;
     width: 100%; overflow-y: auto; top: 0; left: 0; z-index: 999; } .intro.overlay { display: block; width: 100%;
     margin: 0px; /* space for header */ padding: 1rem; max-height: 100%; overflow-y: auto; top: 0; left: 0; border: 1px
     solid #ccc; position: relative; z-index: 100; max-width: 70%; height: auto; } .intro > p {font-size: smaller;} .list
     { height: 100%; width: 100%; margin-top: 0; position: absolute; top: 0; padding: 0 auto; overflow-y: auto; } body
     {top: 0;} .list>a { font-family: var(--font-title); font-size: 38px; line-height: 15vw; } header { display: none; }
-    body { margin: 0 auto; } button>p, button {font-size: x-small;} }
+    body { margin: 0 auto; } button>p, button {font-size: medium;} .button-end {display: block;} }
 
     @media screen and (max-width: 1024px) { .list { width: 100%; padding: 0 auto; overflow-y: auto; margin-top: 7vw;} .list>a {
     font-size: 58px; display: block } }
@@ -314,6 +314,11 @@
       <li><a href="https://archive.org/embed/joy0000abig" target="_blank" rel="noopener noreferrer">Joy by Abigail Santamaria</a></li>
       <li><a href="http://apilgriminnarnia.com/2016/05/09/toy/" target="_blank" rel="noopener noreferrer">A Toy Left on the Lawn: C.S. Lewis and the Controversy of The Four Loves</a></li>
     </ul>
+    <hr>
+    <button class="close-btn button-end" onclick="closeSection('morefourloves')">
+        <p>close</p>
+      </button>
+     <br>
 
   </section>
 
@@ -409,6 +414,11 @@
         <br>
       </div>
     </div>
+  <hr>
+    <button class="close-btn button-end" onclick="closeSection('morenuongnau')">
+        <p>close</p>
+      </button>
+<br>
 
   </section>
 
@@ -482,6 +492,11 @@
 
       <p>Xem cả bài: <a href="https://www.nobelprize.org/prizes/literature/2009/muller/lecture/">Herta Müller’s Nobel Lecture: Every word knows something of a vicious circle</a></p>
     </div>
+    <hr>
+    <button class="close-btn button-end" onclick="closeSection('morekhantay');">
+        <p>close</p>
+      </button>
+<br>
 
   </section>
 
@@ -597,6 +612,11 @@
       <p>Rồi biết đâu, một cậu học trò gen Alpha sẽ xúc được rổ cá đầy?</p><br>
       <p><img src="https://k1rak1ra.neocities.org/blog/5.webp" style="width: 100%;"></p>
     </div>
+    <hr>
+    <button class="close-btn button-end" onclick="closeSection('morechatsong')">
+        <p>close</p>
+      </button>
+<br>
 
   </section>
 
@@ -681,7 +701,12 @@
     <hr>
 
     <p><em>Dự án “No Land Man” (Người Không Đất) của Nguyễn Đình Phong được giới thiệu trong ấn phẩm Makét 02: Qua Khe Hở, Trước Khoảng Không.</em></p>
-    <br>
+
+        <hr>
+    <button class="close-btn button-end" onclick="closeSection('morecanvas')">
+        <p>close</p>
+      </button>
+<br>
   </section>
 
   <!-- Mennonites -->
@@ -781,7 +806,12 @@
         <li><a href="https://www.vanityfair.com/news/2022/08/what-one-war-photographer-has-learned-from-conflict-in-ukraine">Bài phỏng vấn Larry Towell trên Vanity Fair</a></li>
         <li><a href="https://www.theguardian.com/artanddesign/2022/apr/09/a-community-out-of-time-larry-towells-images-of-mennonite-families">Về sách The Mennonites trên The Guardian</a></li>
       </ul>
-    </div><br>
+    </div>
+    <hr>
+    <button class="close-btn button-end" onclick="closeSection('moremennonites')">
+        <p>close</p>
+      </button>
+<br>
 
   </section>
   
@@ -859,7 +889,12 @@
       <p><strong>Neil Burgess</strong></p>
       <hr>
  
-    </div><br>
+    </div>
+     <hr>
+    <button class="close-btn button-end" onclick="closeSection('moresalgado')">
+        <p>close</p>
+      </button>
+<br>
 
   </section>
   
@@ -935,7 +970,10 @@
         <img class="slide" src="https://bizweb.dktcdn.net/thumb/2048x2048/100/453/502/files/dscf9265.jpg?v=1698213975385" alt="" />
       </div>
  </div>
-    <br>
+         <hr>
+    <button class="close-btn button-end" onclick="closeSection('morerobertfrank')">
+        <p>close</p>
+      </button>
 
   </section>
 
@@ -1068,7 +1106,10 @@
 
       
  </div>
-    <br>
+         <hr>
+    <button class="close-btn button-end" onclick="closeSection('morehenryjames')">
+        <p>close</p>
+      </button>
 
   </section>
 
@@ -1215,7 +1256,10 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
     
       </div>
 </div>
-    <br>
+         <hr>
+    <button class="close-btn button-end" onclick="closeSection('moreabbazappa')">
+        <p>close</p>
+      </button>
 
   </section>
 
@@ -1400,7 +1444,10 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F096dc7fa-8249-49e4-81e6-828259a6a5df/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAFpSFbpevxnLv1o1GbJfXw7_ryVvKvpibvs1hXyD0rbI&exp=1762629013&osig=AAAAAAAAAAAAAAAAAAAAAH37mUiGvbYLHVG0eE_vL2nAgH9a48elT-QwnRU0SL2S&signer=media-rpc&x-canva-quality=screen" alt="">  
       <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fb657f325-1a78-42c8-addb-e3f634c33470/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAP1Iw76pJn6VCoj1P3QDvBpCkPQ-fNl0ioW8dVbI0mWc&exp=1762628750&osig=AAAAAAAAAAAAAAAAAAAAAPXFhagJK0LdY9V0eTw4j1AVmEHxxbszwnI7Glwrq6Ox&signer=media-rpc&x-canva-quality=screen" alt="">  
       </div>
-      <br>
+           <hr>
+    <button class="close-btn button-end" onclick="closeSection('morehomeschooled')">
+        <p>close</p>
+      </button>
 
   </section>
 
@@ -1424,34 +1471,6 @@ document.querySelectorAll('.slideshow-container').forEach(container => {
     showSlide(index);
   }, 3000);
 });
-  </script>
-  <script>
-    function openSection(id) {
-      // STEP 1: close all currently open book-scroll sections
-      const openSections = document.querySelectorAll('.book-scroll');
-      openSections.forEach(section => {
-        section.classList.remove('overlay');
-        section.style.display = 'none';
-      });
-      // STEP 2: open the one you want
-      const target = document.getElementById(id);
-      if (target) {
-        target.classList.add('overlay');
-        target.style.display = 'block';
-      }
-    }
-
-    function closeSection(id) {
-      const target = document.getElementById(id);
-      if (target) {
-        target.classList.remove('overlay'); // remove top overlay class
-        target.style.display = 'none'; // hide it again
-      }
-    }
-
-    function closeAllSections() {
-      document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
-    }
   </script>
   <script>
     let slideIndex = 0;
@@ -1499,8 +1518,10 @@ document.querySelectorAll('.slideshow-container').forEach(container => {
       if (target) {
         target.classList.add('overlay');
         target.style.display = 'block';
+        target.scrollTop = 0; // 👈 reset scroll to top of section
       }
     }
+    
 
     function closeSection(id) {
       const target = document.getElementById(id);
