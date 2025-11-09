@@ -102,6 +102,7 @@
     
     .photo-frame .caption { text-align: right; width: 100%; margin-top: 1rem; }
     
+    .details {font-weight: 400; font-size: 0.25em; color: #555; margin-left: 1rem; line-height: inherit;}
     /* 135-149 IMGs zoom-in and slideshow */
     
     .zoom-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); justify-content: center;
@@ -136,7 +137,7 @@
     {top: 0;} .list>a { font-family: var(--font-title); font-size: 38px; line-height: 15vw; } header { display: none; }
     body { margin: 0 auto; } button>p, button {font-size: x-small;} }
 
-    @media screen and (max-width: 1024px) { .list { width: 100%; padding: 0 auto; overflow-y: auto; } .list>a {
+    @media screen and (max-width: 1024px) { .list { width: 100%; padding: 0 auto; overflow-y: auto; margin-top: 7vw;} .list>a {
     font-size: 58px; display: block } }
     
     @media screen and (orientation: landscape) and (max-width: 900px) { .intro.overlay img { max-width: 50% !important;
@@ -152,16 +153,16 @@
   </header>
   <div class="list-container">
   <div class="list">
-    <a href="#fourloves" onclick="closeAllSections(); openSection('fourloves'); return false;">07.2024 — The Four Loves <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">C. S. Lewis</span></a><br>
-    <a href="#khantay" onclick="closeAllSections(); openSection('khantay'); return false;">11.2023 — Con có khăn tay rồi chứ?</a><br>
-    <a href="#henryjames" onclick="closeAllSections(); openSection('henryjames'); return false;">11.2023 — Thứ quý giá nhất: James về cái chết</a><br>
-    <a href="#nuongnau" onclick="closeAllSections(); openSection('nuongnau'); return false;">11.2023 — Một nơi nương náu</a><br>
-    <a href="#homeschooled" onclick="closeAllSections(); openSection('homeschooled'); return false;">03.2023 — Không đến trường <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Rachel Papo</span></a><br>
-    <a href="#abbazappa" onclick="closeAllSections(); openSection('abbazappa'); return false;">02.2023 — ABBA…ZAPPA <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Gijsbert Hanekroot</span></a><br>
-    <a href="#canvas" onclick="closeAllSections(); openSection('canvas'); return false;">01.2023— Tấm canvas trống</a> <br>
-    <a href="#robertfrank" onclick="closeAllSections(); openSection('robertfrank'); return false;">11.2022 — Hold Still, Keep Going <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Robert Frank</span></a><br>
-    <a href="#mennonites" onclick="closeAllSections(); openSection('mennonites'); return false;">08.2022 — The Mennonites <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Larry Towell</span></a><br>
-    <a href="#salgado" onclick="closeAllSections(); openSection('salgado'); return false;">08.2022 — Gold <span style="font-weight: 400; font-size: 0.25em; color: #555; margin-left: 0.5em;">Sebastião Salgado</span></a><br>
+    <a href="#fourloves" onclick="closeAllSections(); openSection('fourloves'); return false;">07.2024 — The Four Loves<span class="details">C. S. Lewis</span></a><br>
+    <a href="#khantay" onclick="closeAllSections(); openSection('khantay'); return false;">11.2023 — Con có khăn tay rồi chứ?<span class="details">Herta Müller</span></a><br>
+    <a href="#henryjames" onclick="closeAllSections(); openSection('henryjames'); return false;">11.2023 — Thứ quý giá nhất<span class="details">Henry James về cái chết</span></a><br>
+    <a href="#nuongnau" onclick="closeAllSections(); openSection('nuongnau'); return false;">11.2023 — Một nơi nương náu<span class="details">Romain Gary</span></a><br>
+    <a href="#homeschooled" onclick="closeAllSections(); openSection('homeschooled'); return false;">03.2023 — Không đến trường<span class="details">Rachel Papo</span></a><br>
+    <a href="#abbazappa" onclick="closeAllSections(); openSection('abbazappa'); return false;">02.2023 — ABBA…ZAPPA<span class="details">Gijsbert Hanekroot</span></a><br>
+    <a href="#canvas" onclick="closeAllSections(); openSection('canvas'); return false;">01.2023— Tấm canvas trống<span class="details">Nguyễn Đình Phong</span></a><br>
+    <a href="#robertfrank" onclick="closeAllSections(); openSection('robertfrank'); return false;">11.2022 — Hold Still, Keep Going<span class="details">Robert Frank</span></a><br>
+    <a href="#mennonites" onclick="closeAllSections(); openSection('mennonites'); return false;">08.2022 — The Mennonites<span class="details">Larry Towell</span></a><br>
+    <a href="#salgado" onclick="closeAllSections(); openSection('salgado'); return false;">08.2022 — Gold<span class="details">Sebastião Salgado</span></a><br>
     <a href="#chatsong" onclick="closeAllSections(); openSection('chatsong'); return false;">07.2022 — Chặt sông ra từng khúc</a><br>
     <br><br><br><br>
   </div></div>
