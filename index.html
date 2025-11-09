@@ -25,7 +25,7 @@
     body ::selection {
     background-color: rgb(189, 147, 228); }
 
-    h1, h2, h3 { font-family: var(--font-title); font-size: medium;}
+    h1, h2, h3 { font-family: var(--font-title); font-size: x-large;}
 
     a { font-family: var(--font-body); color: #000000; text-decoration: none; transition: color 0.3s; } a:hover { color:
     black; text-decoration: underline; }
@@ -42,7 +42,7 @@
     section { break-before: column; /* or column-break-before: always; */ position: relative; z-index: 1; display: none;}
 
     button { border: none; color: rgb(0, 0, 0); cursor: pointer; background: none; font-family: var(--font-body); color:
-    #ccc; } button>p { font-family: var(--font-body); font-size: small; color: #ccc; } button>p:hover { text-decoration:
+    #999; } button>p { font-family: var(--font-body); font-size: small; color: #999; } button>p:hover { text-decoration:
     underline; color: #000000; } button:hover { text-decoration: underline; color: #000000; }
 
     header { position: fixed; top: 0; left: 0; width: 100%; background: #fff; padding: 1rem; border: 1px solid #ccc;
@@ -90,24 +90,20 @@
     background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */ backdrop-filter: blur(4px); /* applies blur
     behind */ -webkit-backdrop-filter: blur(4px); /* for Safari support */ }
 
-    .intro.overlay img { /* shrink to fit the parent width */ width: auto; max-width: 100%; /* never exceed parent width
-    */ max-height: 55vh; width: auto; /* scale width proportionally */ height: auto; /* scale height proportionally */
-    object-fit: contain; /* keep aspect ratio, fit inside parent */ display: block; /* remove inline gaps */ margin: 0 auto;
-    1rem; border: 1px solid #ccc;}
     .photo-frame img { display: block; width: auto; height: auto; max-width: 100%; max-height: 55vh; object-fit:
-    contain; border: 1px solid #ccc; }
+    contain; border: 1px solid #ccc; margin-left: 0 auto;}
 
    .photo-frame { display: inline-flex; flex-direction: column; align-items: flex-end; width: fit-content; /* matches
    image width */ } 
     
     .photo-frame .caption { text-align: right; width: 100%; margin-top: 1rem; }
     
-    .details {font-weight: 400; font-size: 0.25em; color: #555; margin-left: 1rem; line-height: inherit;}
+    .details {font-weight: 400; font-size: 0.25em; color: #999; margin-left: 1rem; line-height: inherit;}
     /* 135-149 IMGs zoom-in and slideshow */
     
     .zoom-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); justify-content: center;
     align-items: center; z-index: 1000; } .zoom-overlay img { display: block; max-width: 60%; height: auto; cursor:
-    zoom-out; }
+    zoom-out; margin-left: auto; }
 
     .slideshow-container { position: relative; width: 100%; max-width: 100%; margin: 2rem auto; overflow: hidden;
     z-index: 5; } .slide { width: 100%; display: none; } .slide.active { display: block; } .prev, .next { position:
@@ -129,21 +125,22 @@
 
     /* 159 media querries */
     
-    @media screen and (max-width: 768px) {* {font-size: medium;} .book-scroll.overlay { display: block; position: absolute; margin: 0 auto;
-    width: 100%; overflow-y: auto; top: 0; left: 0; z-index: 999; } .intro.overlay { display: block; width: 100%;
-    margin: 0px; /* space for header */ padding: 1rem; max-height: 100%; overflow-y: auto; top: 0; left: 0; border: 1px
-    solid #ccc; position: relative; z-index: 100; max-width: 70%; height: auto; } .intro > p {font-size: smaller;} .list
-    { height: 100%; width: 100%; margin-top: 0; position: absolute; top: 0; padding: 0 auto; overflow-y: auto; } body
-    {top: 0;} .list>a { font-family: var(--font-title); font-size: 38px; line-height: 15vw; } header { display: none; }
-    body { margin: 0 auto; } button>p, button {font-size: medium;} .button-end {display: block;} }
+    @media screen and (max-width: 768px) {* {font-size: medium;} .book-scroll.overlay { display: block; position:
+    absolute; margin: 0 auto; width: 100%; overflow-y: auto; top: 0; left: 0; z-index: 999; } .intro.overlay { display:
+    block; width: 100%; margin: 0px; /* space for header */ padding: 1rem; max-height: 100%; overflow-y: auto; top: 0;
+    left: 0; border: 1px solid #ccc; position: relative; z-index: 100; max-width: 70%; height: auto; } .intro > p
+    {font-size: smaller;} .list { height: 100%; width: 100%; margin-top: 0; position: absolute; top: 0; padding: 0 auto;
+    overflow-y: auto; } body {top: 0;} .list>a { font-family: var(--font-title); font-size: 38px; line-height: 15vw; }
+    header { display: none; } body { margin: 0 auto; } button>p, button {font-size: medium;} .button-end {display:
+    block;} .zoom-overlay img { display: block; max-width: 100%; height: auto; cursor: zoom-out;} .halfhalf {flex-direction: column;}}
 
     @media screen and (max-width: 1024px) { .list { width: 100%; padding: 0 auto; overflow-y: auto; margin-top: 7vw;} .list>a {
     font-size: 58px; display: block } }
     
-    @media screen and (orientation: landscape) and (max-width: 900px) { .intro.overlay img { max-width: 50% !important;
-    /* reduce size in landscape */ height: auto; width: auto; /* optional */ margin-top: 0; margin-bottom: 0; } *
-    {font-size: x-small;} button>p {font-size: smaller;}}
-
+    @media screen and (orientation: landscape) and (max-width: 900px) {*
+    {font-size: x-small;} button>p {font-size: smaller;} .photo-frame img { display: block; width: auto; height: auto; max-width: 50% !important; max-height: 55vh; object-fit:
+      contain; border: 1px solid #ccc;} .halfhalf {flex-direction: column;}}
+    .halfhalf {display: flex; gap: 2rem; align-items: flex-end;}
   </style>
 </head>
 
@@ -1318,10 +1315,9 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
         <br><br><strong>(Trích bài phỏng vấn Rachel Papo trên lensculture.com)</strong>
         </em></p>
       <br>
-      <div style="display: flex; gap: 2rem; align-items: flex-end;">
-      <div style="flex: 0 0 40%;">
+      <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div style="flex: 0 0 45%;">
         <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5482-1.jpg?v=1680072890033" style="width: 100%" alt=""></div>
-        <br>
       <div style="flex: 0 0 40%;">
       <p><strong>True, lúc đó 5 tuổi,</strong><br>là cô bé Rachel Papo vô tình gặp khi vừa đến thị trấn Woodstock, vùng núi Catskill. Cuộc gặp là cơ duyên dẫn nữ nhiếp ảnh gia đến dự án ảnh này.</p>
       <p>Cô bé dành hầu hết thời gian với cha mình từ lúc 4 tuần tuổi, sau khi mẹ cô phải trở lại với công việc toàn thời gian tại một nhà hàng địa phương. Cô bé thường phụ giúp cha mình trong những công việc ngoài trời, đồng thời được học những chủ đề đa dạng. Cô và cha thường xuyên lui tới trung tâm New York, nơi cô bé có cơ hội gặp gỡ các nghệ sĩ, nhạc sĩ, và các kì thủ cờ vua. Cô bé thể hiện niềm hứng thú tự nhiên với thế giới xung quanh mình, yêu thích khám phá môi trường hoang dã, và viết nhật ký hằng ngày.</p>
@@ -1340,19 +1336,18 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fa712487c-d4f5-470b-b7b4-4950660de354/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGFZbfTu_OSyFUdk-9F1ZdAcfihsrJ8akw6-DzvX-ItG&exp=1762633880&osig=AAAAAAAAAAAAAAAAAAAAAN5fOYVRZ0KUtCaoJz7uUuBxbXD8GkCBdsIWlDCT7ben&signer=media-rpc&x-canva-quality=screen" alt="">
       </div>
       <hr>
-      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
       <div style="flex: 0 0 40%;">
         <p><em>Học tại nhà giúp True dành thời gian cho những ‘chuyến phiêu lưu cuộc sống’. Cô bé được tiếp cận với nghệ thuật, âm nhạc, tôn giáo, và được những nghệ sĩ hay bạn bè chúng tôi hướng dẫn. Việc này giúp chúng tôi bảo vệ tinh thần của con và cả truyền thống gia đình. Chúng tôi hiểu rõ điểm mạnh và yếu của con và thường đoán được lúc nào con bực bội. Chúng tôi biết chính xác những gì con cần và có thể điều chỉnh thời khóa biểu cho phù hợp, để giúp con học và lớn lên. Được là một phần trong quá trình con phát triển và học hỏi, tìm tòi và khám phá là một món quà. Chúng tôi không bỏ lỡ bất cứ điều gì; chúng tôi có mặt trong những trải nghiệm đầu tiên của con.</em></p></div>
-      <br><div style="flex: 0 0 40%;"><p><em>Điều mà True thực sự có được từ việc học tại nhà chính là tuổi thơ. Con có thời gian để tự phát triển con người riêng của mình. Điều mà tôi nhận thấy, đó là cô bé vẫn giữ được nét trẻ thơ, thứ mà vốn sẽ biến mất nếu con phải đến trường. Ở trường, những đứa trẻ dần nhận thức được chúng có gì và không có gì, chúng trở nên e dè về bản thân, chúng cảm thấy cần phải giống những người khác. True ngớ ngẩn và kỳ quặc, lăn xả và nhân hậu, nhiệt thành và minh mẫn. Giáo dục tại nhà giúp con khám phá chính bản thân mình trước hết, mà không có áp lực của việc phải trở nên hợp chuẩn.
+        <div style="flex: 0 0 40%;"><p><em>Điều mà True thực sự có được từ việc học tại nhà chính là tuổi thơ. Con có thời gian để tự phát triển con người riêng của mình. Điều mà tôi nhận thấy, đó là cô bé vẫn giữ được nét trẻ thơ, thứ mà vốn sẽ biến mất nếu con phải đến trường. Ở trường, những đứa trẻ dần nhận thức được chúng có gì và không có gì, chúng trở nên e dè về bản thân, chúng cảm thấy cần phải giống những người khác. True ngớ ngẩn và kỳ quặc, lăn xả và nhân hậu, nhiệt thành và minh mẫn. Giáo dục tại nhà giúp con khám phá chính bản thân mình trước hết, mà không có áp lực của việc phải trở nên hợp chuẩn.
         <br><strong>Lea, mẹ của True</strong></em></p></div></div>
       <hr>
       
 
-      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
       <div style="flex: 0 0 40%;">
         <p>Thời gian trôi theo nhịp điệu riêng quanh những ngôi nhà, những trang trại, những cánh rừng này. Giữa môi trường được bao bọc bởi thiên nhiên và xa rời những dấu hiệu của công nghệ, Eli, Grisha, Jake, Layla, Iris, Lucia, Maggie Morgan, Roan, Tosabel, True và Zephyr tìm thấy trong mỗi giây phút trải nghiệm là một bài học, một khung cảnh mở ra là một lớp học, mỗi mùa trôi qua là một khóa học mới để chúng tự do khám phá.</p>
         <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5562-1.jpg?v=1680079763993" style="width: 100%"></div>
-      <br>
       <div style="flex: 0 0 40%;">
       <p><strong>Zephyr, 11 tuổi,</strong></p>
       <p>sống trong căn nhà giữa một rừng thông nhỏ, và chưa bao giờ đến trường. Từ nhiều năm nay, cậu bé được hướng dẫn về học thuật và nghệ thuật bởi một nhóm giáo viên sáng tạo. Lúc 10 tuổi, cậu được học về thiết kế – xây dựng với một kiến trúc sư trẻ, qua đó, cậu biết được phần mềm vẽ 3D, cậu thiết kế một ngôi nhà trên cây, làm mô hình, và tự dựng nên ngôi nhà với vật liệu lấy từ gỗ một cây thông già. Ông bà cậu sống ở Lebanon, Zephyr thường xuyên du lịch đến đó suốt trong năm. Thế giới của cậu bé là sự pha trộn của tiếng Anh, lịch sử, toán, khoa học, hoạt họa, làm mộc, âm nhạc, kịch nghệ, nấu ăn, Aikido, Youtube, và trò chơi điện tử.</p>
@@ -1364,25 +1359,23 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2Fe5d7fcf7-da47-4da3-8d89-6d2b39ed8268/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAJfvjoKjLDcQaCIBndmU0GTigEHaxBs8g29uZ55ghu-o&exp=1762628737&osig=AAAAAAAAAAAAAAAAAAAAAPbjs4G-Xa2Wr7CH8AJDqxUJ99sqXgM7YXzGr5Wyl71k&signer=media-rpc&x-canva-quality=screen_2x" alt="">
       </div>
         <br>
-      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
       <div style="flex: 0 0 40%;">
         <p><em>
         Tôi nắm rất nhiều chức danh: hiệu trưởng, người giữ biên bản, nhà tổ chức, giáo viên, tài xế, phụ huynh, đôi lúc là người càu nhàu, đồng thời cũng là một người học. Nếu cần sự hướng dẫn, tôi tìm đến bạn bè và giáo viên của Zephyr, đôi khi tôi đọc lại những văn bản ghi chép về việc giáo dục tại nhà để lấy cảm hứng. Vào một vài ngày, có cảm giác như chúng tôi đang làm đúng, những ngày khác thì không. Đó là một hành trình và một sự hy sinh đối với những người làm cha mẹ, chuyến hành trình cần đến sự can đảm, kỷ luật và những thắc mắc thường trực.
           </em></p></div>
-<br>
       <div style="flex: 0 0 40%;">
         <p><em>Niềm vui là ở chỗ chúng tôi tự đặt ra giờ giấc cho riêng mình, đi du lịch bất cứ lúc nào, dành cả ngày để học môn Hóa hoặc bỏ qua để làm bom khói. Chúng tôi đi bên lề hệ thống và hi vọng tìm thấy mình vượt qua nó một bước. Mỗi khi bắt đầu một chu trình mới, chúng tôi đều có cảm giác như mình đang mở ra một lãnh địa chưa được khai phá. Rất dễ nản lòng, nhưng nếu Zephyr thành công khi chúng tôi hạ cánh, điều đó sẽ thật tuyệt vời, và đó là lúc chúng tôi biết việc mình làm là đúng.
           </em></p>
         <br><p><em><strong>Karine, mẹ của Zephyr.  </strong></em></p>    </div></div>
         <hr>
 
-        <div style="display: flex; gap: 2rem; align-items: flex-end;">
+        <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
       <div style="flex: 0 0 40%;">
         <p>Bề ngoài hoang dại và vô lo, chúng dạn dĩ, xông xáo và đầy tò mò. Chúng không bị gây mê bởi những ứng dụng điện thoại, không chìm đắm trong những xu hướng mạng xã hội, không lay động bởi những tiêu chuẩn được cho là phù hợp, chúng phản chiếu lại môi trường mà chúng sống. Hoàn toàn thoải mái dưới lớp da của mình, chúng dẫn ta bước vào một thế giới huyền bí, đầy ma thuật, được tạo ra bởi óc sáng tạo và trí tưởng tượng không rào cản.</p>
-
         <p>Dẫu tách lìa khỏi xu hướng chung, chúng không bị cô lập. Không tồn tại một ranh giới hay hàng rào vật lý nào ngăn cản tiềm năng của chúng.</p>
         <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5531-1.jpg?v=1680144318020"  style="width: 100%" alt="">  </div>
-        <br>
+
         
       <div style="flex: 0 0 40%;">
         <p>Cha mẹ của <strong>Grisha, 8 tuổi,</strong> muốn con thể hiện trí tưởng tượng và khả năng sáng tạo của mình hết mức có thể trong giai đoạn đa cảm này, họ nghĩ rằng những điều này có thể không được coi trọng và nuôi dưỡng đúng mức ở trường học. Với sự tò mò bất tận, Grisha yêu thích việc làm mộc trong xưởng của cha, học về những loài động vật, thiên nhiên, khoa học, và sáng chế các vật dụng. Cậu bé thường xuyên có những chuyến du ngoạn băng rừng một mình, cậu cũng đang viết một cuốn sách về cuộc phiêu lưu của loài cá, tựa đề “Can the Fish”, và hi vọng cuốn sách sẽ được xuất bản một ngày nào đó.</p>
@@ -1395,24 +1388,24 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F0a360a91-6ae9-457c-a5ad-073710dd3171/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAJcLiajeVKBIX5kHW3zhcFcg5mK7GISJzHQO6ACJUTMo&exp=1762632355&osig=AAAAAAAAAAAAAAAAAAAAALCSYkobyJL8BeUuuOAYlu7YgAhZdI6s-RR-Q63hyumm&signer=media-rpc&x-canva-quality=screen" alt="">
       </div>
       <hr>
-      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
       <div style="flex: 0 0 40%;">
       <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5469-1.jpg?v=1680146140190" style="width: 100%" alt=""> </div>
-        <br>
+
       <div style="flex: 0 0 40%;"><p><strong>Lucia, 12 tuổi, </strong>sống nửa ở thành phố và nửa ở vùng quê.</p>
       <p>Mẹ cô bé từng là giáo viên dạy khoa học ở trường công, đã bỏ việc để giáo dục cô bé tại nhà. Thời gian trong ngày của Lucia dành cho việc tự thiết kế những trải nghiệm của mình, cô bé có hứng thú đặc biệt với di truyền học và khoa học thần kinh. Cô bé học làm gốm từ một nghệ nhân và cũng theo học một lớp vũ đạo. Cô bé yêu thích văn học cổ điển và tham gia khóa kịch nghệ Shakespeare mùa hè từ lúc 9 tuổi.</p>
         <hr></div></div>
-      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
       <div style="flex: 0 0 40%;">
         <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5520-1.jpg?v=1680147996907" style="width: 100%" alt="">  </div>
-      <br>
+
       <div style="flex: 0 0 40%;">
       <p>Từ nhiều năm nay, <strong>Rosabel, 7 tuổi,</strong> được giáo dục tại nhà trên trang trại cùng một nhóm những đứa trẻ khác. Tại đây cô bé được trải nghiệm thực tế công việc làm nông, bao gồm chăm sóc động vật và đất đai. Cô bé học được cách tự làm ra những vật dụng hữu ích thường ngày, như quần áo hay đồ nội thất. Nhóm trẻ giáo dục tại nhà này đề cao việc giáo dục toàn diện – nhắm đến phát triển cả trí óc, cơ thể, tinh thần – trong một môi trường tập trung vào việc nuôi dưỡng mối quan hệ hài hòa với thế giới tự nhiên.</p>
         <hr></div></div>
-      <div style="display: flex; gap: 2rem; align-items: flex-end;">
+      <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
       <div style="flex: 0 0 40%;">
         <img src="https://bizweb.dktcdn.net/100/453/502/files/dscf5472-1.jpg?v=1680147952400" style="width: 100%" alt="">  </div>
-      <br>
+
       <div style="flex: 0 0 40%;">
       <p><strong>Roan, 10 tuổi,</strong>sống cùng cha mẹ và nhiều vật nuôi trên một trang trại. Cậu bé được giáo dục theo phương pháp dựa trên thiên nhiên, nhấn mạnh vào các chu kỳ của việc làm nông và việc tự nuôi trồng thức ăn cho mình. Bên cạnh việc học các môn truyền thống, hoạt động hằng ngày của cậu bé bao gồm gieo hạt, làm đồ thủ công từ lá và rễ cây, chăm sóc mùa màng và gia súc, cùng với việc tự phát triển các sở thích riêng. Cậu say mê lịch sử thuộc địa, tham gia vào một giải bóng đá nhỏ, thích bơi lội, trượt băng trên mặt hồ và chạy chơi khắp khu rừng.</p>
         <hr></div></div>
