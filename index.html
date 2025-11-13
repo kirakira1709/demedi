@@ -122,7 +122,13 @@
     .list-container { position:fixed; width: 100%; height: 100%; display: block; overflow-y: auto; } .list { position:
     absolute; display: flex; flex-direction: column; padding: 0 auto; margin-top: 4vw; overflow-y: auto; } .list a {
     font-family: var(--font-title); font-size: 100px; line-height: 7vw; }
-
+    
+    .banner { position: absolute; top: 50%; left: 0; transform: translateY(-50%) translateX(-100%); width: 100vw;
+    height: 100px; color: #000; display: flex; align-items: center; justify-content: center; z-index: 100;
+    font-weight: bold; white-space: nowrap; animation: moveBanner 20s linear infinite; animation-delay: 3s; /* interval
+    before it starts */ } @keyframes moveBanner { 0% { transform: translateY(-50%) translateX(-100%); /* start off-screen */ } 100% {
+    transform: translateY(-50%) translateX(100vw); /* end off-screen */ } }
+    
     /* 159 media querries */
     
     @media screen and (max-width: 768px) {* {font-size: medium;} .book-scroll.overlay { display: block; position:
@@ -145,9 +151,8 @@
 </head>
 
 <body>
-  <header>
-    <p id="top">demedi.vn</p>
-  </header>
+
+  <div class="banner"><h2><span style="background-color: aquamarine; font-size: larger; padding: 0 15px;">demedi.vn ✦ under makeover, back soon!       </span></h2></div>
   <div class="list-container">
   <div class="list">
     <a href="#fourloves" onclick="closeAllSections(); openSection('fourloves'); return false;">07.2024 — The Four Loves<span class="details">C. S. Lewis</span></a><br>
@@ -1113,7 +1118,7 @@
 <!-- ABBA...ZAPPA -->
   <section class="intro" id="abbazappa" style="text-align: right;">
      <div class="photo-frame">
-    <img src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F50f7e980-1712-46e4-bd9c-a7832576bcfc/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAABA-ZUVPmHQPltbtROX5kao5VF6uKE78Z4eVsN8hVOHc&exp=1762613080&osig=AAAAAAAAAAAAAAAAAAAAAHcCygvvlTUJ3XFtQ0ZgeBP1A-PTTGKoALp2F62JJ08L&signer=media-rpc&x-canva-quality=screen_2x" style="margin-left: auto;">
+    <img src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/DSCF9305.jpg?raw=true" style="margin-left: auto;">
     <div class="caption">
     <p>Rất nhiều bức chân dung vui vẻ, tươi cười của Neil Young,<br>người tự nhận mình là kẻ cô độc.</p>
     <p>Mick Jagger, người đã lấy máy ảnh của tôi để chụp ngược lại tôi.</p>
@@ -1156,7 +1161,7 @@
       
       
       <br>
-      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf9266.jpg?v=1678248667460" style="width: 100%" alt="">
+      <img src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/DSCF9266.jpg?raw=true" style="width: 100%" alt="">
       <p><strong>Ảnh bìa: Neil Young. Phản chiếu trong kính mắt: Gijsbert Hanekroot, Constant Meijers, 1974, Oakland Stadium</strong></p>
       <hr>
       <p>Như một cuốn kỷ yếu, tập hợp ảnh điểm mặt hầu hết ca, nhạc sĩ, nhóm nhạc pop, rock châu Âu trong giai đoạn hậu Woodstock – cuối những năm 1960 đến trước năm 1978.</p>
@@ -1169,7 +1174,7 @@ Gần như hàng tuần, các nhóm nhạc mới bước lên sân khấu, và t
 Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giới (âm nhạc) khác. Có thể nói rằng, từ Abba hôm nay đến Zappa ngày tiếp theo. Chúng tôi xem The Eagles diễn ở London, Paul McCartney ở miền nam nước Pháp, Bob Dylan ở New York và Stones ở Hamburg. Chúng tôi bay London hai tháng một lần. Đó là điều tự nhiên nhất trên thế giới vào thời điểm đó, và bây giờ nhìn lại, một khoảng thời gian tuyệt vời.
         <br></em></p><br>
       <br>
-      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf9317.jpg?v=1678248714183" style="width: 100%" alt="">
+      <img src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/DSCF9317.jpg?raw=true" style="width: 100%" alt="">
       <p><strong>Bìa phải: Nhiếp ảnh gia Gijsbert Hanekroot</strong></p>
       <hr>
       <p>Tập hợp ảnh này có thể được chia thành 3 mảng, Gijsbert chụp những ngôi sao âm nhạc ở studio, ở những buổi diễn, và ở trong đời sống của họ. Qua con mắt của thời gian nhìn lại, Gijsbert đặc biệt yêu thích những bức ảnh chân dung của mình.</p>
@@ -1177,15 +1182,14 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <p><em>Nhìn lại bộ ảnh bằng con mắt ngày hôm nay, tôi nghĩ những bức chụp chân dung là đặc biệt nhất. Vào thời điểm đó, các ngôi sao nhạc rock chưa phải là những biểu tượng vĩ đại như bây giờ. Giờ, họ mài giũa hình ảnh của mình đến từng chi tiết cuối cùng. Họ được đào tạo bài bản về mặt đó, họ gần như tự động trưng ra kiểu thái độ rập khuôn hoặc một ánh nhìn “chữ ký” khi nghĩ rằng có ống kính đang ở gần đâu đó. Điều này hầu như không có vào đầu những năm bảy mươi. Tất nhiên các ngôi sao đều đầy cá tính, nhưng họ vẫn chưa mang vị thế biểu tượng. Rất nhiều bức chân dung vui vẻ, tươi cười của Neil Young, người tự nhận mình là kẻ cô độc. Mick Jagger, người đã lấy máy ảnh của tôi để chụp ngược lại tôi. Über-ghoul Alice Cooper, đùa cợt với những cô hầu khách sạn. Roxy Music nhiệt tình hơi quá đà trong những buổi chụp chân dung, kiểu hình thường được dàn dựng rất cẩn thận. Brian Ferry, gật gù trên chiếc ghế bành. Và nhiều nữa. Bạn trở nên gần gũi với nghệ sĩ đến mức có khả năng nhận ra những ý tứ tinh tế trong cách nói của họ, hay bắt gặp họ buồn bã hoặc xúc động. Bonnie Raitt, John Entwhistle, John Fogerty và nhiều người khác, họ tiết lộ “con người” đằng sau một nghệ sĩ. Và để bắt được con người đó, chính xác là mục tiêu của tôi.
         </em></p>
       <br>
-      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf4027.jpg?v=1678248652083" style="width: 100%" alt="">
+      <img src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0784.jpeg?raw=true" style="width: 100%" alt="">
       <p><strong>Gijsbert Hanekroot là người duy nhất không cầm máy ảnh trong hình, tấm này do Mick Jagger bấm máy.</strong></p>
         <hr>
       <p>Trò chơi chữ trong cách đặt tên sách chỉ là món khai vị cho bữa tiệc thị giác bùng nổ mà Gijsbert cùng Sybren Kuiper mời người xem.</p>
       <p>Ông là người thiết kế sách.</p>
       <br>
       <p>Dùng đa dạng kích thước ảnh, cách cắt ghép, vị trí xếp đặt, mỗi trang sách vừa che dấu nội dung của ảnh tiếp theo, đồng thời hé lộ vừa đủ thiếu. Đúng là vừa đủ thiếu, vì nếu quá thiếu thì nó trở thành bức ảnh tồi, còn nếu đầy đủ hơn một chút thì trò chơi này liền trở nên dễ đoán.</p>
-
-    <hr> 
+      <br>
       <p>Để lý giải cho cách làm này, Sybren Kuiper trả lời trong một bài phỏng vấn:</p>
       <br>
       <p><em>Gijsbert đến studio của tôi. Tôi sẽ không bao giờ quên cảnh anh ấy đến với hai chiếc túi nhựa khổng lồ chứa đầy những bản in gốc. Tôi hỏi về số lượng ảnh tổng cộng, anh ấy trả lời lơ đãng rằng đây chỉ là ba chữ cái đầu tiên trong bảng chữ cái. Anh ấy trải ra hỗn độn những ảnh về biết bao cái tên thần tượng rock của tôi, theo thứ tự ngẫu nhiên, với kích cỡ và hình dạng khác nhau. Lấp dưới mỗi bức hình luôn có bất ngờ mới để khám phá. Ngay lập tức tôi cảm thấy rằng sẽ là một ý tưởng hay nếu mô phỏng hiệu ứng tương tự cho người xem sách. Như thể người xem đang lướt qua một chồng ảnh ghi lại năng lượng sôi nổi của thời gian đó. Nhưng tất nhiên nó phải là một cuốn sách thực sự, được đóng bìa chứ không chỉ là một đống ảnh rời… Cái khó ở đây là tạo ra một cuốn sách với những bức ảnh có định dạng và kích cỡ dường như rất lộn xộn lại với nhau. Làm thế nào một thứ như vậy có thể đóng thành sách, nếu không phải bằng lao động chân tay tốn công mà mắc mỏ? Thợ in nói rằng điều đó là không thể, nhưng tôi không muốn bỏ cuộc và đi thẳng đến thợ đóng sách. Trước sự ngạc nhiên của tôi, một lát sau, anh ấy gửi cho tôi một sách mẫu với vô số định dạng và biến thể trang khác nhau, được đóng gáy bằng máy.
@@ -1193,11 +1197,11 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <br>
       <p>Có thể thấy ở một ảnh Neil Young cười tít mắt cùng tay đánh bass của nhóm Crazy House  Billy Talbot, cạnh bên là tay trống Keith Moon của nhóm The Who đang tạo dáng trong chiếc quần tà lỏn sau một buổi diễn, cùng trong tập hợp này là ca sĩ Bruce Springsteen, sôi nổi trong một màn trình diễn của mình, như đang cổ vũ trò đùa của những bạn ảnh hàng xóm.</p>
       <br>
-      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf9272.jpg?v=1678248674227" style="width: 100%" alt="">
-     
+      <img src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/DSCF9272.jpg?raw=true" style="width: 100%" alt="">
+     <br>
       <p>Có thể thấy ở một ảnh Mick Jagger đang đổ xô nước xuống đầu mình trong khoảnh khắc được ánh đèn sân khấu soi rọi, ngay cạnh đó, người bạn ông, tay guitar Keith Richards ngồi trên chiếc ghế bành trong căn phòng bừa bộn của mình, cạnh đứa con trai nhỏ đang lúi húi trong một trò chơi, che dấu và hé lộ đôi chân của chính Keith Richards đang nghiêng ngả đắm chìm trong một màn diễn.</p>
       <br>
-      <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/453/502/files/dscf9290.jpg?v=1678248690283" style="width: 100%" alt="">
+      <img src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9290.jpg?raw=true" style="width: 100%" alt="">
       <br>
       <p>Bằng cách này, mỗi hình ảnh được mặc nhiều lớp áo, bạn không chỉ xem hình một lần, trong trọn vẹn khuôn hình độc lập của nó, mà còn được xem các biến thể, và khả năng tương tác của nó với những hình ảnh hàng xóm. Nó khiến người xem phải vận động, theo nghĩa đen là phải giở tới giở lui một trang sách mà soi cho kỹ, theo nghĩa bóng, là phải suy nghĩ, và liên tưởng xa ngoài hình ảnh.</p>
       <hr>
@@ -1214,42 +1218,45 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <p>Kể cả việc xem bài viết này.</p>
      
       <div class="slideshow-container">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2F5a3d9ccb-f5b9-4d8f-a328-f79273c527e1/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAABFLN3zWnLOuih-h8bzqTs1XBZjhohM1WSkwRJenpTuP&exp=1762635731&osig=AAAAAAAAAAAAAAAAAAAAADrpaujAsCpF_LClScycRyhHEWeiDTFIJ8qLD0aBGQFn&signer=media-rpc&x-canva-quality=screen">    
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:599/quality:92/uri:ifs%3A%2F%2FM%2F679d085a-dab0-4fe7-a018-4a75231e3770/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAALe9S_fwPOgg2vz07ZYV-MxhQf6YCKb7g9UU-IwMGJzU&exp=1762634375&osig=AAAAAAAAAAAAAAAAAAAAAEvnZv-7yIaIcUE2SnmSyLEWVMRjxec7hYjgnGGaibdM&signer=media-rpc&x-canva-quality=screen">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2Fe7e07fa5-ca04-4093-a15c-ff856cc5ebf7/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAHLB-3usQ73UHBEAbhwpNz6TBoWZFYAMHu3QfYq-9tqb&exp=1762615194&osig=AAAAAAAAAAAAAAAAAAAAAMbBik6EIDG_WfPfeV_AmJub2DjGVt-ap0GygZrCWMOt&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F3bca7593-5748-49b6-aa38-8f61d319093e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAAN18X1Hey_Or14-AgJ_d8ZJ9GLGgxBJ2dKbp4ZLRxQ8&exp=1762612677&osig=AAAAAAAAAAAAAAAAAAAAAEseROdZwZLZJB-slwT4C7WF-6ILjfmoNfPaLxoH2hsb&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2Fddacfc31-7fac-4fd0-af94-a45a39986d74/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAGXtL00b2vdv5wvbuTOaI2_tjGHR8nOTjl5zYknimHeQ&exp=1762612108&osig=AAAAAAAAAAAAAAAAAAAAAD_RVyOkLzZC1mg9OWtwYfEo9xJ91PdwQIMQ1T_R3W3I&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2F9a668f4e-ea24-4640-8e39-2ff1fadd1b47/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAHOnw_V1NmOJ_Y1oTRAAi6ByxnGl9ViGg1bC7fS979To&exp=1762636266&osig=AAAAAAAAAAAAAAAAAAAAALcBIwLKagKIpqRSR2lLfrBNI-LJGyiCdIDGmNxdCZkO&signer=media-rpc&x-canva-quality=screen">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2Fd8d29651-e586-4bbb-b587-e5d5b9d181a4/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPdLT2RT7aoTstgvj9cKnTinEajBlmIF1okukBPZ4nx8&exp=1762636396&osig=AAAAAAAAAAAAAAAAAAAAANNoLSm_lOhPJDOqg6ISKPcjGBWHWirE8_uhdjGvIdue&signer=media-rpc&x-canva-quality=screen">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F947ef2fd-1eb2-47ee-a10e-f0080d61df0b/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAAT_U3yftX9DJ0ezJpwCgj2lz565MNz4iJaiLgAfgP-k&exp=1762613077&osig=AAAAAAAAAAAAAAAAAAAAAPUH-1wh06RbQeyLOqO0WItgm_Pla3DsaljDHnodSGtj&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2Fe71e3f98-760d-4142-9ebd-cdc300e39456/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAF-eQfBgQS6vpfAiCg4-_-Og4eEzYiAsiO2QVLbNeR3k&exp=1762615465&osig=AAAAAAAAAAAAAAAAAAAAAARd-UWfKUR6wO66TOewObvsswQmYZWVKA6W58-KxFzW&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2Fe520e07e-5171-4258-9116-8cc90a9f6a8b/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEI5P5smEqkK0_bBoNgXEUNKlHJ1i342s20nqKDzPfg5&exp=1762612686&osig=AAAAAAAAAAAAAAAAAAAAAE_bIThUzbX5oJNJb3ieQWUYj8kQmyM24aV5hoo5C-dk&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F2bd3c8d1-9437-4a90-8799-4cff13113f65/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAADasIaBXbH_QxCKYz5QBfYTQY_q3KZ-DK6y_hND_5JDs&exp=1762612887&osig=AAAAAAAAAAAAAAAAAAAAAPnDCYhMUJnCzSM3hfI4gtyBXTyl79auckIibevmZ5f_&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F43561dbd-2815-4caa-bddb-bac4ea9140ff/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAIj0KRg15a99B1LYtm91Do4enZbZ47bw53QsQSJ0_c_Y&exp=1762614346&osig=AAAAAAAAAAAAAAAAAAAAANHvkNubRrTST4Lz6JrN5gODI4jb7EI3L-KhVPnXig1H&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F93a1cc29-030f-4d4e-8fb3-76c4fb2bfd42/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAP1RdUlmgHq-w2nJSSBM7v9CDrl-Ttqzo2TYiYHqipJ0&exp=1762614800&osig=AAAAAAAAAAAAAAAAAAAAAIMKHzh0s3GAQJ1-AlEXg86SBoUl6WCXDb2na61deyLr&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F8dca1ac6-f246-49b0-a039-3ed165c10726/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAFk8donVKszkfOhG8RBUL6TL5DjFqWJAjRwPK3WNzYDQ&exp=1762613352&osig=AAAAAAAAAAAAAAAAAAAAAI7B39QewfrVwXLVDVeeZ6VXQySjU_mNP8LiCkQgoX6j&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2Ff4d943dc-7d73-48e6-afe9-13ffc5ba09aa/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEfSwtGyJArQKFduw-JEUcFGYzF4R-UfyBNW_Ff3IjCR&exp=1762615074&osig=AAAAAAAAAAAAAAAAAAAAAIpRbHKZWLS4OB4fPvwZjKN5Yrq_-wv8q-oAcuOLPi9x&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F6b65c0a5-a797-42ad-8161-ffd04292f01e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAACVMDsP6ghMPHKCzdm4EXH9HZjmBpHeZRtsSrflvFt-i&exp=1762614249&osig=AAAAAAAAAAAAAAAAAAAAAGvpTTkPdt97Bl7T7run-yojdX3hfzx2M2Ac2gKGaZMc&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2Fa56e2b7b-18b8-4c20-946e-7287310b12c9/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAOSeasO9SsZLhiXXib0-YZcEFzMPCKRCriOdVfiQLmet&exp=1762612392&osig=AAAAAAAAAAAAAAAAAAAAAMnTjJb1fIf87_P91eLA4TOEwSXkIz7WnmQ7_T7kcQWh&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Ff7e2ea29-8086-4af9-a19d-47d14153470b/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEkfGECCasuHEZYOaPIjRQcg0gHLIu6gQph3xmXJiF66&exp=1762613389&osig=AAAAAAAAAAAAAAAAAAAAAEltP72IDZQvvr9-0rKZpfcrnJSZk10sPloy5Zib2BmZ&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F72a354f1-a589-47f5-a015-c73ab251aa30/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAB2jlv2LsZ1edShIrViDc2Q6UggVCCvy2Z8V_-sobqPo&exp=1762612268&osig=AAAAAAAAAAAAAAAAAAAAAMCfvZblq_nOcbAEJwCYDIdfmHHc_iGoN0HFXr7NYhu_&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F2b2ad9c7-3321-4df6-bcc9-bd4261c68a80/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAKxkMtiAgZWUhJL-1lMvxFAzVSg-j7T45nudLo6vCuYD&exp=1762614393&osig=AAAAAAAAAAAAAAAAAAAAADdef35VD5uwQ9epKe6M1kLW_ZDEu46SyYt0gtslFf8i&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F3a52c394-8d88-48f9-acfa-cf5948b702bf/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAKeYLZAy_aF5eUnOyo2nJeSrxEyWJM-t5W1QhGN6NHfg&exp=1762613144&osig=AAAAAAAAAAAAAAAAAAAAAGXQNPwfcRxSFQH0puhj-IQxz6JnOEnoaq9S1XXbwHdi&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F3b501cf4-015c-46eb-85bf-b0f791e974cf/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAPF1ziniO954F2LnzpX4Xb-ak2cti5deCXCKO0kgRjkc&exp=1762613668&osig=AAAAAAAAAAAAAAAAAAAAABRN8gRlYspsWMicR08OA9sGybKkESBuc3mq24dzDr26&signer=media-rpc&x-canva-quality=screen_2x">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2F43da5445-fd51-4238-9596-b1edaea17e9e/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAACReg5S7-eRfOG3Frvw5uX6JRl9ByVU2p1yoonzPVBxo&exp=1762636386&osig=AAAAAAAAAAAAAAAAAAAAAM50MuLBmz6ouASzMP7GKTcfcwfx4EHRuwq9uuXP2pc-&signer=media-rpc&x-canva-quality=screen">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:600/quality:92/uri:ifs%3A%2F%2FM%2F39a73ee0-3a2a-46ac-8ad5-ac957550ea50/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAOk9KUQNiQQW6JKajB-NLvkXRe97lk6nkLWeh_WHTrnt&exp=1762633537&osig=AAAAAAAAAAAAAAAAAAAAAGrcrkoTG0lF5fZsEc25lIxi-ZRaIgL4p5tInCcGS-WN&signer=media-rpc&x-canva-quality=screen">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:599/quality:92/uri:ifs%3A%2F%2FM%2F106a626b-b0e7-4d1e-b62c-333d30df8808/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAAQou_SDChtCtl88JErzHqL3GY6asDNTimafEQkqg1FI&exp=1762633296&osig=AAAAAAAAAAAAAAAAAAAAADaEiOG81NddZksAGTpTSFjqdGcWudb16MYX2CtvPUn0&signer=media-rpc&x-canva-quality=screen">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:599/quality:92/uri:ifs%3A%2F%2FM%2Faca5fb41-d574-4b19-ac9c-b641c37d438c/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAP3zjYUzw59losCURRre9JqU4Ygw-QRFk9BvMOcz5KIS&exp=1762633771&osig=AAAAAAAAAAAAAAAAAAAAALLtcS3oBuYdlmiZCCDUKV7Dsu3b-J3WsDwAo7rpTq2j&signer=media-rpc&x-canva-quality=screen">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1200/quality:92/uri:ifs%3A%2F%2FM%2F969a235c-0a4a-4733-971e-ee4fb74b99a1/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAF5ceyNoRtReSTdfDxt9b8CfkQPKDogGJkMhQCIUMOFr&exp=1762612157&osig=AAAAAAAAAAAAAAAAAAAAAC_YIGPl3yECEurYISsIq1_9WpgA3jQ1mRN6BXsCrhma&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F52af208c-e72a-4ef7-938e-3f5b376d7b7e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAGqm3yIrZbW83Luv4GkDwgepnCAkL_VpOHbgMzwwqPus&exp=1762615571&osig=AAAAAAAAAAAAAAAAAAAAAIX09V2ydSWxpN4DY7oh5f5AeotcCz2DRmMWsctZWiHP&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Fc6a1ef9d-0395-448b-9aa4-fb11599fbf2d/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAOg65ommo0n85x5FQOOY6gKoemqQzOA4aQdwEaJMWS9M&exp=1762614649&osig=AAAAAAAAAAAAAAAAAAAAAPY7zXN0EmBbl7pIjsaD5JuLBF2uum2GHn0raNcue_Qw&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Fa3616155-e8d0-42a9-8945-70e116fcba8f/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAOfMpqQSTaalZEvUN4ZMuzdpoyUqXiasmlSQuZ08zxa5&exp=1762612365&osig=AAAAAAAAAAAAAAAAAAAAAERilFpTzZct1MfRt_k5QrQhoPUVXLWxc9XtWTejNHfu&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F67d6a7e8-523f-4467-9960-5c0d5b22126c/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAOHrdpFinzu_v8HXzYACZaLcWsuISxu7MYx_64GUuR44&exp=1762614735&osig=AAAAAAAAAAAAAAAAAAAAAKWaZ0gzKMEdYkTka8cj2608SufRjY1z2yXF5IQ08B39&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1199/quality:92/uri:ifs%3A%2F%2FM%2F50f7e980-1712-46e4-bd9c-a7832576bcfc/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAABA-ZUVPmHQPltbtROX5kao5VF6uKE78Z4eVsN8hVOHc&exp=1762613080&osig=AAAAAAAAAAAAAAAAAAAAAHcCygvvlTUJ3XFtQ0ZgeBP1A-PTTGKoALp2F62JJ08L&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F52af208c-e72a-4ef7-938e-3f5b376d7b7e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAGqm3yIrZbW83Luv4GkDwgepnCAkL_VpOHbgMzwwqPus&exp=1762615571&osig=AAAAAAAAAAAAAAAAAAAAAIX09V2ydSWxpN4DY7oh5f5AeotcCz2DRmMWsctZWiHP&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2F2e1ac554-9914-4548-a1cc-5b3b876e0030/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEpx7uZW6kf6eVpvLSTdixNahQ7BvGKZMmUAK6-5vpLV&exp=1762612308&osig=AAAAAAAAAAAAAAAAAAAAANcxTHUzeNji-78gn1wU-6xhwS0gEsmsyylvwHs5R_Tk&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Fa9fe3eb7-5b22-4f07-9ac3-d6ad21f0ca8e/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAMKxaRIwXO55xZ5dakKuxZuI1pHVmwqhISO-Jxxhjc67&exp=1762612610&osig=AAAAAAAAAAAAAAAAAAAAAMALCtBoYTlQFK3gZjKc72KbuoUbus9HQ14b8KgkgQEB&signer=media-rpc&x-canva-quality=screen_2x">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:1062/quality:92/uri:ifs%3A%2F%2FM%2Fbc0cfb69-3c0d-4f9e-8845-c93be7806023/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAADehHsKqKNCBg_b4CbwP34g3-5i8PP12wY-e-7W9G5l7&exp=1762613772&osig=AAAAAAAAAAAAAAAAAAAAAPsvqT6a46vouwsmH8UoU6ZE7vELfYyeA_KJ8sicQrLO&signer=media-rpc&x-canva-quality=screen_2x">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0728.jpeg?raw=true">    
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0742.jpeg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/DSCF9314.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/DSCF9323.jpg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0746.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9298.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9303.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9304.jpg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9309.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9310.jpg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9329.jpg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9307.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0732.jpeg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9312.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9313.jpg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9300.jpg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0782.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0740.jpeg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0692.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0738.jpeg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0768.jpeg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0764.jpeg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0760.jpeg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0748.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0758.jpeg?raw=true">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9336.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0750.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9271.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0734.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF9277.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF4041.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF4040.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0780.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0730.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/DSCF9305.jpg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0774.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0766.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/abbazappa/IMG_0772.jpeg?raw=true">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/51e69e5d1dbfb20d51b0ff44ec146168bd3b08ca/IMG_0770.jpeg?raw=true">
     
       </div>
 </div>
@@ -1323,17 +1330,10 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <p>Cô bé dành hầu hết thời gian với cha mình từ lúc 4 tuần tuổi, sau khi mẹ cô phải trở lại với công việc toàn thời gian tại một nhà hàng địa phương. Cô bé thường phụ giúp cha mình trong những công việc ngoài trời, đồng thời được học những chủ đề đa dạng. Cô và cha thường xuyên lui tới trung tâm New York, nơi cô bé có cơ hội gặp gỡ các nghệ sĩ, nhạc sĩ, và các kì thủ cờ vua. Cô bé thể hiện niềm hứng thú tự nhiên với thế giới xung quanh mình, yêu thích khám phá môi trường hoang dã, và viết nhật ký hằng ngày.</p>
         <hr></div></div>
       <div class="slideshow-container">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fe9f81ff3-1fa7-4f5f-a1c7-0ff07ca028ac/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAOKcBi_wKB3OeemAFhojGPOJEaPQbooIFv4l3S6H_Izt&exp=1762630642&osig=AAAAAAAAAAAAAAAAAAAAANfQiC_ZWxvGx4J37SABOMf2BsWkmDVDUhfISerORKOK&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F19f34ea8-4bcc-48f9-8c84-3bbcec1e9da0/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAObfSvwoq_5ja20EheHy_XOTfWF91dBUrEKKvaBOK1Yl&exp=1762633706&osig=AAAAAAAAAAAAAAAAAAAAAMvLzVXt6FADgjDzUE25iykNJIpegUDnU_6t0wQWBa8o&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F34976c07-2145-4fd5-9b84-aade1263fd6e/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPu_DApsxARnJqhTc75rudT3hkz5kii74BDRyLwjJtei&exp=1762632923&osig=AAAAAAAAAAAAAAAAAAAAAAesaChqY-Z9bpKj3KtF850Y_NV1mjQLjtJjfhoqiYRy&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F1a7f37ac-4261-4402-ba09-6581e8325f61/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAL3k4m4J7faaOnB01kR3--ww9vchdvFpoQz1oHCCOtm5&exp=1762631953&osig=AAAAAAAAAAAAAAAAAAAAACexQsFti_gsF569mR-Iq8JrEt9FEX5eu3GFNtzokS4q&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F2103ffec-3599-46b2-af21-ab2bf639d438/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAOdY_t3V-e9Mledrp3adshKV4B2nm9jr9i1B02eFehdm&exp=1762632733&osig=AAAAAAAAAAAAAAAAAAAAAG7oAcVOW0Fw4XUMyFH8Gph38joXjTexfZshFb5a_Lq2&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F55d0829f-d777-4afb-b124-e015eac2f104/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAACZDAQrsdxVerJBcWVAd2QQnLlAjCaPkWkCVJtSUvrj-&exp=1762633446&osig=AAAAAAAAAAAAAAAAAAAAACQfn3KlyPbBEfhJeEVkzTk8PmcBRnrEu2IHtzBywyWP&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F94afa12b-8e3c-47ee-9402-11dc2a884726/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAABrBocEXtydb-BCMBd6twyCZo02lyyGNBN6G1OyU7tte&exp=1762632416&osig=AAAAAAAAAAAAAAAAAAAAAAFrlI1i8t0wo7udGG7z3-0xZvHTjGDF83AJTMk53xaY&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F3288c231-e414-4698-abdb-d990805e53d6/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPVzVwspzhs4DzFXy7oehjIHRJk8RkTYX-SCzO9K08dF&exp=1762633705&osig=AAAAAAAAAAAAAAAAAAAAAKhuNZsNgkn8Qtu6kWE9QM2OGRIih1bzt8Qxr2C7DNSI&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fe9102cd5-d01e-40e2-859f-37c53a70b0b9/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPDIbigmrbhB2Pioc1cflWdKJoZDEOx9wHB_SuHwuTCl&exp=1762631990&osig=AAAAAAAAAAAAAAAAAAAAAFuaWiQno6s0H1LYIi2pDoH3o1a4V6bvE8nbvPy3B8F3&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F8e70e0c8-344f-4ecb-9dce-89946d90350e/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGPnyKVD8tAo2Xxl-bbbEEEbEL4c_hRQxhh8qQiUO95I&exp=1762631961&osig=AAAAAAAAAAAAAAAAAAAAAEShYHI3EO_4s_7OANUV7zu7NM8KSbM-nckikqEMcDZ-&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fa712487c-d4f5-470b-b7b4-4950660de354/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGFZbfTu_OSyFUdk-9F1ZdAcfihsrJ8akw6-DzvX-ItG&exp=1762633880&osig=AAAAAAAAAAAAAAAAAAAAAN5fOYVRZ0KUtCaoJz7uUuBxbXD8GkCBdsIWlDCT7ben&signer=media-rpc&x-canva-quality=screen" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5483_1.jpg?raw=true" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5496_1.jpg?raw=true" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5515_1.jpg?raw=true" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5547_1.jpg?raw=true" alt="">
       </div>
       <hr>
       <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
@@ -1352,12 +1352,7 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <p><strong>Zephyr, 11 tuổi,</strong></p>
       <p>sống trong căn nhà giữa một rừng thông nhỏ, và chưa bao giờ đến trường. Từ nhiều năm nay, cậu bé được hướng dẫn về học thuật và nghệ thuật bởi một nhóm giáo viên sáng tạo. Lúc 10 tuổi, cậu được học về thiết kế – xây dựng với một kiến trúc sư trẻ, qua đó, cậu biết được phần mềm vẽ 3D, cậu thiết kế một ngôi nhà trên cây, làm mô hình, và tự dựng nên ngôi nhà với vật liệu lấy từ gỗ một cây thông già. Ông bà cậu sống ở Lebanon, Zephyr thường xuyên du lịch đến đó suốt trong năm. Thế giới của cậu bé là sự pha trộn của tiếng Anh, lịch sử, toán, khoa học, hoạt họa, làm mộc, âm nhạc, kịch nghệ, nấu ăn, Aikido, Youtube, và trò chơi điện tử.</p>
        <hr> </div></div>
-      <div class="slideshow-container">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2F643a760b-af76-4c9f-b1a4-76cdb083b824/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAO7EWqEgNNktexajypcgUaEvLgWfd0pRl05lgTTiv8bT&exp=1762632084&osig=AAAAAAAAAAAAAAAAAAAAAAarhg0yrrhazbZ5jd5tsGF5PNOHWZXmsndI2qxzq67G&signer=media-rpc&x-canva-quality=screen_2x" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2F35167e55-6325-4a05-8de0-f97ba693fcb2/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEHROpWDauOROe-VRyYZ4O-5DzrMZX5dGHexOA7ghtHX&exp=1762628696&osig=AAAAAAAAAAAAAAAAAAAAAFLd-VGTLIyJVCZS-M0JzGtnWYN6WzOPkjtqplitwbZO&signer=media-rpc&x-canva-quality=screen_2x" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fdc218ffa-8263-4eb4-8f58-3699baae0d42/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAADaxWGyDO6wTwCSrxKJrdAT7Y_58ud8-4MVF4kT-k6AV&exp=1762630233&osig=AAAAAAAAAAAAAAAAAAAAACMDe6KKpwjxxCd0_gjLJM1XdHet1QHF9p0LTGqSrpCq&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2Fe5d7fcf7-da47-4da3-8d89-6d2b39ed8268/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAJfvjoKjLDcQaCIBndmU0GTigEHaxBs8g29uZ55ghu-o&exp=1762628737&osig=AAAAAAAAAAAAAAAAAAAAAPbjs4G-Xa2Wr7CH8AJDqxUJ99sqXgM7YXzGr5Wyl71k&signer=media-rpc&x-canva-quality=screen_2x" alt="">
-      </div>
+     
         <br>
       <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
       <div style="flex: 0 0 40%;">
@@ -1381,12 +1376,7 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
         <p>Cha mẹ của <strong>Grisha, 8 tuổi,</strong> muốn con thể hiện trí tưởng tượng và khả năng sáng tạo của mình hết mức có thể trong giai đoạn đa cảm này, họ nghĩ rằng những điều này có thể không được coi trọng và nuôi dưỡng đúng mức ở trường học. Với sự tò mò bất tận, Grisha yêu thích việc làm mộc trong xưởng của cha, học về những loài động vật, thiên nhiên, khoa học, và sáng chế các vật dụng. Cậu bé thường xuyên có những chuyến du ngoạn băng rừng một mình, cậu cũng đang viết một cuốn sách về cuộc phiêu lưu của loài cá, tựa đề “Can the Fish”, và hi vọng cuốn sách sẽ được xuất bản một ngày nào đó.</p>
           <hr></div></div>
         <br>
-        <div class="slideshow-container">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2Ff86288f2-7d6e-40e9-90f8-88308dde6e39/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAHn42kJLXtWVlPLD2WSatCY8l_ITL9Hn6mwvMJ0YxxJO&exp=1762632375&osig=AAAAAAAAAAAAAAAAAAAAAJJZrH-gwfq9GrQBydZJLVNdBUEjWocRGbQIyLXwtHYS&signer=media-rpc&x-canva-quality=screen_2x" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2Fc12a1caa-564a-4e65-a655-dd3cf205e046/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAIvJmbbzGgGoRbnWRZkKfAD1xOMYYhUiLs7kjETQz8zh&exp=1762635788&osig=AAAAAAAAAAAAAAAAAAAAALdCYL2jEQdbgtsKfM8pmK63KdG7tN_OcqqGXf7i0jXE&signer=media-rpc&x-canva-quality=screen_2x" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:901/quality:92/uri:ifs%3A%2F%2FM%2F2122e6d6-3c28-4ae6-9353-5ead66f10a63/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAEBBC8d750_bvLFGjCgv6FDAYfhI3e7tV8liwVJLz6-b&exp=1762632220&osig=AAAAAAAAAAAAAAAAAAAAAI_JvE83jUJ20yyvDo13lQJRULv9IIyoNzDwpzDVcLbi&signer=media-rpc&x-canva-quality=screen_2x" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F0a360a91-6ae9-457c-a5ad-073710dd3171/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAJcLiajeVKBIX5kHW3zhcFcg5mK7GISJzHQO6ACJUTMo&exp=1762632355&osig=AAAAAAAAAAAAAAAAAAAAALCSYkobyJL8BeUuuOAYlu7YgAhZdI6s-RR-Q63hyumm&signer=media-rpc&x-canva-quality=screen" alt="">
-      </div>
+       
       <hr>
       <div class="halfhalf" style="display: flex; gap: 2rem; align-items: flex-end;">
       <div style="flex: 0 0 40%;">
@@ -1410,32 +1400,51 @@ Chúng tôi được phóng từ thế giới (âm nhạc) này sang thế giớ
       <p><strong>Roan, 10 tuổi,</strong>sống cùng cha mẹ và nhiều vật nuôi trên một trang trại. Cậu bé được giáo dục theo phương pháp dựa trên thiên nhiên, nhấn mạnh vào các chu kỳ của việc làm nông và việc tự nuôi trồng thức ăn cho mình. Bên cạnh việc học các môn truyền thống, hoạt động hằng ngày của cậu bé bao gồm gieo hạt, làm đồ thủ công từ lá và rễ cây, chăm sóc mùa màng và gia súc, cùng với việc tự phát triển các sở thích riêng. Cậu say mê lịch sử thuộc địa, tham gia vào một giải bóng đá nhỏ, thích bơi lội, trượt băng trên mặt hồ và chạy chơi khắp khu rừng.</p>
         <hr></div></div>
       <div class="slideshow-container">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Ff06e281e-60c9-4423-80ff-3defc4c68a15/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPbB6wJ34mVPgvfQGfQ_w-1R76wS8_UElYhOSJFF2PVp&exp=1762632079&osig=AAAAAAAAAAAAAAAAAAAAAMbg8_oz_vWRmzzrbDcf9IUP42eGhNt6aZK4ph0guC7G&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F12411e62-345b-4be7-b31d-57a35589b1b2/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGNCQ1NfE76VoPw7-9vVZmH_b4BcisNsnOQdh7ZzRXTS&exp=1762629533&osig=AAAAAAAAAAAAAAAAAAAAAF_ef9r9nfbrbeKb0UHViaGZ9h1vHX_KrhYHjM2hh1aT&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F9acebbeb-bbcc-4e70-b3af-52abffa4398a/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPmPOFTcsaVf-1_mO0_kTp-bWtbWHSivY4W9WqeJ-3jh&exp=1762629037&osig=AAAAAAAAAAAAAAAAAAAAACb2JH_bs7iYdo_scYT-3Maan4vRDox9Cj0J9Hf3Fppd&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F0a27f54a-4005-4c0d-b74d-9cc2baf87d83/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAFDK1JGPqkE8NLwddq-I8eTUP7O62nr6i6mRrGLI8r_5&exp=1762631934&osig=AAAAAAAAAAAAAAAAAAAAAEQ2XZpRz5fvvboCkDPedD0FyE6Pj6n-RJQwDzwPLn74&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F34976495-809e-4c43-880b-7435e4b5c390/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAI471Ow7igqh7GPPoa5-EeuJBSgbv_eIXID-ZqtXURjc&exp=1762629552&osig=AAAAAAAAAAAAAAAAAAAAABd2YA8jgQNHPFEX6V1vfo_aNXRJ6rsM3bQFCHdvinxE&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F70051515-0c28-4fd2-8d11-a23db6a640b5/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAH1KsW7QECowcYxjjZKJljaEKtp-S06WuafeDQ6cOt1g&exp=1762630755&osig=AAAAAAAAAAAAAAAAAAAAANYh-1yIy2x1wUNELo-JTqH6t1q9tGtNwGQfOsOelsL2&signer=media-rpc&x-canva-quality=screen" alt="">`
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Ff63ac4d3-3482-4d94-9be9-46ebfc57a91f/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGEOSucWu3_-wpN6tV1-Yus5dTAWVk59ofCDjJOqDf-o&exp=1762630483&osig=AAAAAAAAAAAAAAAAAAAAABUkHfEiBxOOC87oVPeYz0i2wj57EetEoQI5fwme-sbg&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F1dbc090b-e104-4dec-8217-61d7bd4bc652/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAIeAPCX1qv8MtQklDQocKasbbk1HEYAmpn_bjDcd49q-&exp=1762629518&osig=AAAAAAAAAAAAAAAAAAAAAENz9d8Ps80hqCH2dyEjRytOns3zjS2oSQarxEhYMeZp&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fef218444-bab6-41c6-a4d9-bb163de73c80/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPXEeq61GRjqu63hSh6TnjaCmpR_BiawHFOG2Cpifo1F&exp=1762631286&osig=AAAAAAAAAAAAAAAAAAAAAEmyRlnyY6vpvCSSJN3xBhd48vEPRFl6hjwMwIRC-t2j&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fd77bd102-714d-4eb4-a684-45fa2352c1aa/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAM-p34ch0w_6zlkvGzTnOcUDQqmqL9KD7eyMW5ujRbJ4&exp=1762631817&osig=AAAAAAAAAAAAAAAAAAAAAD1Jy68kvEJCeNKW5kSRHx8p0PIegnBo0iNBwDVgxWin&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F86bac37c-b31c-4e0e-8150-47ce09f2a4c5/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAMA1twLIgnfY1i07Focz6Al78f5kdINiQYWUgHPWdhHa&exp=1762631305&osig=AAAAAAAAAAAAAAAAAAAAAMWPtB7tHGGRHVb0rL7vRB_8rQUyLeeEewIfQUAFTI2k&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F02362b31-eb42-4873-befc-e7c0d09ce40d/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAKE_Gp0LrX63B9TpvlGRl6GZazV0x7hSJDxB8HN4ArmT&exp=1762631519&osig=AAAAAAAAAAAAAAAAAAAAAIhSZlvCeJyxXktOXubv290ahzhDNr1KQn2KEGlTGdUJ&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F2e462907-f6d0-459b-9d26-862657eb6540/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAEn2GWoWPvOSWFsd_uFgCtbVxTFXhZfStg7yMCyvmxXI&exp=1762629234&osig=AAAAAAAAAAAAAAAAAAAAAMeJb0GiynRaELaABBdMNxwqJ8grHg7nI_aVS03VzTRg&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fd90fe051-6a9f-4c89-9625-1057b8d8a7cf/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAACVY8QGh_s0iFZcJJ4lph9ogTiQiCF7gDePJ9V_Q_4wG&exp=1762629929&osig=AAAAAAAAAAAAAAAAAAAAAFfujiS44WVuYT2w08HEUb69M8NY-UcSMAsNJedjAqo0&signer=media-rpc&x-canva-quality=screen" alt="">
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F49b98ec8-8561-4920-87c9-3e488ccd6423/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAB5ZeShSK7HgYYnYVFjuTBVrITREH86tyR6c1EN4kOjB&exp=1762630135&osig=AAAAAAAAAAAAAAAAAAAAAGmfHAGdTibCaoCkeuRx9Xyo3pCMqUFUM9QxHyEjPrRN&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F49b98ec8-8561-4920-87c9-3e488ccd6423/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAB5ZeShSK7HgYYnYVFjuTBVrITREH86tyR6c1EN4kOjB&exp=1762630135&osig=AAAAAAAAAAAAAAAAAAAAAGmfHAGdTibCaoCkeuRx9Xyo3pCMqUFUM9QxHyEjPrRN&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F80c29eb2-9799-4f0f-93e2-d988be76f427/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAJm4GLd-iczZqc2LE1m2VG_QbgxM6MJXht2aqQVUlvgI&exp=1762631342&osig=AAAAAAAAAAAAAAAAAAAAAJrQCk11kb6_cXdWgT1oyb3JjPdS4n9ayLJkmohm5sFf&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F23201fb9-75d2-47ce-882e-96e52341b9d0/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAMhXwWAvHLh800R3cFOxt-O3ynyQHp_awlQdn5fhVozr&exp=1762631778&osig=AAAAAAAAAAAAAAAAAAAAAFtzJAZwej_QpB3l4H3JmGGZxQvF2yt8GpFPnej77shM&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F23c87723-00be-45d5-a5e6-c74747271ed0/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAGeNcZ0EmTNcYoWLVqXRKcjHemSiqi-wgt82GfgHbsz-&exp=1762631833&osig=AAAAAAAAAAAAAAAAAAAAAN7JBpHBqqw0pIUNupDqBohnwz1De6HW0XLUFm_9PFJe&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fe6c6352f-2abc-4ffa-95ea-9ed7b863f515/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAP8KCNa_lDXgZfTHHILL5_G2KP4cqF804_65Y0tZGWFZ&exp=1762630950&osig=AAAAAAAAAAAAAAAAAAAAADe9If0-9DzaDAo4E03jDm4bCu0HG2pZiy94hlgVbJfv&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F2b752dd0-4deb-4948-a1df-d6c0674631ed/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAADzrsK3D0pmsqnGl_Bkj0MvenbWCUmJPb3I2U5xld9yH&exp=1762629782&osig=AAAAAAAAAAAAAAAAAAAAAJSv-YzWlDwyZMClpemRTj0FTKrBpGsHpYdpe1MCMk5s&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F168b9c12-b095-40a1-a3b2-26e1d6dc66fc/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAIuSMFyNvNwtERAoNVRXqVgEFkXpOAwizH9W12KYJvFr&exp=1762630166&osig=AAAAAAAAAAAAAAAAAAAAAHzeDJ_ynmEYXLeBZCTijDE3AaW4HqkDW4uj4ENHo8RA&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F9ac87d48-29d7-4312-9768-e57a456a65cc/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAANjC4Gf4_TIow-zmNSL7tUy6QycIjJmN1EYkawaJ8NFQ&exp=1762631622&osig=AAAAAAAAAAAAAAAAAAAAADrFfThsWC7uYO_qHhxLS0fA1gWJB1SgR-zTz19vxGx9&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F29ae888d-69cd-4ec8-ac70-8d12614d854e/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAAOsvHzFqXOKgrfJqpLOK_ZPnj-K_i4BB4UNzg_d_fUz&exp=1762628547&osig=AAAAAAAAAAAAAAAAAAAAAPCcQVzG7iCJGtQhUl4KQ_SVs57TNRcX9nH0IfhIKf8E&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2F096dc7fa-8249-49e4-81e6-828259a6a5df/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAFpSFbpevxnLv1o1GbJfXw7_ryVvKvpibvs1hXyD0rbI&exp=1762629013&osig=AAAAAAAAAAAAAAAAAAAAAH37mUiGvbYLHVG0eE_vL2nAgH9a48elT-QwnRU0SL2S&signer=media-rpc&x-canva-quality=screen" alt="">  
-      <img class="slide" src="https://media.canva.com/v2/image-resize/format:JPG/height:450/quality:92/uri:ifs%3A%2F%2FM%2Fb657f325-1a78-42c8-addb-e3f634c33470/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAP1Iw76pJn6VCoj1P3QDvBpCkPQ-fNl0ioW8dVbI0mWc&exp=1762628750&osig=AAAAAAAAAAAAAAAAAAAAAPXFhagJK0LdY9V0eTw4j1AVmEHxxbszwnI7Glwrq6Ox&signer=media-rpc&x-canva-quality=screen" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5464_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5476_1.jpg?raw=true" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5477_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5480_1.jpg?raw=true" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5487_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5491_1.jpg?raw=true" alt="">`
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5527_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5532_1.jpg?raw=true" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5534_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5536_1.jpg?raw=true" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5540_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5550_1.jpg?raw=true" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5555_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5558_1.jpg?raw=true" alt="">
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5565_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5567_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5572_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5575_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5577_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5578_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5584_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5589_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5592_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5596_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5597_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5601_1.jpg?raw=true" alt="">  
+      <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5603_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5605_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5612_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5615_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5619_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5626_1.jpg?raw=true" alt="">  
+                <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5628_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5633_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5638_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5647_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5626_1.jpg?raw=true" alt="">  
+                        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5628_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5648_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5652_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5657_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5660_1.jpg?raw=true" alt="">  
+                                <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5665_1.jpg?raw=true" alt="">  
+        <img class="slide" src="https://github.com/kirakira1709/IMGs/blob/main/DSCF5667_1.jpg?raw=true" alt="">  
+
       </div>
            <hr>
     <button class="close-btn button-end" onclick="closeSection('morehomeschooled')">
